@@ -5,515 +5,13 @@
       <Option title="zed_wrapper" />
       <Option makefile_is_custom="1" />
       <Option compiler="gcc" />
-      <Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\share\;CMake Files\..\..\..\..\usr\share\catkin\;CMake Files\..\..\..\..\usr\share\catkin\cmake\;CMake Files\..\..\..\..\usr\share\catkin\cmake\platform\;CMake Files\..\..\..\..\usr\share\catkin\cmake\test\;CMake Files\..\..\..\..\usr\share\catkin\cmake\tools\;CMake Files\..\..\..\..\usr\share\catkin\cmake\templates\;CMake Files\..\..\..\..\usr\share\catkin\cmake\em\;CMake Files\..\..\..\..\usr\share\OpenCV\;CMake Files\..\..\..\..\usr\src\;CMake Files\..\..\..\..\usr\src\gtest\;CMake Files\..\..\..\..\usr\src\gtest\cmake\;CMake Files\..\..\..\..\usr\local\;CMake Files\..\..\..\..\usr\local\zed\;CMake Files\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\usr\lib\aarch64-linux-gnu\;CMake Files\..\..\..\..\usr\lib\aarch64-linux-gnu\cmake\;CMake Files\..\..\..\..\usr\lib\aarch64-linux-gnu\cmake\pcl\;CMake Files\..\..\..\..\usr\lib\aarch64-linux-gnu\cmake\Qt5Widgets\;CMake Files\..\..\..\..\usr\lib\aarch64-linux-gnu\cmake\Qt5Gui\;CMake Files\..\..\..\..\usr\lib\aarch64-linux-gnu\cmake\Qt5Core\;CMake Files\..\..\..\..\usr\lib\aarch64-linux-gnu\cmake\Qt5WebKitWidgets\;CMake Files\..\..\..\..\usr\lib\aarch64-linux-gnu\cmake\Qt5WebKit\;CMake Files\..\..\..\..\usr\lib\aarch64-linux-gnu\cmake\Qt5Network\;CMake Files\..\..\..\..\usr\lib\aarch64-linux-gnu\cmake\Qt5OpenGL\;CMake Files\..\..\..\..\usr\lib\aarch64-linux-gnu\cmake\Qt5Sql\;CMake Files\..\..\..\..\usr\lib\cmake\;CMake Files\..\..\..\..\usr\lib\cmake\vtk-6.2\;CMake Files\..\..\..\..\usr\lib\cmake\vtk-6.2\Modules\;CMake Files\..\..\..\..\opt\;CMake Files\..\..\..\..\opt\ros\;CMake Files\..\..\..\..\opt\ros\kinetic\;CMake Files\..\..\..\..\opt\ros\kinetic\share\;CMake Files\..\..\..\..\opt\ros\kinetic\share\roscpp\;CMake Files\..\..\..\..\opt\ros\kinetic\share\roscpp\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\cpp_common\;CMake Files\..\..\..\..\opt\ros\kinetic\share\cpp_common\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\message_runtime\;CMake Files\..\..\..\..\opt\ros\kinetic\share\message_runtime\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\roscpp_serialization\;CMake Files\..\..\..\..\opt\ros\kinetic\share\roscpp_serialization\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\roscpp_traits\;CMake Files\..\..\..\..\opt\ros\kinetic\share\roscpp_traits\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\rostime\;CMake Files\..\..\..\..\opt\ros\kinetic\share\rostime\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\rosconsole\;CMake Files\..\..\..\..\opt\ros\kinetic\share\rosconsole\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\rosgraph_msgs\;CMake Files\..\..\..\..\opt\ros\kinetic\share\rosgraph_msgs\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\std_msgs\;CMake Files\..\..\..\..\opt\ros\kinetic\share\std_msgs\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\xmlrpcpp\;CMake Files\..\..\..\..\opt\ros\kinetic\share\xmlrpcpp\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\rospy\;CMake Files\..\..\..\..\opt\ros\kinetic\share\rospy\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\cv_bridge\;CMake Files\..\..\..\..\opt\ros\kinetic\share\cv_bridge\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\sensor_msgs\;CMake Files\..\..\..\..\opt\ros\kinetic\share\sensor_msgs\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\geometry_msgs\;CMake Files\..\..\..\..\opt\ros\kinetic\share\geometry_msgs\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\image_transport\;CMake Files\..\..\..\..\opt\ros\kinetic\share\image_transport\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\message_filters\;CMake Files\..\..\..\..\opt\ros\kinetic\share\message_filters\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\pluginlib\;CMake Files\..\..\..\..\opt\ros\kinetic\share\pluginlib\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\class_loader\;CMake Files\..\..\..\..\opt\ros\kinetic\share\class_loader\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\roslib\;CMake Files\..\..\..\..\opt\ros\kinetic\share\roslib\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\dynamic_reconfigure\;CMake Files\..\..\..\..\opt\ros\kinetic\share\dynamic_reconfigure\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\tf2_ros\;CMake Files\..\..\..\..\opt\ros\kinetic\share\tf2_ros\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\actionlib\;CMake Files\..\..\..\..\opt\ros\kinetic\share\actionlib\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\actionlib_msgs\;CMake Files\..\..\..\..\opt\ros\kinetic\share\actionlib_msgs\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\genmsg\;CMake Files\..\..\..\..\opt\ros\kinetic\share\genmsg\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\gencpp\;CMake Files\..\..\..\..\opt\ros\kinetic\share\gencpp\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\geneus\;CMake Files\..\..\..\..\opt\ros\kinetic\share\geneus\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\genlisp\;CMake Files\..\..\..\..\opt\ros\kinetic\share\genlisp\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\gennodejs\;CMake Files\..\..\..\..\opt\ros\kinetic\share\gennodejs\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\genpy\;CMake Files\..\..\..\..\opt\ros\kinetic\share\genpy\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\rosgraph\;CMake Files\..\..\..\..\opt\ros\kinetic\share\rosgraph\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\tf2\;CMake Files\..\..\..\..\opt\ros\kinetic\share\tf2\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\tf2_msgs\;CMake Files\..\..\..\..\opt\ros\kinetic\share\tf2_msgs\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\message_generation\;CMake Files\..\..\..\..\opt\ros\kinetic\share\message_generation\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\tf2_py\;CMake Files\..\..\..\..\opt\ros\kinetic\share\tf2_py\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\pcl_conversions\;CMake Files\..\..\..\..\opt\ros\kinetic\share\pcl_conversions\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\pcl_msgs\;CMake Files\..\..\..\..\opt\ros\kinetic\share\pcl_msgs\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\nodelet\;CMake Files\..\..\..\..\opt\ros\kinetic\share\nodelet\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\bondcpp\;CMake Files\..\..\..\..\opt\ros\kinetic\share\bondcpp\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\bond\;CMake Files\..\..\..\..\opt\ros\kinetic\share\bond\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\smclib\;CMake Files\..\..\..\..\opt\ros\kinetic\share\smclib\cmake\;CMake Files\..\build\;CMake Files\..\build\catkin\;CMake Files\..\build\catkin\catkin_generated\;CMake Files\..\build\catkin\catkin_generated\version\;CMake Files\..\build\catkin_generated\;CMake Files\..\build\publisher_subscriber\;CMake Files\..\build\publisher_subscriber\catkin_generated\;CMake Files\..\build\opencv_project\;CMake Files\..\build\opencv_project\catkin_generated\;CMake Files\..\build\zed-ros-wrapper\;CMake Files\..\build\zed-ros-wrapper\catkin_generated\;CMake Files\publisher_subscriber\;CMake Files\opencv_project\;CMake Files\zed-ros-wrapper\;" />
+      <Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\share\;CMake Files\..\..\..\..\usr\share\catkin\;CMake Files\..\..\..\..\usr\share\catkin\cmake\;CMake Files\..\..\..\..\usr\share\catkin\cmake\platform\;CMake Files\..\..\..\..\usr\share\catkin\cmake\test\;CMake Files\..\..\..\..\usr\share\catkin\cmake\tools\;CMake Files\..\..\..\..\usr\share\catkin\cmake\templates\;CMake Files\..\..\..\..\usr\share\catkin\cmake\em\;CMake Files\..\..\..\..\usr\share\OpenCV\;CMake Files\..\..\..\..\usr\src\;CMake Files\..\..\..\..\usr\src\gtest\;CMake Files\..\..\..\..\usr\src\gtest\cmake\;CMake Files\..\..\..\..\usr\local\;CMake Files\..\..\..\..\usr\local\zed\;CMake Files\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\usr\lib\aarch64-linux-gnu\;CMake Files\..\..\..\..\usr\lib\aarch64-linux-gnu\cmake\;CMake Files\..\..\..\..\usr\lib\aarch64-linux-gnu\cmake\pcl\;CMake Files\..\..\..\..\usr\lib\aarch64-linux-gnu\cmake\Qt5Widgets\;CMake Files\..\..\..\..\usr\lib\aarch64-linux-gnu\cmake\Qt5Gui\;CMake Files\..\..\..\..\usr\lib\aarch64-linux-gnu\cmake\Qt5Core\;CMake Files\..\..\..\..\usr\lib\aarch64-linux-gnu\cmake\Qt5WebKitWidgets\;CMake Files\..\..\..\..\usr\lib\aarch64-linux-gnu\cmake\Qt5WebKit\;CMake Files\..\..\..\..\usr\lib\aarch64-linux-gnu\cmake\Qt5Network\;CMake Files\..\..\..\..\usr\lib\aarch64-linux-gnu\cmake\Qt5OpenGL\;CMake Files\..\..\..\..\usr\lib\aarch64-linux-gnu\cmake\Qt5Sql\;CMake Files\..\..\..\..\usr\lib\cmake\;CMake Files\..\..\..\..\usr\lib\cmake\vtk-6.2\;CMake Files\..\..\..\..\usr\lib\cmake\vtk-6.2\Modules\;CMake Files\..\..\..\..\opt\;CMake Files\..\..\..\..\opt\ros\;CMake Files\..\..\..\..\opt\ros\kinetic\;CMake Files\..\..\..\..\opt\ros\kinetic\share\;CMake Files\..\..\..\..\opt\ros\kinetic\share\roscpp\;CMake Files\..\..\..\..\opt\ros\kinetic\share\roscpp\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\cpp_common\;CMake Files\..\..\..\..\opt\ros\kinetic\share\cpp_common\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\message_runtime\;CMake Files\..\..\..\..\opt\ros\kinetic\share\message_runtime\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\roscpp_serialization\;CMake Files\..\..\..\..\opt\ros\kinetic\share\roscpp_serialization\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\roscpp_traits\;CMake Files\..\..\..\..\opt\ros\kinetic\share\roscpp_traits\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\rostime\;CMake Files\..\..\..\..\opt\ros\kinetic\share\rostime\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\rosconsole\;CMake Files\..\..\..\..\opt\ros\kinetic\share\rosconsole\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\rosgraph_msgs\;CMake Files\..\..\..\..\opt\ros\kinetic\share\rosgraph_msgs\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\std_msgs\;CMake Files\..\..\..\..\opt\ros\kinetic\share\std_msgs\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\xmlrpcpp\;CMake Files\..\..\..\..\opt\ros\kinetic\share\xmlrpcpp\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\rospy\;CMake Files\..\..\..\..\opt\ros\kinetic\share\rospy\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\cv_bridge\;CMake Files\..\..\..\..\opt\ros\kinetic\share\cv_bridge\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\sensor_msgs\;CMake Files\..\..\..\..\opt\ros\kinetic\share\sensor_msgs\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\geometry_msgs\;CMake Files\..\..\..\..\opt\ros\kinetic\share\geometry_msgs\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\image_transport\;CMake Files\..\..\..\..\opt\ros\kinetic\share\image_transport\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\message_filters\;CMake Files\..\..\..\..\opt\ros\kinetic\share\message_filters\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\pluginlib\;CMake Files\..\..\..\..\opt\ros\kinetic\share\pluginlib\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\class_loader\;CMake Files\..\..\..\..\opt\ros\kinetic\share\class_loader\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\roslib\;CMake Files\..\..\..\..\opt\ros\kinetic\share\roslib\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\pcl_conversions\;CMake Files\..\..\..\..\opt\ros\kinetic\share\pcl_conversions\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\pcl_msgs\;CMake Files\..\..\..\..\opt\ros\kinetic\share\pcl_msgs\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\dynamic_reconfigure\;CMake Files\..\..\..\..\opt\ros\kinetic\share\dynamic_reconfigure\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\tf2_ros\;CMake Files\..\..\..\..\opt\ros\kinetic\share\tf2_ros\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\actionlib\;CMake Files\..\..\..\..\opt\ros\kinetic\share\actionlib\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\actionlib_msgs\;CMake Files\..\..\..\..\opt\ros\kinetic\share\actionlib_msgs\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\genmsg\;CMake Files\..\..\..\..\opt\ros\kinetic\share\genmsg\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\gencpp\;CMake Files\..\..\..\..\opt\ros\kinetic\share\gencpp\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\geneus\;CMake Files\..\..\..\..\opt\ros\kinetic\share\geneus\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\genlisp\;CMake Files\..\..\..\..\opt\ros\kinetic\share\genlisp\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\gennodejs\;CMake Files\..\..\..\..\opt\ros\kinetic\share\gennodejs\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\genpy\;CMake Files\..\..\..\..\opt\ros\kinetic\share\genpy\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\rosgraph\;CMake Files\..\..\..\..\opt\ros\kinetic\share\rosgraph\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\tf2\;CMake Files\..\..\..\..\opt\ros\kinetic\share\tf2\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\tf2_msgs\;CMake Files\..\..\..\..\opt\ros\kinetic\share\tf2_msgs\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\message_generation\;CMake Files\..\..\..\..\opt\ros\kinetic\share\message_generation\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\tf2_py\;CMake Files\..\..\..\..\opt\ros\kinetic\share\tf2_py\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\nodelet\;CMake Files\..\..\..\..\opt\ros\kinetic\share\nodelet\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\bondcpp\;CMake Files\..\..\..\..\opt\ros\kinetic\share\bondcpp\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\bond\;CMake Files\..\..\..\..\opt\ros\kinetic\share\bond\cmake\;CMake Files\..\..\..\..\opt\ros\kinetic\share\smclib\;CMake Files\..\..\..\..\opt\ros\kinetic\share\smclib\cmake\;CMake Files\..\build\;CMake Files\..\build\catkin\;CMake Files\..\build\catkin\catkin_generated\;CMake Files\..\build\catkin\catkin_generated\version\;CMake Files\..\build\catkin_generated\;CMake Files\..\build\publisher_subscriber\;CMake Files\..\build\publisher_subscriber\catkin_generated\;CMake Files\..\build\opencv_project\;CMake Files\..\build\opencv_project\catkin_generated\;CMake Files\..\build\zed-ros-wrapper\;CMake Files\..\build\zed-ros-wrapper\catkin_generated\;CMake Files\publisher_subscriber\;CMake Files\opencv_project\;CMake Files\zed-ros-wrapper\;" />
       <Build>
       <Target title="all">
          <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
          <Option type="4" />
          <MakeCommands>
             <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 all" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="nodelet_generate_messages_nodejs">
-         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 nodelet_generate_messages_nodejs" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="dynamic_reconfigure_gencfg">
-         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 dynamic_reconfigure_gencfg" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="tf2_msgs_generate_messages_lisp">
-         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 tf2_msgs_generate_messages_lisp" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="actionlib_msgs_generate_messages_py">
-         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 actionlib_msgs_generate_messages_py" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="dummy_zed_wrapper">
-         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 dummy_zed_wrapper" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="tf2_msgs_generate_messages_py">
-         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 tf2_msgs_generate_messages_py" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="actionlib_msgs_generate_messages_nodejs">
-         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 actionlib_msgs_generate_messages_nodejs" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="actionlib_generate_messages_cpp">
-         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 actionlib_generate_messages_cpp" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="nodelet_generate_messages_py">
-         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 nodelet_generate_messages_py" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="actionlib_generate_messages_py">
-         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 actionlib_generate_messages_py" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="dynamic_reconfigure_generate_messages_eus">
-         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 dynamic_reconfigure_generate_messages_eus" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="dynamic_reconfigure_generate_messages_nodejs">
-         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 dynamic_reconfigure_generate_messages_nodejs" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="dynamic_reconfigure_generate_messages_cpp">
-         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 dynamic_reconfigure_generate_messages_cpp" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="bond_generate_messages_py">
-         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 bond_generate_messages_py" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="dynamic_reconfigure_generate_messages_py">
-         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 dynamic_reconfigure_generate_messages_py" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="actionlib_generate_messages_eus">
-         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 actionlib_generate_messages_eus" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="tf2_msgs_generate_messages_cpp">
-         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 tf2_msgs_generate_messages_cpp" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="pcl_msgs_generate_messages_lisp">
-         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 pcl_msgs_generate_messages_lisp" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="actionlib_msgs_generate_messages_eus">
-         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 actionlib_msgs_generate_messages_eus" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="actionlib_generate_messages_lisp">
-         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 actionlib_generate_messages_lisp" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="pcl_msgs_generate_messages_cpp">
-         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 pcl_msgs_generate_messages_cpp" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="bond_generate_messages_eus">
-         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 bond_generate_messages_eus" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="bond_generate_messages_lisp">
-         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 bond_generate_messages_lisp" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="actionlib_msgs_generate_messages_lisp">
-         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 actionlib_msgs_generate_messages_lisp" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="dynamic_reconfigure_generate_messages_lisp">
-         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 dynamic_reconfigure_generate_messages_lisp" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="actionlib_msgs_generate_messages_cpp">
-         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 actionlib_msgs_generate_messages_cpp" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="actionlib_generate_messages_nodejs">
-         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 actionlib_generate_messages_nodejs" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="pcl_msgs_generate_messages_eus">
-         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 pcl_msgs_generate_messages_eus" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="pcl_msgs_generate_messages_nodejs">
-         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 pcl_msgs_generate_messages_nodejs" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="pcl_msgs_generate_messages_py">
-         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 pcl_msgs_generate_messages_py" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="tf2_msgs_generate_messages_eus">
-         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 tf2_msgs_generate_messages_eus" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="nodelet_generate_messages_cpp">
-         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 nodelet_generate_messages_cpp" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="nodelet_generate_messages_lisp">
-         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 nodelet_generate_messages_lisp" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="bond_generate_messages_cpp">
-         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 bond_generate_messages_cpp" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="tf2_msgs_generate_messages_nodejs">
-         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 tf2_msgs_generate_messages_nodejs" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="nodelet_generate_messages_eus">
-         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 nodelet_generate_messages_eus" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="bond_generate_messages_nodejs">
-         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 bond_generate_messages_nodejs" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="zed_wrapper_gencfg">
-         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 zed_wrapper_gencfg" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="ZEDWrapper">
-         <Option output="/home/ubuntu/catkin_ws/devel/lib/libZEDWrapper.so" prefix_auto="0" extension_auto="0" />
-         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
-         <Option object_output="./" />
-         <Option type="3" />
-         <Option compiler="gcc" />
-         <Compiler>
-            <Add option="-DROS_BUILD_SHARED_LIBS=1" />
-            <Add option="-DNO_AVX" />
-            <Add option="-DDISABLE_OPENNI2" />
-            <Add option="-DDISABLE_PCAP" />
-            <Add option="-DDISABLE_PNG" />
-            <Add option="-DvtkFiltersFlowPaths_AUTOINIT=1(vtkFiltersParallelFlowPaths)" />
-            <Add option="-DvtkIOExodus_AUTOINIT=1(vtkIOParallelExodus)" />
-            <Add option="-DvtkIOGeometry_AUTOINIT=1(vtkIOMPIParallel)" />
-            <Add option="-DvtkIOImage_AUTOINIT=1(vtkIOMPIImage)" />
-            <Add option="-DvtkIOSQL_AUTOINIT=2(vtkIOMySQL,vtkIOPostgreSQL)" />
-            <Add option="-DvtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL)" />
-            <Add option="-DvtkRenderingCore_AUTOINIT=4(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingFreeTypeOpenGL,vtkRenderingOpenGL)" />
-            <Add option="-DvtkRenderingFreeType_AUTOINIT=2(vtkRenderingFreeTypeFontConfig,vtkRenderingMatplotlib)" />
-            <Add option="-DvtkRenderingLIC_AUTOINIT=1(vtkRenderingParallelLIC)" />
-            <Add option="-DvtkRenderingVolume_AUTOINIT=1(vtkRenderingVolumeOpenGL)" />
-            <Add option="-DROS_PACKAGE_NAME=&quot;zed_wrapper&quot;" />
-            <Add option="-DROSCONSOLE_BACKEND_LOG4CXX" />
-            <Add option="-DQT_WIDGETS_LIB" />
-            <Add option="-DQT_GUI_LIB" />
-            <Add option="-DQT_CORE_LIB" />
-            <Add directory="/home/ubuntu/catkin_ws/devel/include" />
-            <Add directory="/opt/ros/kinetic/include" />
-            <Add directory="/opt/ros/kinetic/include/opencv" />
-            <Add directory="/usr/include/aarch64-linux-gnu" />
-            <Add directory="/usr/include/aarch64-linux-gnu/freetype2" />
-            <Add directory="/usr/include/aarch64-linux-gnu/qt5" />
-            <Add directory="/usr/include/aarch64-linux-gnu/qt5/QtCore" />
-            <Add directory="/usr/include/aarch64-linux-gnu/qt5/QtGui" />
-            <Add directory="/usr/include/aarch64-linux-gnu/qt5/QtWidgets" />
-            <Add directory="/usr/include/eigen3" />
-            <Add directory="/usr/include/freetype2" />
-            <Add directory="/usr/include/hdf5/openmpi" />
-            <Add directory="/usr/include/jsoncpp" />
-            <Add directory="/usr/include/libxml2" />
-            <Add directory="/usr/include/ni" />
-            <Add directory="/usr/include/pcl-1.7" />
-            <Add directory="/usr/include/python2.7" />
-            <Add directory="/usr/include/tcl" />
-            <Add directory="/usr/include/vtk-6.2" />
-            <Add directory="/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++" />
-            <Add directory="/usr/lib/openmpi/include" />
-            <Add directory="/usr/lib/openmpi/include/openmpi" />
-            <Add directory="/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent" />
-            <Add directory="/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent/include" />
-            <Add directory="/usr/local/cuda-8.0/include" />
-            <Add directory="/usr/local/zed/include" />
-         </Compiler>
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 ZEDWrapper" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="ZEDWrapper/fast">
-         <Option output="/home/ubuntu/catkin_ws/devel/lib/libZEDWrapper.so" prefix_auto="0" extension_auto="0" />
-         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
-         <Option object_output="./" />
-         <Option type="3" />
-         <Option compiler="gcc" />
-         <Compiler>
-            <Add option="-DROS_BUILD_SHARED_LIBS=1" />
-            <Add option="-DNO_AVX" />
-            <Add option="-DDISABLE_OPENNI2" />
-            <Add option="-DDISABLE_PCAP" />
-            <Add option="-DDISABLE_PNG" />
-            <Add option="-DvtkFiltersFlowPaths_AUTOINIT=1(vtkFiltersParallelFlowPaths)" />
-            <Add option="-DvtkIOExodus_AUTOINIT=1(vtkIOParallelExodus)" />
-            <Add option="-DvtkIOGeometry_AUTOINIT=1(vtkIOMPIParallel)" />
-            <Add option="-DvtkIOImage_AUTOINIT=1(vtkIOMPIImage)" />
-            <Add option="-DvtkIOSQL_AUTOINIT=2(vtkIOMySQL,vtkIOPostgreSQL)" />
-            <Add option="-DvtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL)" />
-            <Add option="-DvtkRenderingCore_AUTOINIT=4(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingFreeTypeOpenGL,vtkRenderingOpenGL)" />
-            <Add option="-DvtkRenderingFreeType_AUTOINIT=2(vtkRenderingFreeTypeFontConfig,vtkRenderingMatplotlib)" />
-            <Add option="-DvtkRenderingLIC_AUTOINIT=1(vtkRenderingParallelLIC)" />
-            <Add option="-DvtkRenderingVolume_AUTOINIT=1(vtkRenderingVolumeOpenGL)" />
-            <Add option="-DROS_PACKAGE_NAME=&quot;zed_wrapper&quot;" />
-            <Add option="-DROSCONSOLE_BACKEND_LOG4CXX" />
-            <Add option="-DQT_WIDGETS_LIB" />
-            <Add option="-DQT_GUI_LIB" />
-            <Add option="-DQT_CORE_LIB" />
-            <Add directory="/home/ubuntu/catkin_ws/devel/include" />
-            <Add directory="/opt/ros/kinetic/include" />
-            <Add directory="/opt/ros/kinetic/include/opencv" />
-            <Add directory="/usr/include/aarch64-linux-gnu" />
-            <Add directory="/usr/include/aarch64-linux-gnu/freetype2" />
-            <Add directory="/usr/include/aarch64-linux-gnu/qt5" />
-            <Add directory="/usr/include/aarch64-linux-gnu/qt5/QtCore" />
-            <Add directory="/usr/include/aarch64-linux-gnu/qt5/QtGui" />
-            <Add directory="/usr/include/aarch64-linux-gnu/qt5/QtWidgets" />
-            <Add directory="/usr/include/eigen3" />
-            <Add directory="/usr/include/freetype2" />
-            <Add directory="/usr/include/hdf5/openmpi" />
-            <Add directory="/usr/include/jsoncpp" />
-            <Add directory="/usr/include/libxml2" />
-            <Add directory="/usr/include/ni" />
-            <Add directory="/usr/include/pcl-1.7" />
-            <Add directory="/usr/include/python2.7" />
-            <Add directory="/usr/include/tcl" />
-            <Add directory="/usr/include/vtk-6.2" />
-            <Add directory="/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++" />
-            <Add directory="/usr/lib/openmpi/include" />
-            <Add directory="/usr/lib/openmpi/include/openmpi" />
-            <Add directory="/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent" />
-            <Add directory="/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent/include" />
-            <Add directory="/usr/local/cuda-8.0/include" />
-            <Add directory="/usr/local/zed/include" />
-         </Compiler>
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 ZEDWrapper/fast" />
             <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
             <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
             <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
@@ -641,6 +139,458 @@
             <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
+      <Target title="ZEDWrapper">
+         <Option output="/home/ubuntu/catkin_ws/devel/lib/libZEDWrapper.so" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
+         <Option object_output="./" />
+         <Option type="3" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DROS_BUILD_SHARED_LIBS=1" />
+            <Add option="-DNO_AVX" />
+            <Add option="-DDISABLE_OPENNI2" />
+            <Add option="-DDISABLE_PCAP" />
+            <Add option="-DDISABLE_PNG" />
+            <Add option="-DvtkFiltersFlowPaths_AUTOINIT=1(vtkFiltersParallelFlowPaths)" />
+            <Add option="-DvtkIOExodus_AUTOINIT=1(vtkIOParallelExodus)" />
+            <Add option="-DvtkIOGeometry_AUTOINIT=1(vtkIOMPIParallel)" />
+            <Add option="-DvtkIOImage_AUTOINIT=1(vtkIOMPIImage)" />
+            <Add option="-DvtkIOSQL_AUTOINIT=2(vtkIOMySQL,vtkIOPostgreSQL)" />
+            <Add option="-DvtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL)" />
+            <Add option="-DvtkRenderingCore_AUTOINIT=4(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingFreeTypeOpenGL,vtkRenderingOpenGL)" />
+            <Add option="-DvtkRenderingFreeType_AUTOINIT=2(vtkRenderingFreeTypeFontConfig,vtkRenderingMatplotlib)" />
+            <Add option="-DvtkRenderingLIC_AUTOINIT=1(vtkRenderingParallelLIC)" />
+            <Add option="-DvtkRenderingVolume_AUTOINIT=1(vtkRenderingVolumeOpenGL)" />
+            <Add option="-DROS_PACKAGE_NAME=&quot;zed_wrapper&quot;" />
+            <Add option="-DROSCONSOLE_BACKEND_LOG4CXX" />
+            <Add option="-DQT_WIDGETS_LIB" />
+            <Add option="-DQT_GUI_LIB" />
+            <Add option="-DQT_CORE_LIB" />
+            <Add directory="/home/ubuntu/catkin_ws/devel/include" />
+            <Add directory="/opt/ros/kinetic/include" />
+            <Add directory="/opt/ros/kinetic/include/opencv" />
+            <Add directory="/usr/include/aarch64-linux-gnu" />
+            <Add directory="/usr/include/aarch64-linux-gnu/freetype2" />
+            <Add directory="/usr/include/aarch64-linux-gnu/qt5" />
+            <Add directory="/usr/include/aarch64-linux-gnu/qt5/QtCore" />
+            <Add directory="/usr/include/aarch64-linux-gnu/qt5/QtGui" />
+            <Add directory="/usr/include/aarch64-linux-gnu/qt5/QtWidgets" />
+            <Add directory="/usr/include/eigen3" />
+            <Add directory="/usr/include/freetype2" />
+            <Add directory="/usr/include/hdf5/openmpi" />
+            <Add directory="/usr/include/jsoncpp" />
+            <Add directory="/usr/include/libxml2" />
+            <Add directory="/usr/include/ni" />
+            <Add directory="/usr/include/pcl-1.7" />
+            <Add directory="/usr/include/python2.7" />
+            <Add directory="/usr/include/tcl" />
+            <Add directory="/usr/include/vtk-6.2" />
+            <Add directory="/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++" />
+            <Add directory="/usr/lib/openmpi/include" />
+            <Add directory="/usr/lib/openmpi/include/openmpi" />
+            <Add directory="/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent" />
+            <Add directory="/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent/include" />
+            <Add directory="/usr/local/cuda-8.0/include" />
+            <Add directory="/usr/local/zed/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 ZEDWrapper" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="ZEDWrapper/fast">
+         <Option output="/home/ubuntu/catkin_ws/devel/lib/libZEDWrapper.so" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
+         <Option object_output="./" />
+         <Option type="3" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DROS_BUILD_SHARED_LIBS=1" />
+            <Add option="-DNO_AVX" />
+            <Add option="-DDISABLE_OPENNI2" />
+            <Add option="-DDISABLE_PCAP" />
+            <Add option="-DDISABLE_PNG" />
+            <Add option="-DvtkFiltersFlowPaths_AUTOINIT=1(vtkFiltersParallelFlowPaths)" />
+            <Add option="-DvtkIOExodus_AUTOINIT=1(vtkIOParallelExodus)" />
+            <Add option="-DvtkIOGeometry_AUTOINIT=1(vtkIOMPIParallel)" />
+            <Add option="-DvtkIOImage_AUTOINIT=1(vtkIOMPIImage)" />
+            <Add option="-DvtkIOSQL_AUTOINIT=2(vtkIOMySQL,vtkIOPostgreSQL)" />
+            <Add option="-DvtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL)" />
+            <Add option="-DvtkRenderingCore_AUTOINIT=4(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingFreeTypeOpenGL,vtkRenderingOpenGL)" />
+            <Add option="-DvtkRenderingFreeType_AUTOINIT=2(vtkRenderingFreeTypeFontConfig,vtkRenderingMatplotlib)" />
+            <Add option="-DvtkRenderingLIC_AUTOINIT=1(vtkRenderingParallelLIC)" />
+            <Add option="-DvtkRenderingVolume_AUTOINIT=1(vtkRenderingVolumeOpenGL)" />
+            <Add option="-DROS_PACKAGE_NAME=&quot;zed_wrapper&quot;" />
+            <Add option="-DROSCONSOLE_BACKEND_LOG4CXX" />
+            <Add option="-DQT_WIDGETS_LIB" />
+            <Add option="-DQT_GUI_LIB" />
+            <Add option="-DQT_CORE_LIB" />
+            <Add directory="/home/ubuntu/catkin_ws/devel/include" />
+            <Add directory="/opt/ros/kinetic/include" />
+            <Add directory="/opt/ros/kinetic/include/opencv" />
+            <Add directory="/usr/include/aarch64-linux-gnu" />
+            <Add directory="/usr/include/aarch64-linux-gnu/freetype2" />
+            <Add directory="/usr/include/aarch64-linux-gnu/qt5" />
+            <Add directory="/usr/include/aarch64-linux-gnu/qt5/QtCore" />
+            <Add directory="/usr/include/aarch64-linux-gnu/qt5/QtGui" />
+            <Add directory="/usr/include/aarch64-linux-gnu/qt5/QtWidgets" />
+            <Add directory="/usr/include/eigen3" />
+            <Add directory="/usr/include/freetype2" />
+            <Add directory="/usr/include/hdf5/openmpi" />
+            <Add directory="/usr/include/jsoncpp" />
+            <Add directory="/usr/include/libxml2" />
+            <Add directory="/usr/include/ni" />
+            <Add directory="/usr/include/pcl-1.7" />
+            <Add directory="/usr/include/python2.7" />
+            <Add directory="/usr/include/tcl" />
+            <Add directory="/usr/include/vtk-6.2" />
+            <Add directory="/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++" />
+            <Add directory="/usr/lib/openmpi/include" />
+            <Add directory="/usr/lib/openmpi/include/openmpi" />
+            <Add directory="/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent" />
+            <Add directory="/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent/include" />
+            <Add directory="/usr/local/cuda-8.0/include" />
+            <Add directory="/usr/local/zed/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 ZEDWrapper/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="zed_wrapper_gencfg">
+         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 zed_wrapper_gencfg" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="bond_generate_messages_nodejs">
+         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 bond_generate_messages_nodejs" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="bond_generate_messages_lisp">
+         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 bond_generate_messages_lisp" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="bond_generate_messages_eus">
+         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 bond_generate_messages_eus" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="bond_generate_messages_cpp">
+         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 bond_generate_messages_cpp" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="nodelet_generate_messages_lisp">
+         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 nodelet_generate_messages_lisp" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="nodelet_generate_messages_eus">
+         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 nodelet_generate_messages_eus" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="actionlib_generate_messages_nodejs">
+         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 actionlib_generate_messages_nodejs" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="dynamic_reconfigure_generate_messages_lisp">
+         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 dynamic_reconfigure_generate_messages_lisp" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="actionlib_msgs_generate_messages_lisp">
+         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 actionlib_msgs_generate_messages_lisp" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="actionlib_generate_messages_lisp">
+         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 actionlib_generate_messages_lisp" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="tf2_msgs_generate_messages_cpp">
+         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 tf2_msgs_generate_messages_cpp" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="actionlib_generate_messages_eus">
+         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 actionlib_generate_messages_eus" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="dynamic_reconfigure_generate_messages_py">
+         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 dynamic_reconfigure_generate_messages_py" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="bond_generate_messages_py">
+         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 bond_generate_messages_py" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="dynamic_reconfigure_generate_messages_cpp">
+         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 dynamic_reconfigure_generate_messages_cpp" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="dynamic_reconfigure_generate_messages_nodejs">
+         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 dynamic_reconfigure_generate_messages_nodejs" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="dynamic_reconfigure_generate_messages_eus">
+         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 dynamic_reconfigure_generate_messages_eus" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="actionlib_generate_messages_py">
+         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 actionlib_generate_messages_py" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="nodelet_generate_messages_py">
+         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 nodelet_generate_messages_py" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="actionlib_msgs_generate_messages_cpp">
+         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 actionlib_msgs_generate_messages_cpp" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="actionlib_msgs_generate_messages_eus">
+         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 actionlib_msgs_generate_messages_eus" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="actionlib_generate_messages_cpp">
+         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 actionlib_generate_messages_cpp" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="actionlib_msgs_generate_messages_nodejs">
+         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 actionlib_msgs_generate_messages_nodejs" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="dummy_zed_wrapper">
+         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 dummy_zed_wrapper" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="actionlib_msgs_generate_messages_py">
+         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 actionlib_msgs_generate_messages_py" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="tf2_msgs_generate_messages_lisp">
+         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 tf2_msgs_generate_messages_lisp" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="dynamic_reconfigure_gencfg">
+         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 dynamic_reconfigure_gencfg" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="tf2_msgs_generate_messages_nodejs">
+         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 tf2_msgs_generate_messages_nodejs" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="nodelet_generate_messages_cpp">
+         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 nodelet_generate_messages_cpp" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="nodelet_generate_messages_nodejs">
+         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 nodelet_generate_messages_nodejs" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="tf2_msgs_generate_messages_eus">
+         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 tf2_msgs_generate_messages_eus" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="tf2_msgs_generate_messages_py">
+         <Option working_dir="/home/ubuntu/catkin_ws/build/zed-ros-wrapper" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 tf2_msgs_generate_messages_py" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/ubuntu/catkin_ws/build/zed-ros-wrapper/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
       </Build>
       <Unit filename="/home/ubuntu/catkin_ws/src/CMakeLists.txt">
          <Option target="dummy_zed_wrapper"/>
@@ -745,12 +695,12 @@
          <Option target="dummy_zed_wrapper"/>
       </Unit>
       <Unit filename="/home/ubuntu/catkin_ws/src/zed-ros-wrapper/src/zed_wrapper_node.cpp">
-         <Option target="dummy_zed_wrapper"/>
          <Option target="zed_wrapper_node"/>
+         <Option target="dummy_zed_wrapper"/>
       </Unit>
       <Unit filename="/home/ubuntu/catkin_ws/src/zed-ros-wrapper/src/zed_wrapper_nodelet.cpp">
-         <Option target="dummy_zed_wrapper"/>
          <Option target="ZEDWrapper"/>
+         <Option target="dummy_zed_wrapper"/>
       </Unit>
       <Unit filename="/home/ubuntu/catkin_ws/src/zed-ros-wrapper/urdf/ZED.stl">
          <Option target="dummy_zed_wrapper"/>
@@ -3971,6 +3921,12 @@
       <Unit filename="/home/ubuntu/catkin_ws/src/../../../../opt/ros/kinetic/share/rosconsole/cmake/rosconsoleConfig.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\opt\ros\kinetic\share\rosconsole\cmake\" />
       </Unit>
+      <Unit filename="/home/ubuntu/catkin_ws/src/../../../../opt/ros/kinetic/share/rosconsole/cmake/rosconsoleConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\opt\ros\kinetic\share\rosconsole\cmake\" />
+      </Unit>
+      <Unit filename="/home/ubuntu/catkin_ws/src/../../../../opt/ros/kinetic/share/rosconsole/cmake/rosconsoleConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\opt\ros\kinetic\share\rosconsole\cmake\" />
+      </Unit>
       <Unit filename="/home/ubuntu/catkin_ws/src/../../../../opt/ros/kinetic/share/rosconsole/cmake/rosconsole-extras.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\opt\ros\kinetic\share\rosconsole\cmake\" />
       </Unit>
@@ -3987,6 +3943,12 @@
           <Option virtualFolder="CMake Files\..\..\..\..\opt\ros\kinetic\share\rosconsole\cmake\" />
       </Unit>
       <Unit filename="/home/ubuntu/catkin_ws/src/../../../../opt/ros/kinetic/share/rosconsole/cmake/rosconsole-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\opt\ros\kinetic\share\rosconsole\cmake\" />
+      </Unit>
+      <Unit filename="/home/ubuntu/catkin_ws/src/../../../../opt/ros/kinetic/share/rosconsole/cmake/rosconsoleConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\opt\ros\kinetic\share\rosconsole\cmake\" />
+      </Unit>
+      <Unit filename="/home/ubuntu/catkin_ws/src/../../../../opt/ros/kinetic/share/rosconsole/cmake/rosconsoleConfig.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\opt\ros\kinetic\share\rosconsole\cmake\" />
       </Unit>
       <Unit filename="/home/ubuntu/catkin_ws/src/../../../../opt/ros/kinetic/share/rosconsole/cmake/rosconsoleConfig-version.cmake">
@@ -4457,6 +4419,66 @@
       <Unit filename="/home/ubuntu/catkin_ws/src/../../../../opt/ros/kinetic/share/roslib/cmake/roslib-extras.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\opt\ros\kinetic\share\roslib\cmake\" />
       </Unit>
+      <Unit filename="/home/ubuntu/catkin_ws/src/../../../../opt/ros/kinetic/share/pcl_conversions/cmake/pcl_conversionsConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\opt\ros\kinetic\share\pcl_conversions\cmake\" />
+      </Unit>
+      <Unit filename="/home/ubuntu/catkin_ws/src/../../../../opt/ros/kinetic/share/pcl_conversions/cmake/pcl_conversionsConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\opt\ros\kinetic\share\pcl_conversions\cmake\" />
+      </Unit>
+      <Unit filename="/home/ubuntu/catkin_ws/src/../../../../opt/ros/kinetic/share/pcl_conversions/cmake/pcl_conversionsConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\opt\ros\kinetic\share\pcl_conversions\cmake\" />
+      </Unit>
+      <Unit filename="/home/ubuntu/catkin_ws/src/../../../../opt/ros/kinetic/share/pcl_conversions/cmake/pcl_conversionsConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\opt\ros\kinetic\share\pcl_conversions\cmake\" />
+      </Unit>
+      <Unit filename="/home/ubuntu/catkin_ws/src/../../../../opt/ros/kinetic/share/pcl_conversions/cmake/pcl_conversionsConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\opt\ros\kinetic\share\pcl_conversions\cmake\" />
+      </Unit>
+      <Unit filename="/home/ubuntu/catkin_ws/src/../../../../opt/ros/kinetic/share/pcl_conversions/cmake/pcl_conversionsConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\opt\ros\kinetic\share\pcl_conversions\cmake\" />
+      </Unit>
+      <Unit filename="/home/ubuntu/catkin_ws/src/../../../../opt/ros/kinetic/share/pcl_conversions/cmake/pcl_conversionsConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\opt\ros\kinetic\share\pcl_conversions\cmake\" />
+      </Unit>
+      <Unit filename="/home/ubuntu/catkin_ws/src/../../../../opt/ros/kinetic/share/pcl_conversions/cmake/pcl_conversionsConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\opt\ros\kinetic\share\pcl_conversions\cmake\" />
+      </Unit>
+      <Unit filename="/home/ubuntu/catkin_ws/src/../../../../opt/ros/kinetic/share/pcl_msgs/cmake/pcl_msgsConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\opt\ros\kinetic\share\pcl_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/ubuntu/catkin_ws/src/../../../../opt/ros/kinetic/share/pcl_msgs/cmake/pcl_msgsConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\opt\ros\kinetic\share\pcl_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/ubuntu/catkin_ws/src/../../../../opt/ros/kinetic/share/pcl_msgs/cmake/pcl_msgs-msg-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\opt\ros\kinetic\share\pcl_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/ubuntu/catkin_ws/src/../../../../opt/ros/kinetic/share/pcl_msgs/cmake/pcl_msgsConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\opt\ros\kinetic\share\pcl_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/ubuntu/catkin_ws/src/../../../../opt/ros/kinetic/share/pcl_msgs/cmake/pcl_msgsConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\opt\ros\kinetic\share\pcl_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/ubuntu/catkin_ws/src/../../../../opt/ros/kinetic/share/pcl_msgs/cmake/pcl_msgs-msg-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\opt\ros\kinetic\share\pcl_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/ubuntu/catkin_ws/src/../../../../opt/ros/kinetic/share/pcl_msgs/cmake/pcl_msgsConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\opt\ros\kinetic\share\pcl_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/ubuntu/catkin_ws/src/../../../../opt/ros/kinetic/share/pcl_msgs/cmake/pcl_msgsConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\opt\ros\kinetic\share\pcl_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/ubuntu/catkin_ws/src/../../../../opt/ros/kinetic/share/pcl_msgs/cmake/pcl_msgs-msg-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\opt\ros\kinetic\share\pcl_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/ubuntu/catkin_ws/src/../../../../opt/ros/kinetic/share/pcl_msgs/cmake/pcl_msgsConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\opt\ros\kinetic\share\pcl_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/ubuntu/catkin_ws/src/../../../../opt/ros/kinetic/share/pcl_msgs/cmake/pcl_msgsConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\opt\ros\kinetic\share\pcl_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/ubuntu/catkin_ws/src/../../../../opt/ros/kinetic/share/pcl_msgs/cmake/pcl_msgs-msg-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\opt\ros\kinetic\share\pcl_msgs\cmake\" />
+      </Unit>
       <Unit filename="/home/ubuntu/catkin_ws/src/../../../../opt/ros/kinetic/share/dynamic_reconfigure/cmake/dynamic_reconfigureConfig-version.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\opt\ros\kinetic\share\dynamic_reconfigure\cmake\" />
       </Unit>
@@ -4732,36 +4754,6 @@
       </Unit>
       <Unit filename="/home/ubuntu/catkin_ws/src/../../../../opt/ros/kinetic/share/tf2_py/cmake/tf2_pyConfig.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\opt\ros\kinetic\share\tf2_py\cmake\" />
-      </Unit>
-      <Unit filename="/home/ubuntu/catkin_ws/src/../../../../opt/ros/kinetic/share/pcl_conversions/cmake/pcl_conversionsConfig-version.cmake">
-          <Option virtualFolder="CMake Files\..\..\..\..\opt\ros\kinetic\share\pcl_conversions\cmake\" />
-      </Unit>
-      <Unit filename="/home/ubuntu/catkin_ws/src/../../../../opt/ros/kinetic/share/pcl_conversions/cmake/pcl_conversionsConfig.cmake">
-          <Option virtualFolder="CMake Files\..\..\..\..\opt\ros\kinetic\share\pcl_conversions\cmake\" />
-      </Unit>
-      <Unit filename="/home/ubuntu/catkin_ws/src/../../../../opt/ros/kinetic/share/pcl_conversions/cmake/pcl_conversionsConfig-version.cmake">
-          <Option virtualFolder="CMake Files\..\..\..\..\opt\ros\kinetic\share\pcl_conversions\cmake\" />
-      </Unit>
-      <Unit filename="/home/ubuntu/catkin_ws/src/../../../../opt/ros/kinetic/share/pcl_conversions/cmake/pcl_conversionsConfig.cmake">
-          <Option virtualFolder="CMake Files\..\..\..\..\opt\ros\kinetic\share\pcl_conversions\cmake\" />
-      </Unit>
-      <Unit filename="/home/ubuntu/catkin_ws/src/../../../../opt/ros/kinetic/share/pcl_msgs/cmake/pcl_msgsConfig-version.cmake">
-          <Option virtualFolder="CMake Files\..\..\..\..\opt\ros\kinetic\share\pcl_msgs\cmake\" />
-      </Unit>
-      <Unit filename="/home/ubuntu/catkin_ws/src/../../../../opt/ros/kinetic/share/pcl_msgs/cmake/pcl_msgsConfig.cmake">
-          <Option virtualFolder="CMake Files\..\..\..\..\opt\ros\kinetic\share\pcl_msgs\cmake\" />
-      </Unit>
-      <Unit filename="/home/ubuntu/catkin_ws/src/../../../../opt/ros/kinetic/share/pcl_msgs/cmake/pcl_msgs-msg-extras.cmake">
-          <Option virtualFolder="CMake Files\..\..\..\..\opt\ros\kinetic\share\pcl_msgs\cmake\" />
-      </Unit>
-      <Unit filename="/home/ubuntu/catkin_ws/src/../../../../opt/ros/kinetic/share/pcl_msgs/cmake/pcl_msgsConfig-version.cmake">
-          <Option virtualFolder="CMake Files\..\..\..\..\opt\ros\kinetic\share\pcl_msgs\cmake\" />
-      </Unit>
-      <Unit filename="/home/ubuntu/catkin_ws/src/../../../../opt/ros/kinetic/share/pcl_msgs/cmake/pcl_msgsConfig.cmake">
-          <Option virtualFolder="CMake Files\..\..\..\..\opt\ros\kinetic\share\pcl_msgs\cmake\" />
-      </Unit>
-      <Unit filename="/home/ubuntu/catkin_ws/src/../../../../opt/ros/kinetic/share/pcl_msgs/cmake/pcl_msgs-msg-extras.cmake">
-          <Option virtualFolder="CMake Files\..\..\..\..\opt\ros\kinetic\share\pcl_msgs\cmake\" />
       </Unit>
       <Unit filename="/home/ubuntu/catkin_ws/src/../../../../opt/ros/kinetic/share/nodelet/cmake/nodeletConfig-version.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\opt\ros\kinetic\share\nodelet\cmake\" />

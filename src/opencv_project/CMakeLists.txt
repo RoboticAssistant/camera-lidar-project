@@ -8,27 +8,31 @@ find_package(catkin REQUIRED COMPONENTS
   cv_bridge
   image_transport
   roscpp
+  rosconsole
   rospy
+  pcl_conversions
   std_msgs
 )
 
-SET(CUDA_VERSION "8.0")
 SET(CUDA_USE_STATIC_CUDA_RUNTIME OFF)				# To get rid of -lopencv_dep_cudart error
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
+
+exec_program(uname ARGS -p OUTPUT_VARIABLE CMAKE_SYSTEM_NAME2)
 
 ## OpenCV package
 SET(OCV_VERSION "2.4")
 find_package(OpenCV ${OCV_VERSION} COMPONENTS core highgui imgproc REQUIRED)
 
 ## ZED package
-find_package(ZED 1.1 REQUIRED)
+find_package(ZED 1.2 REQUIRED)
 
 ## PCL package
 find_package(PCL REQUIRED)
 
 ## CUDA package
+SET(CUDA_VERSION "8.0")
 find_package(CUDA ${CUDA_VERSION} REQUIRED)
 
 ## Uncomment this if the package has a setup.py. This macro ensures
@@ -140,6 +144,7 @@ include_directories(
   ${OpenCV_INCLUDE_DIRS}
 )
 
+link_directories(include)
 link_directories(${ZED_LIBRARY_DIR})
 link_directories(${CUDA_LIBRARY_DIRS})
 link_directories(${OpenCV_LIBRARY_DIRS})

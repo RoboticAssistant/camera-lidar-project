@@ -8,6 +8,24 @@
 
 int main(int argc, char *argv[])
 {
-    Pub_Sub("Temp", "temp", "Temp");
+    if(!strcmp(argv[1], "talker"))
+    {
+        string send_data(argv[2]);
+        cout << "Talker" << endl;
+        Pub_Sub publisher(argc, argv, "talker");
+
+        while(1)
+        {
+            // Publishing data
+            publisher.publisher_data(send_data);
+        }
+    }
+    else if(!strcmp(argv[1], "listener"))
+    {
+        cout << "Listener" << endl;
+        Pub_Sub subscriber(argc, argv, "listener");
+        subscriber.subscribe_data();
+    }
+
     return 0;
 }
