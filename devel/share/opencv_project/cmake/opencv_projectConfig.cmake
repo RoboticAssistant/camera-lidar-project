@@ -153,7 +153,7 @@ foreach(t ${opencv_project_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "opencv;cv_bridge;image_transport;roscpp;rospy;std_msgs")
+set(depends "rosconsole;opencv;image_transport;roscpp;rospy;std_msgs;pcl_conversions")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls

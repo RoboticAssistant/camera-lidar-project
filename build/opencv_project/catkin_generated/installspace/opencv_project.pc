@@ -5,4 +5,4 @@ Description: Description of opencv_project
 Version: 0.0.0
 Cflags: -I/home/ubuntu/catkin_ws/install/include
 Libs: -L/home/ubuntu/catkin_ws/install/lib 
-Requires: opencv cv_bridge image_transport roscpp rospy std_msgs
+Requires: rosconsole opencv image_transport roscpp rospy std_msgs pcl_conversions

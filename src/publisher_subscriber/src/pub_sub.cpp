@@ -18,14 +18,10 @@ using namespace ros;
 
 Pub_Sub::Pub_Sub(int argc, char **argv, string utility)
 { 
-//    std::map<std::string, std::string> map_strings;
-//    map_strings.insert(std::pair<std::string, std::string>(first_string, second_string));
-
-//    ros::init(map_strings, utility, 0);
     ros::init(argc, argv, utility);
 }
 
-int Pub_Sub::publisher_data(string data)
+int Pub_Sub::publisher_data(string data, string publish_topic)
 {
     ros::NodeHandle node_handle;
     publish_chatter = node_handle.advertise<std_msgs::String>("chatter", 1000);

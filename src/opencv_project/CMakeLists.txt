@@ -1,11 +1,14 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 2.8.7)
 project(opencv_project)
+
+## ZED package
+find_package(ZED 1.2 REQUIRED)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  cv_bridge
+  #cv_bridge
   image_transport
   roscpp
   rosconsole
@@ -17,7 +20,7 @@ find_package(catkin REQUIRED COMPONENTS
 SET(CUDA_USE_STATIC_CUDA_RUNTIME OFF)				# To get rid of -lopencv_dep_cudart error
 
 ## System dependencies are found with CMake's conventions
-# find_package(Boost REQUIRED COMPONENTS system)
+find_package(Boost REQUIRED COMPONENTS system)
 
 exec_program(uname ARGS -p OUTPUT_VARIABLE CMAKE_SYSTEM_NAME2)
 
@@ -25,15 +28,35 @@ exec_program(uname ARGS -p OUTPUT_VARIABLE CMAKE_SYSTEM_NAME2)
 SET(OCV_VERSION "2.4")
 find_package(OpenCV ${OCV_VERSION} COMPONENTS core highgui imgproc REQUIRED)
 
-## ZED package
-find_package(ZED 1.2 REQUIRED)
+## CUDA package
+SET(CUDA_VERSION "8.0")
+find_package(CUDA ${CUDA_VERSION} REQUIRED)
 
 ## PCL package
 find_package(PCL REQUIRED)
 
-## CUDA package
-SET(CUDA_VERSION "8.0")
-find_package(CUDA ${CUDA_VERSION} REQUIRED)
+###################################
+## catkin specific configuration ##
+###################################
+## The catkin_package macro generates cmake config files for your package
+## Declare things to be passed to dependent projects
+## INCLUDE_DIRS: uncomment this if you package contains header files
+## LIBRARIES: libraries you create in this project that dependent projects also need
+## CATKIN_DEPENDS: catkin_packages dependent projects also need
+## DEPENDS: system dependencies of this project that dependent projects also need
+catkin_package(
+  INCLUDE_DIRS include
+#  LIBRARIES opencv_project
+  CATKIN_DEPENDS rosconsole
+		opencv
+		#cv_bridge
+		image_transport
+		roscpp
+		rospy
+		std_msgs
+		pcl_conversions
+#  DEPENDS system_lib
+)
 
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed
@@ -111,22 +134,6 @@ find_package(CUDA ${CUDA_VERSION} REQUIRED)
 #   cfg/DynReconf2.cfg
 # )
 
-###################################
-## catkin specific configuration ##
-###################################
-## The catkin_package macro generates cmake config files for your package
-## Declare things to be passed to dependent projects
-## INCLUDE_DIRS: uncomment this if you package contains header files
-## LIBRARIES: libraries you create in this project that dependent projects also need
-## CATKIN_DEPENDS: catkin_packages dependent projects also need
-## DEPENDS: system dependencies of this project that dependent projects also need
-catkin_package(
-  INCLUDE_DIRS include
-#  LIBRARIES opencv_project
-  CATKIN_DEPENDS opencv cv_bridge image_transport roscpp rospy std_msgs
-#  DEPENDS system_lib
-)
-
 ###########
 ## Build ##
 ###########
@@ -150,11 +157,6 @@ link_directories(${CUDA_LIBRARY_DIRS})
 link_directories(${OpenCV_LIBRARY_DIRS})
 link_directories(${PCL_LIBRARY_DIRS})
 
-## Declare a C++ library. Note: If you have any local cpp files, you can add here. But don't forget to link them later (Follow this marker ***)
-# add_library(opencv_project
-#   src/convolution_2d.cpp
-# )
-
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
 ## either from message generation or dynamic reconfigure
@@ -169,6 +171,9 @@ SET(LINK_LIBRARIES
   ${OpenCV_LIBS}
   ${PCL_LIBRARIES})
 
+## Declare a C++ library. Note: If you have any local cpp files, you can add here. But don't forget to link them later (Follow this marker ***)
+add_library(opencv_project src/convolution_2d.cpp)
+
 ## Declare a C++ executable
 add_executable(opencv_project_node src/opencv_project_node.cpp src/convolution_2d.cpp src/depth_computations.cpp)
 
@@ -178,6 +183,11 @@ add_executable(opencv_project_node src/opencv_project_node.cpp src/convolution_2
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(opencv_project_node ${LINK_LIBRARIES})
+
+#Add all files in subdirectories of the project in
+# a dummy_target so qtcreator have access to all files
+FILE(GLOB_RECURSE extra_files ${CMAKE_SOURCE_DIR}/*)
+add_custom_target(dummy_${PROJECT_NAME} SOURCES ${extra_files})
 
 #############
 ## Install ##

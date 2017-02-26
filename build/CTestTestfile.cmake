@@ -6,5 +6,6 @@
 # testing this directory and lists subdirectories to be tested as well.
 subdirs(gtest)
 subdirs(publisher_subscriber)
+subdirs(create_2_motion_handle)
 subdirs(opencv_project)
 subdirs(zed-ros-wrapper)

@@ -52,8 +52,6 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/usr/include/libxml2"
   "/usr/include/tcl"
   "/home/ubuntu/catkin_ws/src/opencv_project/include"
-  "/opt/ros/kinetic/include/opencv-3.1.0-dev/opencv"
-  "/opt/ros/kinetic/include/opencv-3.1.0-dev"
   "/usr/include/eigen3"
   "/usr/include/pcl-1.7"
   "/usr/local/cuda-8.0/include"

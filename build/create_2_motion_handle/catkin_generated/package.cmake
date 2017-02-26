@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "create_2_motion_handle")
+set(create_2_motion_handle_MAINTAINER "ubuntu <ubuntu@todo.todo>")
+set(create_2_motion_handle_DEPRECATED "")
+set(create_2_motion_handle_VERSION "0.0.0")
+set(create_2_motion_handle_BUILD_DEPENDS "pyserial" "rosconsole" "roscpp" "rospy" "std_msgs" "publisher_subscriber")
+set(create_2_motion_handle_RUN_DEPENDS "pyserial" "rosconsole" "roscpp" "rospy" "std_msgs" "publisher_subscriber")
+set(create_2_motion_handle_BUILDTOOL_DEPENDS "catkin")

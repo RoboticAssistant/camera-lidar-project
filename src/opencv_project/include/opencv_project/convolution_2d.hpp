@@ -8,7 +8,7 @@
 using namespace std;
 using namespace cv;
 
-int perform_convolution(Mat inputConvImage, string kernelFileName);
+int perform_convolution(Mat srcConvImage, string kernelFileName, string kernelPattern);
 
 #endif // CONVOLUTION_2D_HPP
 
