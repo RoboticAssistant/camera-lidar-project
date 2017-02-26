@@ -57,7 +57,122 @@ include publisher_subscriber/CMakeFiles/publisher_subscriber.dir/progress.make
 # Include the compile flags for this target's objects.
 include publisher_subscriber/CMakeFiles/publisher_subscriber.dir/flags.make
 
-publisher_subscriber/CMakeFiles/publisher_subscriber.dir/requires:
+publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/publisher_subscriber_node.cpp.o: publisher_subscriber/CMakeFiles/publisher_subscriber.dir/flags.make
+publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/publisher_subscriber_node.cpp.o: /home/ubuntu/catkin_ws/src/publisher_subscriber/src/publisher_subscriber_node.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/publisher_subscriber_node.cpp.o"
+	cd /home/ubuntu/catkin_ws/build/publisher_subscriber && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/publisher_subscriber.dir/src/publisher_subscriber_node.cpp.o -c /home/ubuntu/catkin_ws/src/publisher_subscriber/src/publisher_subscriber_node.cpp
+
+publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/publisher_subscriber_node.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/publisher_subscriber.dir/src/publisher_subscriber_node.cpp.i"
+	cd /home/ubuntu/catkin_ws/build/publisher_subscriber && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/catkin_ws/src/publisher_subscriber/src/publisher_subscriber_node.cpp > CMakeFiles/publisher_subscriber.dir/src/publisher_subscriber_node.cpp.i
+
+publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/publisher_subscriber_node.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/publisher_subscriber.dir/src/publisher_subscriber_node.cpp.s"
+	cd /home/ubuntu/catkin_ws/build/publisher_subscriber && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/catkin_ws/src/publisher_subscriber/src/publisher_subscriber_node.cpp -o CMakeFiles/publisher_subscriber.dir/src/publisher_subscriber_node.cpp.s
+
+publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/publisher_subscriber_node.cpp.o.requires:
+
+.PHONY : publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/publisher_subscriber_node.cpp.o.requires
+
+publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/publisher_subscriber_node.cpp.o.provides: publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/publisher_subscriber_node.cpp.o.requires
+	$(MAKE) -f publisher_subscriber/CMakeFiles/publisher_subscriber.dir/build.make publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/publisher_subscriber_node.cpp.o.provides.build
+.PHONY : publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/publisher_subscriber_node.cpp.o.provides
+
+publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/publisher_subscriber_node.cpp.o.provides.build: publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/publisher_subscriber_node.cpp.o
+
+
+publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/pub_sub.cpp.o: publisher_subscriber/CMakeFiles/publisher_subscriber.dir/flags.make
+publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/pub_sub.cpp.o: /home/ubuntu/catkin_ws/src/publisher_subscriber/src/pub_sub.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/pub_sub.cpp.o"
+	cd /home/ubuntu/catkin_ws/build/publisher_subscriber && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/publisher_subscriber.dir/src/pub_sub.cpp.o -c /home/ubuntu/catkin_ws/src/publisher_subscriber/src/pub_sub.cpp
+
+publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/pub_sub.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/publisher_subscriber.dir/src/pub_sub.cpp.i"
+	cd /home/ubuntu/catkin_ws/build/publisher_subscriber && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/catkin_ws/src/publisher_subscriber/src/pub_sub.cpp > CMakeFiles/publisher_subscriber.dir/src/pub_sub.cpp.i
+
+publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/pub_sub.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/publisher_subscriber.dir/src/pub_sub.cpp.s"
+	cd /home/ubuntu/catkin_ws/build/publisher_subscriber && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/catkin_ws/src/publisher_subscriber/src/pub_sub.cpp -o CMakeFiles/publisher_subscriber.dir/src/pub_sub.cpp.s
+
+publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/pub_sub.cpp.o.requires:
+
+.PHONY : publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/pub_sub.cpp.o.requires
+
+publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/pub_sub.cpp.o.provides: publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/pub_sub.cpp.o.requires
+	$(MAKE) -f publisher_subscriber/CMakeFiles/publisher_subscriber.dir/build.make publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/pub_sub.cpp.o.provides.build
+.PHONY : publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/pub_sub.cpp.o.provides
+
+publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/pub_sub.cpp.o.provides.build: publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/pub_sub.cpp.o
+
+
+# Object files for target publisher_subscriber
+publisher_subscriber_OBJECTS = \
+"CMakeFiles/publisher_subscriber.dir/src/publisher_subscriber_node.cpp.o" \
+"CMakeFiles/publisher_subscriber.dir/src/pub_sub.cpp.o"
+
+# External object files for target publisher_subscriber
+publisher_subscriber_EXTERNAL_OBJECTS =
+
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/publisher_subscriber_node.cpp.o
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/pub_sub.cpp.o
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: publisher_subscriber/CMakeFiles/publisher_subscriber.dir/build.make
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /opt/ros/kinetic/lib/libroscpp.so
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /usr/lib/aarch64-linux-gnu/libboost_signals.so
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /usr/lib/aarch64-linux-gnu/libboost_filesystem.so
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /opt/ros/kinetic/lib/librosconsole.so
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /usr/lib/aarch64-linux-gnu/liblog4cxx.so
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /usr/lib/aarch64-linux-gnu/libboost_regex.so
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /opt/ros/kinetic/lib/libxmlrpcpp.so
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /opt/ros/kinetic/lib/libroscpp_serialization.so
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /opt/ros/kinetic/lib/librostime.so
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /opt/ros/kinetic/lib/libcpp_common.so
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /usr/lib/aarch64-linux-gnu/libboost_system.so
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /usr/lib/aarch64-linux-gnu/libboost_thread.so
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /usr/lib/aarch64-linux-gnu/libboost_chrono.so
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /usr/lib/aarch64-linux-gnu/libboost_date_time.so
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /usr/lib/aarch64-linux-gnu/libboost_atomic.so
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /usr/lib/aarch64-linux-gnu/libpthread.so
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /usr/lib/aarch64-linux-gnu/libconsole_bridge.so
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /usr/lib/libopencv_vstab.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /usr/lib/libopencv_imuvstab.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /usr/lib/libopencv_facedetect.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /usr/lib/libopencv_esm_panorama.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /usr/lib/libopencv_detection_based_tracker.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /usr/lib/libopencv_videostab.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /usr/lib/libopencv_superres.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /usr/lib/libopencv_contrib.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /usr/lib/libopencv_tegra.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /usr/lib/libopencv_stitching.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /usr/lib/libopencv_gpu.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /usr/lib/libopencv_photo.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /usr/lib/libopencv_legacy.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /usr/local/cuda-8.0/lib64/libcufft.so
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /usr/lib/libopencv_video.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /usr/lib/libopencv_objdetect.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /usr/lib/libopencv_ml.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /usr/lib/libopencv_calib3d.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /usr/lib/libopencv_features2d.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /usr/lib/libopencv_highgui.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /usr/lib/libopencv_imgproc.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /usr/lib/libopencv_flann.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /usr/lib/libopencv_core.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /usr/local/cuda-8.0/lib64/libcudart.so
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /usr/local/cuda-8.0/lib64/libnppc.so
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /usr/local/cuda-8.0/lib64/libnppi.so
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /usr/local/cuda-8.0/lib64/libnpps.so
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: publisher_subscriber/CMakeFiles/publisher_subscriber.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX shared library /home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so"
+	cd /home/ubuntu/catkin_ws/build/publisher_subscriber && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/publisher_subscriber.dir/link.txt --verbose=$(VERBOSE)
+
+# Rule to build all files generated by this target.
+publisher_subscriber/CMakeFiles/publisher_subscriber.dir/build: /home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so
+
+.PHONY : publisher_subscriber/CMakeFiles/publisher_subscriber.dir/build
+
+publisher_subscriber/CMakeFiles/publisher_subscriber.dir/requires: publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/publisher_subscriber_node.cpp.o.requires
+publisher_subscriber/CMakeFiles/publisher_subscriber.dir/requires: publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/pub_sub.cpp.o.requires
 
 .PHONY : publisher_subscriber/CMakeFiles/publisher_subscriber.dir/requires
 

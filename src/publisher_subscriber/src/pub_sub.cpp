@@ -24,7 +24,7 @@ Pub_Sub::Pub_Sub(int argc, char **argv, string utility)
 int Pub_Sub::publisher_data(string data, string publish_topic)
 {
     ros::NodeHandle node_handle;
-    publish_chatter = node_handle.advertise<std_msgs::String>("chatter", 1000);
+    publish_chatter = node_handle.advertise<std_msgs::String>(publish_topic, 1000);
 
     // This section has to be called just when there is need of sending continuos messages.
     // For sending just one message, this is not needed. 10 -10Hz. USE THIS PART OF CODE FROM WHERE DATA IS TRANSMITTED
@@ -49,12 +49,12 @@ void callback_function(const std_msgs::String::ConstPtr &msg)
     ROS_INFO("Data Received: [%s]", msg->data.c_str());
 }
 
-int Pub_Sub::subscribe_data()
+int Pub_Sub::subscribe_data(void(*received_callback)(const std_msgs::String::ConstPtr &), string subscribe_topic)
 {
     ROS_INFO("Subscribed to topic: chatter");
 
     ros::NodeHandle node_handle;
-    subscribe_chatter = node_handle.subscribe("chatter", 1000, callback_function);
+    subscribe_chatter = node_handle.subscribe(subscribe_topic, 1000, received_callback);
 
     ros::spin();
 

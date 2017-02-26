@@ -14,10 +14,10 @@ public:
     Pub_Sub(int argc, char **argv, string utility);
 
     // For publishing data
-    int publisher_data(string data);
+    int publisher_data(string data, string publish_topic);
 
     // For subscribing data
-    int subscribe_data();
+    int subscribe_data(void(*)(const std_msgs::String::ConstPtr &), string subscribe_topic);
 
 private:
     ros::Publisher publish_chatter;

@@ -123,9 +123,10 @@ include_directories(
 )
 
 ## Declare a C++ library
-# add_library(publisher_subscriber
-#   src/${PROJECT_NAME}/publisher_subscriber.cpp
-# )
+add_library(publisher_subscriber
+    src/publisher_subscriber_node.cpp
+    src/pub_sub.cpp
+)
 
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
@@ -133,19 +134,19 @@ include_directories(
 # add_dependencies(publisher_subscriber ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Declare a C++ executable
-add_executable(publisher_subscriber_node src/publisher_subscriber_node.cpp src/pub_sub.cpp)
+#add_executable(publisher_subscriber_node src/publisher_subscriber_node.cpp src/pub_sub.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
 # add_dependencies(publisher_subscriber_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(publisher_subscriber_node
+target_link_libraries(publisher_subscriber
    ${catkin_LIBRARIES}
 )
 
 ## Specify libraries to link openCV library or executable target against
-target_link_libraries(publisher_subscriber_node
+target_link_libraries(publisher_subscriber
   ${OpenCV_LIBRARIES}
 )
 
@@ -164,7 +165,7 @@ target_link_libraries(publisher_subscriber_node
 # )
 
 ## Mark executables and/or libraries for installation
-install(TARGETS publisher_subscriber_node
+install(TARGETS publisher_subscriber
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}

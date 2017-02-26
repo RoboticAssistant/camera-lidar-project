@@ -361,19 +361,6 @@ std_msgs_generate_messages_cpp/fast:
 .PHONY : std_msgs_generate_messages_cpp/fast
 
 #=============================================================================
-# Target rules for targets named publisher_subscriber_node
-
-# Build rule for target.
-publisher_subscriber_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 publisher_subscriber_node
-.PHONY : publisher_subscriber_node
-
-# fast build rule for target.
-publisher_subscriber_node/fast:
-	$(MAKE) -f publisher_subscriber/CMakeFiles/publisher_subscriber_node.dir/build.make publisher_subscriber/CMakeFiles/publisher_subscriber_node.dir/build
-.PHONY : publisher_subscriber_node/fast
-
-#=============================================================================
 # Target rules for targets named roscpp_generate_messages_eus
 
 # Build rule for target.
@@ -476,6 +463,19 @@ std_msgs_generate_messages_lisp: cmake_check_build_system
 std_msgs_generate_messages_lisp/fast:
 	$(MAKE) -f publisher_subscriber/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make publisher_subscriber/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
 .PHONY : std_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named publisher_subscriber
+
+# Build rule for target.
+publisher_subscriber: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 publisher_subscriber
+.PHONY : publisher_subscriber
+
+# fast build rule for target.
+publisher_subscriber/fast:
+	$(MAKE) -f publisher_subscriber/CMakeFiles/publisher_subscriber.dir/build.make publisher_subscriber/CMakeFiles/publisher_subscriber.dir/build
+.PHONY : publisher_subscriber/fast
 
 #=============================================================================
 # Target rules for targets named create_2_motion_handle_node
@@ -1207,7 +1207,6 @@ help:
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_cpp"
-	@echo "... publisher_subscriber_node"
 	@echo "... roscpp_generate_messages_eus"
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
@@ -1216,6 +1215,7 @@ help:
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_eus"
 	@echo "... std_msgs_generate_messages_lisp"
+	@echo "... publisher_subscriber"
 	@echo "... create_2_motion_handle_node"
 	@echo "... pcl_msgs_generate_messages_eus"
 	@echo "... geometry_msgs_generate_messages_lisp"

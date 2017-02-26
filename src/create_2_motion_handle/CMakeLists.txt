@@ -139,7 +139,7 @@ add_executable(create_2_motion_handle_node src/create_2_motion_handle_node.cpp)
 # add_dependencies(create_2_motion_handle_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(create_2_motion_handle_node
+target_link_libraries(create_2_motion_handle_node publisher_subscriber
   ${catkin_LIBRARIES}
 )
 

@@ -90,6 +90,7 @@ create_2_motion_handle_node_EXTERNAL_OBJECTS =
 
 /home/ubuntu/catkin_ws/devel/lib/create_2_motion_handle/create_2_motion_handle_node: create_2_motion_handle/CMakeFiles/create_2_motion_handle_node.dir/src/create_2_motion_handle_node.cpp.o
 /home/ubuntu/catkin_ws/devel/lib/create_2_motion_handle/create_2_motion_handle_node: create_2_motion_handle/CMakeFiles/create_2_motion_handle_node.dir/build.make
+/home/ubuntu/catkin_ws/devel/lib/create_2_motion_handle/create_2_motion_handle_node: /home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so
 /home/ubuntu/catkin_ws/devel/lib/create_2_motion_handle/create_2_motion_handle_node: /opt/ros/kinetic/lib/libroscpp.so
 /home/ubuntu/catkin_ws/devel/lib/create_2_motion_handle/create_2_motion_handle_node: /usr/lib/aarch64-linux-gnu/libboost_signals.so
 /home/ubuntu/catkin_ws/devel/lib/create_2_motion_handle/create_2_motion_handle_node: /usr/lib/aarch64-linux-gnu/libboost_filesystem.so
@@ -109,6 +110,33 @@ create_2_motion_handle_node_EXTERNAL_OBJECTS =
 /home/ubuntu/catkin_ws/devel/lib/create_2_motion_handle/create_2_motion_handle_node: /usr/lib/aarch64-linux-gnu/libboost_atomic.so
 /home/ubuntu/catkin_ws/devel/lib/create_2_motion_handle/create_2_motion_handle_node: /usr/lib/aarch64-linux-gnu/libpthread.so
 /home/ubuntu/catkin_ws/devel/lib/create_2_motion_handle/create_2_motion_handle_node: /usr/lib/aarch64-linux-gnu/libconsole_bridge.so
+/home/ubuntu/catkin_ws/devel/lib/create_2_motion_handle/create_2_motion_handle_node: /usr/lib/libopencv_vstab.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/create_2_motion_handle/create_2_motion_handle_node: /usr/lib/libopencv_imuvstab.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/create_2_motion_handle/create_2_motion_handle_node: /usr/lib/libopencv_facedetect.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/create_2_motion_handle/create_2_motion_handle_node: /usr/lib/libopencv_esm_panorama.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/create_2_motion_handle/create_2_motion_handle_node: /usr/lib/libopencv_detection_based_tracker.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/create_2_motion_handle/create_2_motion_handle_node: /usr/lib/libopencv_tegra.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/create_2_motion_handle/create_2_motion_handle_node: /usr/lib/libopencv_videostab.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/create_2_motion_handle/create_2_motion_handle_node: /usr/lib/libopencv_superres.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/create_2_motion_handle/create_2_motion_handle_node: /usr/lib/libopencv_stitching.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/create_2_motion_handle/create_2_motion_handle_node: /usr/lib/libopencv_gpu.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/create_2_motion_handle/create_2_motion_handle_node: /usr/lib/libopencv_photo.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/create_2_motion_handle/create_2_motion_handle_node: /usr/lib/libopencv_legacy.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/create_2_motion_handle/create_2_motion_handle_node: /usr/local/cuda-8.0/lib64/libcufft.so
+/home/ubuntu/catkin_ws/devel/lib/create_2_motion_handle/create_2_motion_handle_node: /usr/lib/libopencv_contrib.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/create_2_motion_handle/create_2_motion_handle_node: /usr/lib/libopencv_video.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/create_2_motion_handle/create_2_motion_handle_node: /usr/lib/libopencv_objdetect.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/create_2_motion_handle/create_2_motion_handle_node: /usr/lib/libopencv_ml.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/create_2_motion_handle/create_2_motion_handle_node: /usr/lib/libopencv_calib3d.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/create_2_motion_handle/create_2_motion_handle_node: /usr/lib/libopencv_features2d.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/create_2_motion_handle/create_2_motion_handle_node: /usr/lib/libopencv_highgui.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/create_2_motion_handle/create_2_motion_handle_node: /usr/lib/libopencv_imgproc.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/create_2_motion_handle/create_2_motion_handle_node: /usr/lib/libopencv_flann.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/create_2_motion_handle/create_2_motion_handle_node: /usr/lib/libopencv_core.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/create_2_motion_handle/create_2_motion_handle_node: /usr/local/cuda-8.0/lib64/libcudart.so
+/home/ubuntu/catkin_ws/devel/lib/create_2_motion_handle/create_2_motion_handle_node: /usr/local/cuda-8.0/lib64/libnppc.so
+/home/ubuntu/catkin_ws/devel/lib/create_2_motion_handle/create_2_motion_handle_node: /usr/local/cuda-8.0/lib64/libnppi.so
+/home/ubuntu/catkin_ws/devel/lib/create_2_motion_handle/create_2_motion_handle_node: /usr/local/cuda-8.0/lib64/libnpps.so
 /home/ubuntu/catkin_ws/devel/lib/create_2_motion_handle/create_2_motion_handle_node: create_2_motion_handle/CMakeFiles/create_2_motion_handle_node.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/ubuntu/catkin_ws/devel/lib/create_2_motion_handle/create_2_motion_handle_node"
 	cd /home/ubuntu/catkin_ws/build/create_2_motion_handle && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/create_2_motion_handle_node.dir/link.txt --verbose=$(VERBOSE)

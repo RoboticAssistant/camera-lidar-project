@@ -11,7 +11,11 @@ iostream
 -
 ros/ros.h
 -
+std_msgs/String.h
+-
 publisher_subscriber/pub_sub.hpp
+-
+strings.h
 -
 
 /home/ubuntu/catkin_ws/src/publisher_subscriber/include/publisher_subscriber/pub_sub.hpp
