@@ -18,19 +18,34 @@ int main(int argc, char *argv[])
     {
         string send_data(argv[2]);
         cout << "Talker" << endl;
-        Pub_Sub publisher(argc, argv, "talker");
+
+        msg_details publish_details;
+        publish_details.is_talker = true;
+        publish_details.is_listener = false;
+        publish_details.pub_repeat = true;
+        publish_details.frequency = 10;
+        publish_details.received_callback = callback_temp;
+
+        Pub_Sub publisher(argc, argv, publish_details);
 
         while(1)
         {
             // Publishing data
-            publisher.publisher_data(send_data, "temp");
+            publisher.publisher_data(send_data);
         }
     }
     else if(!strcmp(argv[1], "listener"))
     {
         cout << "Listener" << endl;
-        Pub_Sub subscriber(argc, argv, "listener");
-        subscriber.subscribe_data(&callback_temp, "temp");
+
+        msg_details subscribe_details;
+        subscribe_details.is_talker = false;
+        subscribe_details.is_listener = true;
+        subscribe_details.pub_repeat = true;
+        subscribe_details.frequency = 10;
+
+        Pub_Sub subscriber(argc, argv, subscribe_details);
+        subscriber.subscribe_data(&callback_temp);
     }
 
     return 0;
