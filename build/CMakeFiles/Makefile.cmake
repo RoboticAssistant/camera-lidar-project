@@ -462,6 +462,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "publisher_subscriber/CMakeFiles/roscpp_generate_messages_cpp.dir/DependInfo.cmake"
   "publisher_subscriber/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/DependInfo.cmake"
   "publisher_subscriber/CMakeFiles/std_msgs_generate_messages_cpp.dir/DependInfo.cmake"
+  "publisher_subscriber/CMakeFiles/publisher_subscriber_node.dir/DependInfo.cmake"
   "publisher_subscriber/CMakeFiles/roscpp_generate_messages_eus.dir/DependInfo.cmake"
   "publisher_subscriber/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/DependInfo.cmake"
   "publisher_subscriber/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/DependInfo.cmake"

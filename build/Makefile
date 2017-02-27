@@ -361,6 +361,19 @@ std_msgs_generate_messages_cpp/fast:
 .PHONY : std_msgs_generate_messages_cpp/fast
 
 #=============================================================================
+# Target rules for targets named publisher_subscriber_node
+
+# Build rule for target.
+publisher_subscriber_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 publisher_subscriber_node
+.PHONY : publisher_subscriber_node
+
+# fast build rule for target.
+publisher_subscriber_node/fast:
+	$(MAKE) -f publisher_subscriber/CMakeFiles/publisher_subscriber_node.dir/build.make publisher_subscriber/CMakeFiles/publisher_subscriber_node.dir/build
+.PHONY : publisher_subscriber_node/fast
+
+#=============================================================================
 # Target rules for targets named roscpp_generate_messages_eus
 
 # Build rule for target.
@@ -1207,6 +1220,7 @@ help:
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_cpp"
+	@echo "... publisher_subscriber_node"
 	@echo "... roscpp_generate_messages_eus"
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_lisp"

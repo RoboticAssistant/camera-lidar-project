@@ -3,13 +3,14 @@
 #include <publisher_subscriber/pub_sub.hpp>
 #include <std_msgs/String.h>
 
+using namespace ros;
 // This project is mainly used for the publishing and subsribing of data.
 // Everywhere in the project, you have to use this publisher and subscriber thing.
 // There is no need to create any special pub sub models in your classes.
 
 void callback_temp(const std_msgs::String::ConstPtr &msg)
 {
-    ROS_INFO("Data Received: [%s]", msg->data.c_str());
+    ROS_INFO("publisher_subscriber_node: Data Received: [%s]", msg->data.c_str());
 }
 
 int main(int argc, char *argv[])
@@ -23,15 +24,17 @@ int main(int argc, char *argv[])
         publish_details.is_talker = true;
         publish_details.is_listener = false;
         publish_details.pub_repeat = true;
-        publish_details.frequency = 10;
-        publish_details.received_callback = callback_temp;
+        publish_details.frequency = 1;
+        publish_details.message_topic = "test/topic";
 
         Pub_Sub publisher(argc, argv, publish_details);
 
-        while(1)
+        ros::Rate loop_rate(publish_details.frequency);
+        while(ros::ok())
         {
             // Publishing data
             publisher.publisher_data(send_data);
+            loop_rate.sleep();
         }
     }
     else if(!strcmp(argv[1], "listener"))
@@ -41,11 +44,11 @@ int main(int argc, char *argv[])
         msg_details subscribe_details;
         subscribe_details.is_talker = false;
         subscribe_details.is_listener = true;
-        subscribe_details.pub_repeat = true;
-        subscribe_details.frequency = 10;
+        subscribe_details.pub_repeat = false;
+        subscribe_details.message_topic = "test/topic";
+        subscribe_details.received_callback = callback_temp;
 
         Pub_Sub subscriber(argc, argv, subscribe_details);
-        subscriber.subscribe_data(&callback_temp);
     }
 
     return 0;

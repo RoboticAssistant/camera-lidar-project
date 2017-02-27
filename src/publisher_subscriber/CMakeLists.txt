@@ -5,9 +5,10 @@ project(publisher_subscriber)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  roscpp
-  rospy
-  std_msgs
+    roscpp
+    rospy
+    std_msgs
+    rosconsole
 )
 
 SET(CUDA_USE_STATIC_CUDA_RUNTIME OFF)				# To get rid of -lopencv_dep_cudart error
@@ -107,7 +108,7 @@ include_directories(${OpenCV_INCLUDE_DIRS})
 catkin_package(
    INCLUDE_DIRS include
 #  LIBRARIES publisher_subscriber
-   CATKIN_DEPENDS roscpp rospy std_msgs
+   CATKIN_DEPENDS roscpp rospy std_msgs rosconsole
 #  DEPENDS system_lib
 )
 
@@ -134,7 +135,7 @@ add_library(publisher_subscriber
 # add_dependencies(publisher_subscriber ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Declare a C++ executable
-#add_executable(publisher_subscriber_node src/publisher_subscriber_node.cpp src/pub_sub.cpp)
+add_executable(publisher_subscriber_node src/publisher_subscriber_node.cpp src/pub_sub.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
@@ -142,13 +143,11 @@ add_library(publisher_subscriber
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(publisher_subscriber
-   ${catkin_LIBRARIES}
+   ${catkin_LIBRARIES} ${OpenCV_LIBRARIES}
 )
 
-## Specify libraries to link openCV library or executable target against
-target_link_libraries(publisher_subscriber
-  ${OpenCV_LIBRARIES}
-)
+## Specify libraries to link executable to local library
+target_link_libraries(publisher_subscriber_node publisher_subscriber)
 
 #############
 ## Install ##

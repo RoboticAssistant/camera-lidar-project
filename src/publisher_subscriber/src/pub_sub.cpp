@@ -37,7 +37,7 @@ Pub_Sub::Pub_Sub(int argc, char **argv, msg_details &message_details)
     ros::NodeHandle node_handle;
     topic = message_details.message_topic;
 
-    cout << topic << endl;
+    cout << utility << endl;
 
     if(message_details.is_talker)
     {
@@ -58,7 +58,7 @@ Pub_Sub::Pub_Sub(int argc, char **argv, msg_details &message_details)
     }
     else if(message_details.is_listener)
     {
-        ROS_INFO("Subscribed to topic: chatter");
+        ROS_INFO("Subscribed to topic: [%s]", topic.c_str());
         subscribe_chatter = node_handle.subscribe(topic.c_str(), 1, message_details.received_callback);
         ros::spin();
     }

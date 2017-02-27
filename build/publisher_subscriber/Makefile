@@ -56,15 +56,17 @@ CMAKE_BINARY_DIR = /home/ubuntu/catkin_ws/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
 
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -88,6 +90,16 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -98,18 +110,6 @@ test:
 test/fast: test
 
 .PHONY : test/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
@@ -271,6 +271,21 @@ std_msgs_generate_messages_cpp/fast:
 .PHONY : std_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
+publisher_subscriber/CMakeFiles/publisher_subscriber_node.dir/rule:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 publisher_subscriber/CMakeFiles/publisher_subscriber_node.dir/rule
+.PHONY : publisher_subscriber/CMakeFiles/publisher_subscriber_node.dir/rule
+
+# Convenience name for target.
+publisher_subscriber_node: publisher_subscriber/CMakeFiles/publisher_subscriber_node.dir/rule
+
+.PHONY : publisher_subscriber_node
+
+# fast build rule for target.
+publisher_subscriber_node/fast:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f publisher_subscriber/CMakeFiles/publisher_subscriber_node.dir/build.make publisher_subscriber/CMakeFiles/publisher_subscriber_node.dir/build
+.PHONY : publisher_subscriber_node/fast
+
+# Convenience name for target.
 publisher_subscriber/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
 	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 publisher_subscriber/CMakeFiles/roscpp_generate_messages_eus.dir/rule
 .PHONY : publisher_subscriber/CMakeFiles/roscpp_generate_messages_eus.dir/rule
@@ -411,6 +426,7 @@ src/pub_sub.o: src/pub_sub.cpp.o
 
 # target to build an object file
 src/pub_sub.cpp.o:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f publisher_subscriber/CMakeFiles/publisher_subscriber_node.dir/build.make publisher_subscriber/CMakeFiles/publisher_subscriber_node.dir/src/pub_sub.cpp.o
 	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f publisher_subscriber/CMakeFiles/publisher_subscriber.dir/build.make publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/pub_sub.cpp.o
 .PHONY : src/pub_sub.cpp.o
 
@@ -420,6 +436,7 @@ src/pub_sub.i: src/pub_sub.cpp.i
 
 # target to preprocess a source file
 src/pub_sub.cpp.i:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f publisher_subscriber/CMakeFiles/publisher_subscriber_node.dir/build.make publisher_subscriber/CMakeFiles/publisher_subscriber_node.dir/src/pub_sub.cpp.i
 	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f publisher_subscriber/CMakeFiles/publisher_subscriber.dir/build.make publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/pub_sub.cpp.i
 .PHONY : src/pub_sub.cpp.i
 
@@ -429,6 +446,7 @@ src/pub_sub.s: src/pub_sub.cpp.s
 
 # target to generate assembly for a file
 src/pub_sub.cpp.s:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f publisher_subscriber/CMakeFiles/publisher_subscriber_node.dir/build.make publisher_subscriber/CMakeFiles/publisher_subscriber_node.dir/src/pub_sub.cpp.s
 	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f publisher_subscriber/CMakeFiles/publisher_subscriber.dir/build.make publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/pub_sub.cpp.s
 .PHONY : src/pub_sub.cpp.s
 
@@ -438,6 +456,7 @@ src/publisher_subscriber_node.o: src/publisher_subscriber_node.cpp.o
 
 # target to build an object file
 src/publisher_subscriber_node.cpp.o:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f publisher_subscriber/CMakeFiles/publisher_subscriber_node.dir/build.make publisher_subscriber/CMakeFiles/publisher_subscriber_node.dir/src/publisher_subscriber_node.cpp.o
 	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f publisher_subscriber/CMakeFiles/publisher_subscriber.dir/build.make publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/publisher_subscriber_node.cpp.o
 .PHONY : src/publisher_subscriber_node.cpp.o
 
@@ -447,6 +466,7 @@ src/publisher_subscriber_node.i: src/publisher_subscriber_node.cpp.i
 
 # target to preprocess a source file
 src/publisher_subscriber_node.cpp.i:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f publisher_subscriber/CMakeFiles/publisher_subscriber_node.dir/build.make publisher_subscriber/CMakeFiles/publisher_subscriber_node.dir/src/publisher_subscriber_node.cpp.i
 	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f publisher_subscriber/CMakeFiles/publisher_subscriber.dir/build.make publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/publisher_subscriber_node.cpp.i
 .PHONY : src/publisher_subscriber_node.cpp.i
 
@@ -456,6 +476,7 @@ src/publisher_subscriber_node.s: src/publisher_subscriber_node.cpp.s
 
 # target to generate assembly for a file
 src/publisher_subscriber_node.cpp.s:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f publisher_subscriber/CMakeFiles/publisher_subscriber_node.dir/build.make publisher_subscriber/CMakeFiles/publisher_subscriber_node.dir/src/publisher_subscriber_node.cpp.s
 	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f publisher_subscriber/CMakeFiles/publisher_subscriber.dir/build.make publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/publisher_subscriber_node.cpp.s
 .PHONY : src/publisher_subscriber_node.cpp.s
 
@@ -465,7 +486,7 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... list_install_components"
+	@echo "... install"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_eus"
@@ -475,6 +496,8 @@ help:
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_cpp"
+	@echo "... list_install_components"
+	@echo "... publisher_subscriber_node"
 	@echo "... roscpp_generate_messages_eus"
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
@@ -485,7 +508,6 @@ help:
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... test"
 	@echo "... publisher_subscriber"
-	@echo "... install"
 	@echo "... install/strip"
 	@echo "... install/local"
 	@echo "... src/pub_sub.o"

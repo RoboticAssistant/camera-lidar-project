@@ -119,13 +119,13 @@ publisher_subscriber_EXTERNAL_OBJECTS =
 /home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /opt/ros/kinetic/lib/libroscpp.so
 /home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /usr/lib/aarch64-linux-gnu/libboost_signals.so
 /home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /usr/lib/aarch64-linux-gnu/libboost_filesystem.so
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /opt/ros/kinetic/lib/libxmlrpcpp.so
+/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /opt/ros/kinetic/lib/libroscpp_serialization.so
 /home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /opt/ros/kinetic/lib/librosconsole.so
 /home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
 /home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
 /home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /usr/lib/aarch64-linux-gnu/liblog4cxx.so
 /home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /usr/lib/aarch64-linux-gnu/libboost_regex.so
-/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /opt/ros/kinetic/lib/libxmlrpcpp.so
-/home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /opt/ros/kinetic/lib/libroscpp_serialization.so
 /home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /opt/ros/kinetic/lib/librostime.so
 /home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /opt/ros/kinetic/lib/libcpp_common.so
 /home/ubuntu/catkin_ws/devel/lib/libpublisher_subscriber.so: /usr/lib/aarch64-linux-gnu/libboost_system.so

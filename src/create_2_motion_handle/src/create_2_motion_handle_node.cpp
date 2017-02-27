@@ -52,8 +52,6 @@ int main(int argc, char *argv[])
         subscribe_details.received_callback = direction_subscribe;
 
         Pub_Sub subscriber(argc, argv, subscribe_details);
-        // Subscribe to topic
-        subscriber.subscribe_data(&direction_subscribe);
     }
 
     // Depending upon the received data being a subscriber,
