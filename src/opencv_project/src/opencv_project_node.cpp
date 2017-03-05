@@ -27,6 +27,37 @@ using namespace cv;
 
 int main(int argc, char *argv[])
 {	
+    bool is_live = false;
+    string svo_file_path, svo_file_name(argv[2]), input_status(argv[1]);
+
+    if(argc != 4) {
+        cout << "Error in Usage:::Usage: <exe> [is_live]<true/false> <svo_file_name> <depth_clamp>" << endl;
+        return -1;
+    }
+    int depth_clamp = atoi(argv[3]);
+
+    int size_of_file_name = (sizeof(svo_file_name)/sizeof(char));
+
+    if(!strcmp(input_status.c_str(), "true")) {
+        is_live = true;
+    }
+    else {
+        is_live = false;
+    }
+
+    if(!is_live) {
+        cout << "From Stored Camera Feed" << endl;
+        svo_file_path = "/media/ubuntu/7A1A38B11A386C6F/Video_Recordings/";
+        svo_file_path.append(svo_file_name.c_str());
+    }
+    else {
+        cout << "From Live Camera Feed" << endl;
+    }
+
+    // Depth Calculations
+    depth_reception(is_live, svo_file_path, depth_clamp);
+
+
 //    cv::Mat inputImage, grayImage, binaryImage;
 //    string kernelFileName;
 
@@ -69,9 +100,6 @@ int main(int argc, char *argv[])
 //    // Get the convolution kernel
 //    kernelFileName = argv[2];
 //    perform_convolution(binaryImage, kernelFileName, argv[3]);
-
-
-    depth_reception();
 
     waitKey(0);
 	return 0;

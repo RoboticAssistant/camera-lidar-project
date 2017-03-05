@@ -1,5 +1,5 @@
-cmake_minimum_required(VERSION 2.8.7)
-project(opencv_project)
+cmake_minimum_required(VERSION 2.8.3)
+project(face_detect_module)
 
 ## ZED package
 find_package(ZED 1.2 REQUIRED)
@@ -9,10 +9,10 @@ find_package(ZED 1.2 REQUIRED)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   image_transport
-  roscpp
-  rosconsole
-  rospy
   pcl_conversions
+  rosconsole
+  roscpp
+  rospy
   std_msgs
 )
 
@@ -33,29 +33,6 @@ find_package(CUDA ${CUDA_VERSION} REQUIRED)
 
 ## PCL package
 find_package(PCL REQUIRED)
-
-###################################
-## catkin specific configuration ##
-###################################
-## The catkin_package macro generates cmake config files for your package
-## Declare things to be passed to dependent projects
-## INCLUDE_DIRS: uncomment this if you package contains header files
-## LIBRARIES: libraries you create in this project that dependent projects also need
-## CATKIN_DEPENDS: catkin_packages dependent projects also need
-## DEPENDS: system dependencies of this project that dependent projects also need
-catkin_package(
-  INCLUDE_DIRS include
-#  LIBRARIES opencv_project
-  CATKIN_DEPENDS rosconsole
-		opencv
-		#cv_bridge
-		image_transport
-		roscpp
-		rospy
-		std_msgs
-		pcl_conversions
-#  DEPENDS system_lib
-)
 
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed
@@ -133,21 +110,36 @@ catkin_package(
 #   cfg/DynReconf2.cfg
 # )
 
+###################################
+## catkin specific configuration ##
+###################################
+## The catkin_package macro generates cmake config files for your package
+## Declare things to be passed to dependent projects
+## INCLUDE_DIRS: uncomment this if you package contains header files
+## LIBRARIES: libraries you create in this project that dependent projects also need
+## CATKIN_DEPENDS: catkin_packages dependent projects also need
+## DEPENDS: system dependencies of this project that dependent projects also need
+catkin_package(
+   INCLUDE_DIRS include
+#  LIBRARIES face_detect_module
+   CATKIN_DEPENDS opencv image_transport pcl_conversions rosconsole roscpp rospy std_msgs
+#  DEPENDS system_lib
+)
+
 ###########
 ## Build ##
 ###########
 
-###############################################################################
-# INCLUDES
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
+# include_directories(include)
 include_directories(
-  include
-  ${catkin_INCLUDE_DIRS}
-  ${CUDA_INCLUDE_DIRS}
-  ${ZED_INCLUDE_DIRS}
-  ${PCL_INCLUDE_DIRS}
-  ${OpenCV_INCLUDE_DIRS}
+    include
+    ${catkin_INCLUDE_DIRS}
+    ${CUDA_INCLUDE_DIRS}
+    ${ZED_INCLUDE_DIRS}
+    ${PCL_INCLUDE_DIRS}
+    ${OpenCV_INCLUDE_DIRS}
 )
 
 link_directories(include)
@@ -155,11 +147,6 @@ link_directories(${ZED_LIBRARY_DIR})
 link_directories(${CUDA_LIBRARY_DIRS})
 link_directories(${OpenCV_LIBRARY_DIRS})
 link_directories(${PCL_LIBRARY_DIRS})
-
-## Add cmake target dependencies of the library
-## as an example, code may need to be generated before libraries
-## either from message generation or dynamic reconfigure
-# add_dependencies(opencv_project ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 add_definitions(-std=c++11)# -m64) #-Wall)
 
@@ -170,23 +157,25 @@ SET(LINK_LIBRARIES
   ${OpenCV_LIBS}
   ${PCL_LIBRARIES})
 
-## Declare a C++ library. Note: If you have any local cpp files, you can add here. But don't forget to link them later (Follow this marker ***)
-add_library(opencv_project src/convolution_2d.cpp)
+## Declare a C++ library
+# add_library(face_detect_module
+#   src/${PROJECT_NAME}/face_detect_module.cpp
+# )
+
+## Add cmake target dependencies of the library
+## as an example, code may need to be generated before libraries
+## either from message generation or dynamic reconfigure
+# add_dependencies(face_detect_module ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Declare a C++ executable
-add_executable(opencv_project_node src/opencv_project_node.cpp src/convolution_2d.cpp src/depth_computations.cpp)
+add_executable(face_detect_module_node src/face_detect_module_node.cpp src/face_detection_engine.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
-# add_dependencies(opencv_project_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+# add_dependencies(face_detect_module_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(opencv_project_node ${LINK_LIBRARIES})
-
-#Add all files in subdirectories of the project in
-# a dummy_target so qtcreator have access to all files
-FILE(GLOB_RECURSE extra_files ${CMAKE_SOURCE_DIR}/*)
-add_custom_target(dummy_${PROJECT_NAME} SOURCES ${extra_files})
+target_link_libraries(face_detect_module_node ${LINK_LIBRARIES})
 
 #############
 ## Install ##
@@ -203,7 +192,7 @@ add_custom_target(dummy_${PROJECT_NAME} SOURCES ${extra_files})
 # )
 
 ## Mark executables and/or libraries for installation
-# install(TARGETS opencv_project opencv_project_node
+# install(TARGETS face_detect_module face_detect_module_node
 #   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
@@ -228,7 +217,7 @@ add_custom_target(dummy_${PROJECT_NAME} SOURCES ${extra_files})
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_opencv_project.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_face_detect_module.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
