@@ -119,6 +119,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/ubuntu/catkin_ws/build/gtest/cmake_install.cmake")
   include("/home/ubuntu/catkin_ws/build/publisher_subscriber/cmake_install.cmake")
   include("/home/ubuntu/catkin_ws/build/create_2_motion_handle/cmake_install.cmake")
+  include("/home/ubuntu/catkin_ws/build/face_detect_module/cmake_install.cmake")
   include("/home/ubuntu/catkin_ws/build/opencv_project/cmake_install.cmake")
   include("/home/ubuntu/catkin_ws/build/zed-ros-wrapper/cmake_install.cmake")
 

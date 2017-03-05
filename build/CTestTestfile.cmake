@@ -7,5 +7,6 @@
 subdirs(gtest)
 subdirs(publisher_subscriber)
 subdirs(create_2_motion_handle)
+subdirs(face_detect_module)
 subdirs(opencv_project)
 subdirs(zed-ros-wrapper)

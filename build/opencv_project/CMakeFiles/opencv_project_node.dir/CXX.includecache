@@ -15,6 +15,8 @@ opencv2/highgui/highgui.hpp
 -
 
 /home/ubuntu/catkin_ws/src/opencv_project/include/opencv_project/depth_computations.hpp
+strings.h
+-
 
 /home/ubuntu/catkin_ws/src/opencv_project/src/convolution_2d.cpp
 iostream
@@ -38,6 +40,10 @@ memory
 thread
 -
 opencv_project/depth_computations.hpp
+-
+boost/asio.hpp
+-
+boost/date_time/posix_time/posix_time.hpp
 -
 opencv2/core/core.hpp
 -

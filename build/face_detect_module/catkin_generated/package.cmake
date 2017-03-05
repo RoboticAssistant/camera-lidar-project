@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "face_detect_module")
+set(face_detect_module_MAINTAINER "ubuntu <ubuntu@todo.todo>")
+set(face_detect_module_DEPRECATED "")
+set(face_detect_module_VERSION "0.0.0")
+set(face_detect_module_BUILD_DEPENDS "image_transport" "pcl_conversions" "rosconsole" "roscpp" "rospy" "std_msgs" "opencv")
+set(face_detect_module_RUN_DEPENDS "image_transport" "pcl_conversions" "rosconsole" "roscpp" "rospy" "std_msgs" "opencv")
+set(face_detect_module_BUILDTOOL_DEPENDS "catkin")
