@@ -25,7 +25,7 @@ exec_program(uname ARGS -p OUTPUT_VARIABLE CMAKE_SYSTEM_NAME2)
 
 ## OpenCV package
 SET(OCV_VERSION "2.4")
-find_package(OpenCV ${OCV_VERSION} COMPONENTS core highgui imgproc REQUIRED)
+find_package(OpenCV ${OCV_VERSION} COMPONENTS core highgui imgproc objdetect REQUIRED)
 
 ## CUDA package
 SET(CUDA_VERSION "8.0")

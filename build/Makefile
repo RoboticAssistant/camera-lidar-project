@@ -712,43 +712,82 @@ face_detect_module_node/fast:
 .PHONY : face_detect_module_node/fast
 
 #=============================================================================
-# Target rules for targets named opencv_project
+# Target rules for targets named object_depth_module
 
 # Build rule for target.
-opencv_project: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 opencv_project
-.PHONY : opencv_project
+object_depth_module: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 object_depth_module
+.PHONY : object_depth_module
 
 # fast build rule for target.
-opencv_project/fast:
-	$(MAKE) -f opencv_project/CMakeFiles/opencv_project.dir/build.make opencv_project/CMakeFiles/opencv_project.dir/build
-.PHONY : opencv_project/fast
+object_depth_module/fast:
+	$(MAKE) -f object_depth_module/CMakeFiles/object_depth_module.dir/build.make object_depth_module/CMakeFiles/object_depth_module.dir/build
+.PHONY : object_depth_module/fast
 
 #=============================================================================
-# Target rules for targets named opencv_project_node
+# Target rules for targets named object_depth_module_node
 
 # Build rule for target.
-opencv_project_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 opencv_project_node
-.PHONY : opencv_project_node
+object_depth_module_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 object_depth_module_node
+.PHONY : object_depth_module_node
 
 # fast build rule for target.
-opencv_project_node/fast:
-	$(MAKE) -f opencv_project/CMakeFiles/opencv_project_node.dir/build.make opencv_project/CMakeFiles/opencv_project_node.dir/build
-.PHONY : opencv_project_node/fast
+object_depth_module_node/fast:
+	$(MAKE) -f object_depth_module/CMakeFiles/object_depth_module_node.dir/build.make object_depth_module/CMakeFiles/object_depth_module_node.dir/build
+.PHONY : object_depth_module_node/fast
 
 #=============================================================================
-# Target rules for targets named dummy_opencv_project
+# Target rules for targets named dummy_object_depth_module
 
 # Build rule for target.
-dummy_opencv_project: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 dummy_opencv_project
-.PHONY : dummy_opencv_project
+dummy_object_depth_module: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 dummy_object_depth_module
+.PHONY : dummy_object_depth_module
 
 # fast build rule for target.
-dummy_opencv_project/fast:
-	$(MAKE) -f opencv_project/CMakeFiles/dummy_opencv_project.dir/build.make opencv_project/CMakeFiles/dummy_opencv_project.dir/build
-.PHONY : dummy_opencv_project/fast
+dummy_object_depth_module/fast:
+	$(MAKE) -f object_depth_module/CMakeFiles/dummy_object_depth_module.dir/build.make object_depth_module/CMakeFiles/dummy_object_depth_module.dir/build
+.PHONY : dummy_object_depth_module/fast
+
+#=============================================================================
+# Target rules for targets named rplidarNode
+
+# Build rule for target.
+rplidarNode: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 rplidarNode
+.PHONY : rplidarNode
+
+# fast build rule for target.
+rplidarNode/fast:
+	$(MAKE) -f rplidar_ros/CMakeFiles/rplidarNode.dir/build.make rplidar_ros/CMakeFiles/rplidarNode.dir/build
+.PHONY : rplidarNode/fast
+
+#=============================================================================
+# Target rules for targets named rplidarNodeClient
+
+# Build rule for target.
+rplidarNodeClient: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 rplidarNodeClient
+.PHONY : rplidarNodeClient
+
+# fast build rule for target.
+rplidarNodeClient/fast:
+	$(MAKE) -f rplidar_ros/CMakeFiles/rplidarNodeClient.dir/build.make rplidar_ros/CMakeFiles/rplidarNodeClient.dir/build
+.PHONY : rplidarNodeClient/fast
+
+#=============================================================================
+# Target rules for targets named video_analytics_node
+
+# Build rule for target.
+video_analytics_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 video_analytics_node
+.PHONY : video_analytics_node
+
+# fast build rule for target.
+video_analytics_node/fast:
+	$(MAKE) -f video_analytics/CMakeFiles/video_analytics_node.dir/build.make video_analytics/CMakeFiles/video_analytics_node.dir/build
+.PHONY : video_analytics_node/fast
 
 #=============================================================================
 # Target rules for targets named zed_wrapper_node
@@ -1260,9 +1299,12 @@ help:
 	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... pcl_msgs_generate_messages_py"
 	@echo "... face_detect_module_node"
-	@echo "... opencv_project"
-	@echo "... opencv_project_node"
-	@echo "... dummy_opencv_project"
+	@echo "... object_depth_module"
+	@echo "... object_depth_module_node"
+	@echo "... dummy_object_depth_module"
+	@echo "... rplidarNode"
+	@echo "... rplidarNodeClient"
+	@echo "... video_analytics_node"
 	@echo "... zed_wrapper_node"
 	@echo "... ZEDWrapper"
 	@echo "... zed_wrapper_gencfg"

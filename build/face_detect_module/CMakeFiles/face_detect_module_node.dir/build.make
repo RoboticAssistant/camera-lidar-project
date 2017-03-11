@@ -153,8 +153,7 @@ face_detect_module_node_EXTERNAL_OBJECTS =
 /home/ubuntu/catkin_ws/devel/lib/face_detect_module/face_detect_module_node: /usr/local/cuda-8.0/lib64/libcudart.so
 /home/ubuntu/catkin_ws/devel/lib/face_detect_module/face_detect_module_node: /usr/local/cuda-8.0/lib64/libnppi.so
 /home/ubuntu/catkin_ws/devel/lib/face_detect_module/face_detect_module_node: /usr/local/cuda-8.0/lib64/libnpps.so
-/home/ubuntu/catkin_ws/devel/lib/face_detect_module/face_detect_module_node: /usr/lib/libopencv_highgui.so.2.4.13
-/home/ubuntu/catkin_ws/devel/lib/face_detect_module/face_detect_module_node: /usr/lib/libopencv_imgproc.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/face_detect_module/face_detect_module_node: /usr/lib/libopencv_objdetect.so.2.4.13
 /home/ubuntu/catkin_ws/devel/lib/face_detect_module/face_detect_module_node: /usr/lib/aarch64-linux-gnu/libboost_system.so
 /home/ubuntu/catkin_ws/devel/lib/face_detect_module/face_detect_module_node: /usr/lib/aarch64-linux-gnu/libboost_filesystem.so
 /home/ubuntu/catkin_ws/devel/lib/face_detect_module/face_detect_module_node: /usr/lib/aarch64-linux-gnu/libboost_thread.so
@@ -350,6 +349,8 @@ face_detect_module_node_EXTERNAL_OBJECTS =
 /home/ubuntu/catkin_ws/devel/lib/face_detect_module/face_detect_module_node: /usr/lib/aarch64-linux-gnu/libpcl_people.so
 /home/ubuntu/catkin_ws/devel/lib/face_detect_module/face_detect_module_node: /usr/lib/aarch64-linux-gnu/libpcl_outofcore.so
 /home/ubuntu/catkin_ws/devel/lib/face_detect_module/face_detect_module_node: /usr/lib/aarch64-linux-gnu/libpcl_tracking.so
+/home/ubuntu/catkin_ws/devel/lib/face_detect_module/face_detect_module_node: /usr/lib/libopencv_highgui.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/face_detect_module/face_detect_module_node: /usr/lib/libopencv_imgproc.so.2.4.13
 /home/ubuntu/catkin_ws/devel/lib/face_detect_module/face_detect_module_node: /usr/lib/libopencv_core.so.2.4.13
 /home/ubuntu/catkin_ws/devel/lib/face_detect_module/face_detect_module_node: /usr/local/cuda-8.0/lib64/libcudart.so
 /home/ubuntu/catkin_ws/devel/lib/face_detect_module/face_detect_module_node: /usr/local/cuda-8.0/lib64/libnppc.so

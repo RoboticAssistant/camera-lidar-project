@@ -787,6 +787,15 @@ message_runtime_DIR:PATH=/opt/ros/kinetic/share/message_runtime/cmake
 //The directory containing a CMake configuration file for nodelet.
 nodelet_DIR:PATH=/opt/ros/kinetic/share/nodelet/cmake
 
+//Value Computed by CMake
+object_depth_module_BINARY_DIR:STATIC=/home/ubuntu/catkin_ws/build/object_depth_module
+
+//Dependencies for target
+object_depth_module_LIB_DEPENDS:STATIC=
+
+//Value Computed by CMake
+object_depth_module_SOURCE_DIR:STATIC=/home/ubuntu/catkin_ws/src/object_depth_module
+
 //The directory containing a CMake configuration file for opencv2.
 opencv2_DIR:PATH=opencv2_DIR-NOTFOUND
 
@@ -859,6 +868,12 @@ rospy_DIR:PATH=/opt/ros/kinetic/share/rospy/cmake
 //The directory containing a CMake configuration file for rostime.
 rostime_DIR:PATH=/opt/ros/kinetic/share/rostime/cmake
 
+//Value Computed by CMake
+rplidar_ros_BINARY_DIR:STATIC=/home/ubuntu/catkin_ws/build/rplidar_ros
+
+//Value Computed by CMake
+rplidar_ros_SOURCE_DIR:STATIC=/home/ubuntu/catkin_ws/src/rplidar_ros
+
 //The directory containing a CMake configuration file for sensor_msgs.
 sensor_msgs_DIR:PATH=/opt/ros/kinetic/share/sensor_msgs/cmake
 
@@ -879,6 +894,12 @@ tf2_py_DIR:PATH=/opt/ros/kinetic/share/tf2_py/cmake
 
 //The directory containing a CMake configuration file for tf2_ros.
 tf2_ros_DIR:PATH=/opt/ros/kinetic/share/tf2_ros/cmake
+
+//Value Computed by CMake
+video_analytics_BINARY_DIR:STATIC=/home/ubuntu/catkin_ws/build/video_analytics
+
+//Value Computed by CMake
+video_analytics_SOURCE_DIR:STATIC=/home/ubuntu/catkin_ws/src/video_analytics
 
 //The directory containing a CMake configuration file for xmlrpcpp.
 xmlrpcpp_DIR:PATH=/opt/ros/kinetic/share/xmlrpcpp/cmake
@@ -1035,7 +1056,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=7
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=9
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

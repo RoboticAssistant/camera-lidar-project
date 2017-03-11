@@ -24,13 +24,15 @@ using namespace std;
 using namespace cv;
 
 // Copy this file from opencv/data/haarscascades to target folder
-string face_cascade_name = "c:/haarcascade_frontalface_alt.xml";
+cv::CascadeClassifier face_cascade;
+string face_cascade_name = "/usr/share/OpenCV/haarcascades/haarcascade_frontalface_alt.xml";
 string window_name = "Capture - Face detection";
 int filenumber; // Number of file to be saved
 string filename;
+int faces_detected = 0;
 
-// Function detectAndDisplay
-void detectAndDisplay(cv::CascadeClassifier face_cascade, cv::Mat frame)
+// Function detectAndDisplay. Returns faces detected
+int detectAndDisplay(cv::Mat frame, bool is_left)
 {
     std::vector<Rect> faces;
     cv::Mat frame_gray;
@@ -56,7 +58,9 @@ void detectAndDisplay(cv::CascadeClassifier face_cascade, cv::Mat frame)
     size_t ib = 0; // ib is index of biggest element
     int ab = 0; // ab is area of biggest element
 
-    for (ic = 0; ic < faces.size(); ic++) // Iterate through all current elements (detected faces)
+    faces_detected = faces.size();
+
+    for (ic = 0; ic < faces_detected; ic++) // Iterate through all current elements (detected faces)
 
     {
         roi_c.x = faces[ic].x;
@@ -86,69 +90,46 @@ void detectAndDisplay(cv::CascadeClassifier face_cascade, cv::Mat frame)
         resize(crop, res, Size(128, 128), 0, 0, INTER_LINEAR); // This will be needed later while saving images
         cvtColor(crop, gray, CV_BGR2GRAY); // Convert cropped image to Grayscale
 
-        // Form a filename
-        filename = "";
-        stringstream ssfn;
-        ssfn << filenumber << ".png";
-        filename = ssfn.str();
-        filenumber++;
-
-        imwrite(filename, gray);
-
         Point pt1(faces[ic].x, faces[ic].y); // Display detected faces on main window - live stream from camera
         Point pt2((faces[ic].x + faces[ic].height), (faces[ic].y + faces[ic].width));
         rectangle(frame, pt1, pt2, Scalar(0, 255, 0), 2, 8, 0);
     }
 
-    // Show image
-    sstm << "Crop area size: " << roi_b.width << "x" << roi_b.height << " Filename: " << filename;
-    text = sstm.str();
+      text = "Face Detector";
 
     putText(frame, text, cvPoint(30, 30), FONT_HERSHEY_COMPLEX_SMALL, 0.8, cvScalar(0, 0, 255), 1, CV_AA);
-    imshow("original", frame);
 
-    if (!crop.empty())
-    {
-        imshow("detected", crop);
+    if(is_left) {
+        imshow("Left: Face Detector", frame);
     }
-    else
-        destroyWindow("detected");
+    else {
+        imshow("Right Cam: Face Detector", frame);
+    }
+
+    return faces_detected;
 }
 
-int face_detector()
+int face_detector_initializer()
 {
-    // Global variables
-    cv::CascadeClassifier face_cascade(face_cascade_name);
-
     // Load the cascade
     if (!face_cascade.load(face_cascade_name)){
         printf("--(!)Error loading\n");
         return (-1);
     }
-
-    // Read the image file
-    cv::Mat frame = imread("yourImageName.bmp");
-
-    // Apply the classifier to the frame
-    if (!frame.empty()){
-        detectAndDisplay(face_cascade, frame);
-    }
-    else{
-        printf(" --(!) No captured frame -- Break!");
-    }
-
     return 0;
 }
 
 void face_detection_engine(bool is_live, string svo_path)
 {
     int svo_position = 0;
+    int left_faces_detected = 0, right_faces_detected = 0;
+    bool face_detected = false;
 
     // Initializing while loop timer parameter
     boost::asio::io_service service_io;
     boost::asio::deadline_timer timer(service_io, boost::posix_time::seconds(2));
 
-    // Initializatio of the parameters
+    // Initialization of the parameters
     char keyboard = ' ';
     int quality = sl::zed::MODE::PERFORMANCE;
     int gpu_id = -1;
@@ -202,41 +183,78 @@ void face_detection_engine(bool is_live, string svo_path)
     cv::Mat image_right(height, width, CV_8UC4,1);
 
     // Create OpenCV windows
-    cv::namedWindow("Left Image", cv::WINDOW_AUTOSIZE);
-    cv::namedWindow("Right Depth", cv::WINDOW_AUTOSIZE);
+//    cv::namedWindow("Left Image", cv::WINDOW_AUTOSIZE);
+//    cv::namedWindow("Right Depth", cv::WINDOW_AUTOSIZE);
 
     // Settings for windows
     cv::Size displaySize(720, 404);
     cv::Mat left_image_display(displaySize, CV_8UC4);
     cv::Mat right_image_display(displaySize, CV_8UC4);
 
-    face_detector();
+    // Face detector Initialization
+    if(!face_detector_initializer()) {
+        cout << "face_detection_module: Face detector Initialized Successfully" << endl;
+    }
+
     // Loop until 'q' is pressed
     while (keyboard != 'q')
     {
+        err = zed->grab(sl::zed::SENSING_MODE::FILL);
         // Grab frame and compute depth in FILL sensing mode
-        if (!zed->grab(sl::zed::SENSING_MODE::FILL))
+        if (!err)
         {
-             // Retrieve left color image
-             sl::zed::Mat left = zed->retrieveImage(sl::zed::SIDE::LEFT);
-             memcpy(image_left.data, left.data,width*height*4*sizeof(uchar));
+            // Retrieve left color image
+            sl::zed::Mat left = zed->retrieveImage(sl::zed::SIDE::LEFT);
+            memcpy(image_left.data, left.data,width*height*4*sizeof(uchar));
 
-             sl::zed::Mat right = zed->retrieveImage(sl::zed::SIDE::RIGHT);
-             memcpy(image_right.data, right.data,width*height*4*sizeof(uchar));
+            sl::zed::Mat right = zed->retrieveImage(sl::zed::SIDE::RIGHT);
+            memcpy(image_right.data, right.data,width*height*4*sizeof(uchar));
 
-             // Display image in OpenCV window
-             cv::resize(image_left, left_image_display, displaySize);
-             cv::imshow("Left Image", left_image_display);
+            // Display image in OpenCV window
+            // Switching off display for sometime to enhance speed
+            cv::resize(image_left, left_image_display, displaySize);
+            //             cv::imshow("Left Image", left_image_display);
 
-             cv::resize(image_right, right_image_display, displaySize);
-             cv::imshow("Right Image", left_image_display);
+            cv::resize(image_right, right_image_display, displaySize);
+            //             cv::imshow("Right Image", left_image_display);
 
-             if(!is_live) {
-                 svo_position = zed->getSVOPosition();
-                 svo_position += 10;
-                 zed->setSVOPosition(svo_position);
-             }
+            if (!left_image_display.empty()){
+             left_faces_detected = detectAndDisplay(left_image_display, true);
+            }
+            else{
+             printf(" --(!) No captured frame -- Break!");
+            }
+
+            if (!right_image_display.empty()){
+             right_faces_detected = detectAndDisplay(right_image_display, false);
+            }
+            else{
+             printf(" --(!) No captured frame -- Break!");
+            }
+
+            if(left_faces_detected == right_faces_detected) {
+                face_detected = true;
+            }
+
+            if(faces_detected > 0) {
+                cout << "Face Detected: Publishing face detected data: " << faces_detected << endl;
+            }
+            else {
+                cout << "Face not detected: Stop Publishing" << endl;
+            }
+
+            if(!is_live) {
+             svo_position = zed->getSVOPosition();
+             svo_position += 10;
+             zed->setSVOPosition(svo_position);
+            }
              timer.wait();
+
+             face_detected = false;
+        }
+        else
+        {
+            cout << err << endl;
         }
         keyboard = cv::waitKey(30);
     }

@@ -1,1 +1,0 @@
-/usr/bin/c++  -fPIC   -g   -shared -Wl,-soname,libopencv_project.so -o /home/ubuntu/catkin_ws/devel/lib/libopencv_project.so CMakeFiles/opencv_project.dir/src/convolution_2d.cpp.o  -L/home/ubuntu/catkin_ws/src/opencv_project/include  -L/usr/local/zed/lib 
