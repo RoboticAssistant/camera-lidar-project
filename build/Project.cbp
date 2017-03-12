@@ -1899,6 +1899,10 @@
          <Option target="dummy_object_depth_module"/>
          <Option target="dummy_zed_wrapper"/>
       </Unit>
+      <Unit filename="/home/ubuntu/catkin_ws/src/object_depth_module/include/object_depth_module/object_depth_interface.hpp">
+         <Option target="dummy_object_depth_module"/>
+         <Option target="dummy_zed_wrapper"/>
+      </Unit>
       <Unit filename="/home/ubuntu/catkin_ws/src/object_depth_module/include/object_depth_module/object_detection.hpp">
          <Option target="dummy_object_depth_module"/>
          <Option target="dummy_zed_wrapper"/>
@@ -1914,6 +1918,10 @@
          <Option target="dummy_zed_wrapper"/>
       </Unit>
       <Unit filename="/home/ubuntu/catkin_ws/src/object_depth_module/src/kernel_window">
+         <Option target="dummy_object_depth_module"/>
+         <Option target="dummy_zed_wrapper"/>
+      </Unit>
+      <Unit filename="/home/ubuntu/catkin_ws/src/object_depth_module/src/object_depth_interface.cpp">
          <Option target="dummy_object_depth_module"/>
          <Option target="dummy_zed_wrapper"/>
       </Unit>

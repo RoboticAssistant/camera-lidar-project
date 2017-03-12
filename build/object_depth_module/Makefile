@@ -240,6 +240,33 @@ src/depth_computations.cpp.s:
 	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f object_depth_module/CMakeFiles/object_depth_module_node.dir/build.make object_depth_module/CMakeFiles/object_depth_module_node.dir/src/depth_computations.cpp.s
 .PHONY : src/depth_computations.cpp.s
 
+src/object_depth_interface.o: src/object_depth_interface.cpp.o
+
+.PHONY : src/object_depth_interface.o
+
+# target to build an object file
+src/object_depth_interface.cpp.o:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f object_depth_module/CMakeFiles/object_depth_module_node.dir/build.make object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_depth_interface.cpp.o
+.PHONY : src/object_depth_interface.cpp.o
+
+src/object_depth_interface.i: src/object_depth_interface.cpp.i
+
+.PHONY : src/object_depth_interface.i
+
+# target to preprocess a source file
+src/object_depth_interface.cpp.i:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f object_depth_module/CMakeFiles/object_depth_module_node.dir/build.make object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_depth_interface.cpp.i
+.PHONY : src/object_depth_interface.cpp.i
+
+src/object_depth_interface.s: src/object_depth_interface.cpp.s
+
+.PHONY : src/object_depth_interface.s
+
+# target to generate assembly for a file
+src/object_depth_interface.cpp.s:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f object_depth_module/CMakeFiles/object_depth_module_node.dir/build.make object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_depth_interface.cpp.s
+.PHONY : src/object_depth_interface.cpp.s
+
 src/object_depth_module_node.o: src/object_depth_module_node.cpp.o
 
 .PHONY : src/object_depth_module_node.o
@@ -286,6 +313,9 @@ help:
 	@echo "... src/depth_computations.o"
 	@echo "... src/depth_computations.i"
 	@echo "... src/depth_computations.s"
+	@echo "... src/object_depth_interface.o"
+	@echo "... src/object_depth_interface.i"
+	@echo "... src/object_depth_interface.s"
 	@echo "... src/object_depth_module_node.o"
 	@echo "... src/object_depth_module_node.i"
 	@echo "... src/object_depth_module_node.s"

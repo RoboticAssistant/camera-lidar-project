@@ -17,8 +17,6 @@ memory
 -
 thread
 -
-object_depth_module/depth_computations.hpp
--
 boost/asio.hpp
 -
 boost/date_time/posix_time/posix_time.hpp
@@ -36,6 +34,8 @@ zed/utils/GlobalDefine.hpp
 cuda.h
 -
 cuda_runtime_api.h
+-
+object_depth_module/depth_computations.hpp
 -
 
 /usr/include/eigen3/Eigen/Cholesky

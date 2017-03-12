@@ -173,7 +173,8 @@ SET(LINK_LIBRARIES
 add_library(object_depth_module src/depth_computations.cpp)
 
 ## Declare a C++ executable
-add_executable(object_depth_module_node src/object_depth_module_node.cpp src/depth_computations.cpp)
+add_executable(object_depth_module_node src/object_depth_module_node.cpp src/depth_computations.cpp
+					src/object_depth_interface.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above

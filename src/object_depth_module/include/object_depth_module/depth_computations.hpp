@@ -5,7 +5,7 @@
 
 using namespace std;
 
-void depth_reception(bool is_live, string svo_path, int depth_clamp);
+void depth_reception(bool is_live, int depth_clamp);
 
 #endif // DEPTH_COMPUTATIONS_HPP
 
