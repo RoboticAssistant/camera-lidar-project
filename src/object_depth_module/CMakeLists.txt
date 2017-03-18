@@ -4,6 +4,8 @@ project(object_depth_module)
 ## ZED package
 find_package(ZED 1.2 REQUIRED)
 
+find_package(find_object_2d REQUIRED)
+
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
@@ -25,7 +27,7 @@ exec_program(uname ARGS -p OUTPUT_VARIABLE CMAKE_SYSTEM_NAME2)
 
 ## OpenCV package
 SET(OCV_VERSION "2.4")
-find_package(OpenCV ${OCV_VERSION} COMPONENTS core highgui imgproc REQUIRED)
+find_package(OpenCV ${OCV_VERSION} COMPONENTS core highgui imgproc features2d REQUIRED)
 
 ## CUDA package
 SET(CUDA_VERSION "8.0")
@@ -53,6 +55,7 @@ catkin_package(
 		rospy
 		std_msgs
 		pcl_conversions
+		find_object_2d
 #  DEPENDS system_lib
 )
 
@@ -174,7 +177,7 @@ add_library(object_depth_module src/depth_computations.cpp)
 
 ## Declare a C++ executable
 add_executable(object_depth_module_node src/object_depth_module_node.cpp src/depth_computations.cpp
-					src/object_depth_interface.cpp)
+					src/object_depth_interface.cpp src/object_detection.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above

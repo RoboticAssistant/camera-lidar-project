@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/ubuntu/catkin_ws/src/object_depth_module/src/depth_computations.cpp" "/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/object_depth_module_node.dir/src/depth_computations.cpp.o"
   "/home/ubuntu/catkin_ws/src/object_depth_module/src/object_depth_interface.cpp" "/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_depth_interface.cpp.o"
   "/home/ubuntu/catkin_ws/src/object_depth_module/src/object_depth_module_node.cpp" "/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_depth_module_node.cpp.o"
+  "/home/ubuntu/catkin_ws/src/object_depth_module/src/object_detection.cpp" "/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_detection.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

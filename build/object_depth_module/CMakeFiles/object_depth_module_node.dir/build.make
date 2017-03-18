@@ -129,11 +129,36 @@ object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_depth_int
 object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_depth_interface.cpp.o.provides.build: object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_depth_interface.cpp.o
 
 
+object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_detection.cpp.o: object_depth_module/CMakeFiles/object_depth_module_node.dir/flags.make
+object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_detection.cpp.o: /home/ubuntu/catkin_ws/src/object_depth_module/src/object_detection.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_detection.cpp.o"
+	cd /home/ubuntu/catkin_ws/build/object_depth_module && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/object_depth_module_node.dir/src/object_detection.cpp.o -c /home/ubuntu/catkin_ws/src/object_depth_module/src/object_detection.cpp
+
+object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_detection.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/object_depth_module_node.dir/src/object_detection.cpp.i"
+	cd /home/ubuntu/catkin_ws/build/object_depth_module && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/catkin_ws/src/object_depth_module/src/object_detection.cpp > CMakeFiles/object_depth_module_node.dir/src/object_detection.cpp.i
+
+object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_detection.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/object_depth_module_node.dir/src/object_detection.cpp.s"
+	cd /home/ubuntu/catkin_ws/build/object_depth_module && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/catkin_ws/src/object_depth_module/src/object_detection.cpp -o CMakeFiles/object_depth_module_node.dir/src/object_detection.cpp.s
+
+object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_detection.cpp.o.requires:
+
+.PHONY : object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_detection.cpp.o.requires
+
+object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_detection.cpp.o.provides: object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_detection.cpp.o.requires
+	$(MAKE) -f object_depth_module/CMakeFiles/object_depth_module_node.dir/build.make object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_detection.cpp.o.provides.build
+.PHONY : object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_detection.cpp.o.provides
+
+object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_detection.cpp.o.provides.build: object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_detection.cpp.o
+
+
 # Object files for target object_depth_module_node
 object_depth_module_node_OBJECTS = \
 "CMakeFiles/object_depth_module_node.dir/src/object_depth_module_node.cpp.o" \
 "CMakeFiles/object_depth_module_node.dir/src/depth_computations.cpp.o" \
-"CMakeFiles/object_depth_module_node.dir/src/object_depth_interface.cpp.o"
+"CMakeFiles/object_depth_module_node.dir/src/object_depth_interface.cpp.o" \
+"CMakeFiles/object_depth_module_node.dir/src/object_detection.cpp.o"
 
 # External object files for target object_depth_module_node
 object_depth_module_node_EXTERNAL_OBJECTS =
@@ -141,6 +166,7 @@ object_depth_module_node_EXTERNAL_OBJECTS =
 /home/ubuntu/catkin_ws/devel/lib/object_depth_module/object_depth_module_node: object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_depth_module_node.cpp.o
 /home/ubuntu/catkin_ws/devel/lib/object_depth_module/object_depth_module_node: object_depth_module/CMakeFiles/object_depth_module_node.dir/src/depth_computations.cpp.o
 /home/ubuntu/catkin_ws/devel/lib/object_depth_module/object_depth_module_node: object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_depth_interface.cpp.o
+/home/ubuntu/catkin_ws/devel/lib/object_depth_module/object_depth_module_node: object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_detection.cpp.o
 /home/ubuntu/catkin_ws/devel/lib/object_depth_module/object_depth_module_node: object_depth_module/CMakeFiles/object_depth_module_node.dir/build.make
 /home/ubuntu/catkin_ws/devel/lib/object_depth_module/object_depth_module_node: /opt/ros/kinetic/lib/libimage_transport.so
 /home/ubuntu/catkin_ws/devel/lib/object_depth_module/object_depth_module_node: /opt/ros/kinetic/lib/libmessage_filters.so
@@ -179,8 +205,7 @@ object_depth_module_node_EXTERNAL_OBJECTS =
 /home/ubuntu/catkin_ws/devel/lib/object_depth_module/object_depth_module_node: /usr/local/cuda-8.0/lib64/libcudart.so
 /home/ubuntu/catkin_ws/devel/lib/object_depth_module/object_depth_module_node: /usr/local/cuda-8.0/lib64/libnppi.so
 /home/ubuntu/catkin_ws/devel/lib/object_depth_module/object_depth_module_node: /usr/local/cuda-8.0/lib64/libnpps.so
-/home/ubuntu/catkin_ws/devel/lib/object_depth_module/object_depth_module_node: /usr/lib/libopencv_highgui.so.2.4.13
-/home/ubuntu/catkin_ws/devel/lib/object_depth_module/object_depth_module_node: /usr/lib/libopencv_imgproc.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/object_depth_module/object_depth_module_node: /usr/lib/libopencv_features2d.so.2.4.13
 /home/ubuntu/catkin_ws/devel/lib/object_depth_module/object_depth_module_node: /usr/lib/aarch64-linux-gnu/libboost_system.so
 /home/ubuntu/catkin_ws/devel/lib/object_depth_module/object_depth_module_node: /usr/lib/aarch64-linux-gnu/libboost_filesystem.so
 /home/ubuntu/catkin_ws/devel/lib/object_depth_module/object_depth_module_node: /usr/lib/aarch64-linux-gnu/libboost_thread.so
@@ -376,6 +401,9 @@ object_depth_module_node_EXTERNAL_OBJECTS =
 /home/ubuntu/catkin_ws/devel/lib/object_depth_module/object_depth_module_node: /usr/lib/aarch64-linux-gnu/libpcl_people.so
 /home/ubuntu/catkin_ws/devel/lib/object_depth_module/object_depth_module_node: /usr/lib/aarch64-linux-gnu/libpcl_outofcore.so
 /home/ubuntu/catkin_ws/devel/lib/object_depth_module/object_depth_module_node: /usr/lib/aarch64-linux-gnu/libpcl_tracking.so
+/home/ubuntu/catkin_ws/devel/lib/object_depth_module/object_depth_module_node: /usr/lib/libopencv_highgui.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/object_depth_module/object_depth_module_node: /usr/lib/libopencv_imgproc.so.2.4.13
+/home/ubuntu/catkin_ws/devel/lib/object_depth_module/object_depth_module_node: /usr/lib/libopencv_flann.so.2.4.13
 /home/ubuntu/catkin_ws/devel/lib/object_depth_module/object_depth_module_node: /usr/lib/libopencv_core.so.2.4.13
 /home/ubuntu/catkin_ws/devel/lib/object_depth_module/object_depth_module_node: /usr/local/cuda-8.0/lib64/libcudart.so
 /home/ubuntu/catkin_ws/devel/lib/object_depth_module/object_depth_module_node: /usr/local/cuda-8.0/lib64/libnppc.so
@@ -476,7 +504,7 @@ object_depth_module_node_EXTERNAL_OBJECTS =
 /home/ubuntu/catkin_ws/devel/lib/object_depth_module/object_depth_module_node: /usr/lib/aarch64-linux-gnu/libtheoradec.so
 /home/ubuntu/catkin_ws/devel/lib/object_depth_module/object_depth_module_node: /usr/lib/aarch64-linux-gnu/libogg.so
 /home/ubuntu/catkin_ws/devel/lib/object_depth_module/object_depth_module_node: object_depth_module/CMakeFiles/object_depth_module_node.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable /home/ubuntu/catkin_ws/devel/lib/object_depth_module/object_depth_module_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable /home/ubuntu/catkin_ws/devel/lib/object_depth_module/object_depth_module_node"
 	cd /home/ubuntu/catkin_ws/build/object_depth_module && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/object_depth_module_node.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -487,6 +515,7 @@ object_depth_module/CMakeFiles/object_depth_module_node.dir/build: /home/ubuntu/
 object_depth_module/CMakeFiles/object_depth_module_node.dir/requires: object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_depth_module_node.cpp.o.requires
 object_depth_module/CMakeFiles/object_depth_module_node.dir/requires: object_depth_module/CMakeFiles/object_depth_module_node.dir/src/depth_computations.cpp.o.requires
 object_depth_module/CMakeFiles/object_depth_module_node.dir/requires: object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_depth_interface.cpp.o.requires
+object_depth_module/CMakeFiles/object_depth_module_node.dir/requires: object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_detection.cpp.o.requires
 
 .PHONY : object_depth_module/CMakeFiles/object_depth_module_node.dir/requires
 

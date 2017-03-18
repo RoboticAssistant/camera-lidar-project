@@ -1,18 +1,24 @@
 #include <sstream>
 #include <string>
 #include <iostream>
-#include <opencv/highgui.h>
-#include <opencv/cv.h>
+#include <stdlib.h>
 
+#include <opencv2/core/core.hpp>
+#include <opencv2/highgui/highgui.hpp>
+
+#include <object_depth_module/object_detection.hpp>
+
+using namespace std;
 using namespace cv;
+
 //initial min and max HSV filter values.
 //these will be changed using trackbars
-int H_MIN = 0;
-int H_MAX = 256;
-int S_MIN = 0;
-int S_MAX = 256;
-int V_MIN = 0;
-int V_MAX = 256;
+int H_VAL_MIN = 0;
+int H_VAL_MAX = 256;
+int S_VAL_MIN = 0;
+int S_VAL_MAX = 256;
+int V_VAL_MIN = 0;
+int V_VAL_MAX = 256;
 //default capture width and height
 const int FRAME_WIDTH = 640;
 const int FRAME_HEIGHT = 480;
@@ -27,50 +33,45 @@ const string windowName1 = "HSV Image";
 const string windowName2 = "Thresholded Image";
 const string windowName3 = "After Morphological Operations";
 const string trackbarWindowName = "Trackbars";
+
 void on_trackbar( int, void* )
 {//This function gets called whenever a
     // trackbar position is changed
 
-
-
-
-
 }
+
 string intToString(int number){
-
-
     std::stringstream ss;
     ss << number;
     return ss.str();
 }
+
 void createTrackbars(){
     //create window for trackbars
 
-
     namedWindow(trackbarWindowName,0);
     //create memory to store trackbar name on window
-    char TrackbarName[50];
-    sprintf( TrackbarName, "H_MIN", H_MIN);
-    sprintf( TrackbarName, "H_MAX", H_MAX);
-    sprintf( TrackbarName, "S_MIN", S_MIN);
-    sprintf( TrackbarName, "S_MAX", S_MAX);
-    sprintf( TrackbarName, "V_MIN", V_MIN);
-    sprintf( TrackbarName, "V_MAX", V_MAX);
+    char TrackbarName[50] = "Temp Name";
+    sprintf( TrackbarName, "H_VAL_MIN", H_VAL_MIN);
+    sprintf( TrackbarName, "H_VAL_MAX", H_VAL_MAX);
+    sprintf( TrackbarName, "S_VAL_MIN", S_VAL_MIN);
+    sprintf( TrackbarName, "S_VAL_MAX", S_VAL_MAX);
+    sprintf( TrackbarName, "V_VAL_MIN", V_VAL_MIN);
+    sprintf( TrackbarName, "V_VAL_MAX", V_VAL_MAX);
     //create trackbars and insert them into window
     //3 parameters are: the address of the variable that is changing when the trackbar is moved(eg.H_LOW),
     //the max value the trackbar can move (eg. H_HIGH),
     //and the function that is called whenever the trackbar is moved(eg. on_trackbar)
     //                                  ---->    ---->     ---->
-    createTrackbar( "H_MIN", trackbarWindowName, &H_MIN, H_MAX, on_trackbar );
-    createTrackbar( "H_MAX", trackbarWindowName, &H_MAX, H_MAX, on_trackbar );
-    createTrackbar( "S_MIN", trackbarWindowName, &S_MIN, S_MAX, on_trackbar );
-    createTrackbar( "S_MAX", trackbarWindowName, &S_MAX, S_MAX, on_trackbar );
-    createTrackbar( "V_MIN", trackbarWindowName, &V_MIN, V_MAX, on_trackbar );
-    createTrackbar( "V_MAX", trackbarWindowName, &V_MAX, V_MAX, on_trackbar );
-
-
+    createTrackbar( "H_VAL_MIN", trackbarWindowName, &H_VAL_MIN, H_VAL_MAX, on_trackbar );
+    createTrackbar( "H_VAL_MAX", trackbarWindowName, &H_VAL_MAX, H_VAL_MAX, on_trackbar );
+    createTrackbar( "S_VAL_MIN", trackbarWindowName, &S_VAL_MIN, S_VAL_MAX, on_trackbar );
+    createTrackbar( "S_VAL_MAX", trackbarWindowName, &S_VAL_MAX, S_VAL_MAX, on_trackbar );
+    createTrackbar( "V_VAL_MIN", trackbarWindowName, &V_VAL_MIN, V_VAL_MAX, on_trackbar );
+    createTrackbar( "V_VAL_MAX", trackbarWindowName, &V_VAL_MAX, V_VAL_MAX, on_trackbar );
 }
-void drawObject(int x, int y,Mat &frame){
+
+void drawObject(int x, int y,Mat &frame) {
 
     //use some of the openCV drawing functions to draw crosshairs
     //on your tracked image!
@@ -96,6 +97,7 @@ void drawObject(int x, int y,Mat &frame){
     putText(frame,intToString(x)+","+intToString(y),Point(x,y+30),1,1,Scalar(0,255,0),2);
 
 }
+
 void morphOps(Mat &thresh){
 
     //create structuring element that will be used to "dilate" and "erode" image.
@@ -108,22 +110,18 @@ void morphOps(Mat &thresh){
     erode(thresh,thresh,erodeElement);
     erode(thresh,thresh,erodeElement);
 
-
     dilate(thresh,thresh,dilateElement);
     dilate(thresh,thresh,dilateElement);
-
-
-
 }
-void trackFilteredObject(int &x, int &y, Mat threshold, Mat &cameraFeed){
 
+void trackFilteredObject(int &x, int &y, Mat threshold, Mat &cameraFeed) {
     Mat temp;
     threshold.copyTo(temp);
     //these two vectors needed for output of findContours
-    vector< vector<Point> > contours;
-    vector<Vec4i> hierarchy;
+    std::vector< std::vector<Point> > contours;
+    std::vector<Vec4i> hierarchy;
     //find contours of filtered image using openCV findContours function
-    findContours(temp,contours,hierarchy,CV_RETR_CCOMP,CV_CHAIN_APPROX_SIMPLE );
+    findContours(temp, contours, hierarchy, CV_RETR_CCOMP, CV_CHAIN_APPROX_SIMPLE );
     //use moments method to find our filtered object
     double refArea = 0;
     bool objectFound = false;
@@ -140,84 +138,20 @@ void trackFilteredObject(int &x, int &y, Mat threshold, Mat &cameraFeed){
                 //if the area is the same as the 3/2 of the image size, probably just a bad filter
                 //we only want the object with the largest area so we safe a reference area each
                 //iteration and compare it to the area in the next iteration.
-                if(area>MIN_OBJECT_AREA && area<MAX_OBJECT_AREA && area>refArea){
+                if(area > MIN_OBJECT_AREA && area < MAX_OBJECT_AREA && area > refArea){
                     x = moment.m10/area;
                     y = moment.m01/area;
                     objectFound = true;
                     refArea = area;
                 }else objectFound = false;
-
-
             }
             //let user know you found an object
             if(objectFound ==true){
                 putText(cameraFeed,"Tracking Object",Point(0,50),2,1,Scalar(0,255,0),2);
                 //draw object location on screen
-                drawObject(x,y,cameraFeed);}
-
-        }else putText(cameraFeed,"TOO MUCH NOISE! ADJUST FILTER",Point(0,50),1,2,Scalar(0,0,255),2);
+                drawObject(x,y,cameraFeed);
+            }
+        }
+        else putText(cameraFeed,"TOO MUCH NOISE! ADJUST FILTER",Point(0,50),1,2,Scalar(0,0,255),2);
     }
 }
-
-int object_detect()
-{
-    //some boolean variables for different functionality within this
-    //program
-    bool trackObjects = false;
-    bool useMorphOps = false;
-    //Matrix to store each frame of the webcam feed
-    Mat cameraFeed;
-    //matrix storage for HSV image
-    Mat HSV;
-    //matrix storage for binary threshold image
-    Mat threshold;
-    //x and y values for the location of the object
-    int x=0, y=0;
-    //create slider bars for HSV filtering
-    createTrackbars();
-    //video capture object to acquire webcam feed
-    VideoCapture capture;
-    //open capture object at location zero (default location for webcam)
-    capture.open(0);
-    //set height and width of capture frame
-    capture.set(CV_CAP_PROP_FRAME_WIDTH,FRAME_WIDTH);
-    capture.set(CV_CAP_PROP_FRAME_HEIGHT,FRAME_HEIGHT);
-    //start an infinite loop where webcam feed is copied to cameraFeed matrix
-    //all of our operations will be performed within this loop
-    while(1){
-        //store image to matrix
-        capture.read(cameraFeed);
-        //convert frame from BGR to HSV colorspace
-        cvtColor(cameraFeed,HSV,COLOR_BGR2HSV);
-        //filter HSV image between values and store filtered image to
-        //threshold matrix
-        inRange(HSV,Scalar(H_MIN,S_MIN,V_MIN),Scalar(H_MAX,S_MAX,V_MAX),threshold);
-        //perform morphological operations on thresholded image to eliminate noise
-        //and emphasize the filtered object(s)
-        if(useMorphOps)
-        morphOps(threshold);
-        //pass in thresholded frame to our object tracking function
-        //this function will return the x and y coordinates of the
-        //filtered object
-        if(trackObjects)
-            trackFilteredObject(x,y,threshold,cameraFeed);
-
-        //show frames
-        imshow(windowName2,threshold);
-        imshow(windowName,cameraFeed);
-        imshow(windowName1,HSV);
-
-
-        //delay 30ms so that screen can refresh.
-        //image will not appear without this waitKey() command
-        waitKey(30);
-    }
-
-
-
-
-
-
-    return 0;
-}
-

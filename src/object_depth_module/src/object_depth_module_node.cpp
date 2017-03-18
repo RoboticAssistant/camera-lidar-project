@@ -12,7 +12,6 @@
 
 // ZED Libraries
 #include <zed/Camera.hpp>
-#include <zed/utils/GlobalDefine.hpp>
 
 // CUDA Libraries
 #include <cuda.h>
@@ -21,7 +20,6 @@
 //// Internal Libraries
 #include <object_depth_module/depth_computations.hpp>
 #include <object_depth_module/object_depth_interface.hpp>
-
 
 using namespace sl::zed;
 using namespace std;
@@ -62,12 +60,26 @@ int main(int argc, char *argv[])
         cout << "From Live Camera Feed" << endl;
     }
 
+    // Handling initial camera object and it's initialization
     object_depth_interface depth_display(is_live, svo_file_path, depth_clamp);
+    depth_display.initialize_ZED_camera();
+    depth_display.initialize_camera_reception();
+
+    // Initializing data for object detection
+    depth_display.object_detection_initialize();
 
     while (keyboard != 'q')
     {
         // Depth Calculations
-        depth_display.depth_reception();
+        if(!depth_display.receive_images()) {
+              depth_display.depth_reception();
+//            depth_display.object_detect();
+//            depth_display.object_detection(argc, argv);
+        }
+        else {
+            cout << "object_depth_module_node: image reception" << endl;
+        }
+
         timer.wait();
         keyboard = cv::waitKey(30);
     }

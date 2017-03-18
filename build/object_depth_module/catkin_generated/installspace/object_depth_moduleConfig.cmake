@@ -153,7 +153,7 @@ foreach(t ${object_depth_module_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "rosconsole;opencv;image_transport;roscpp;rospy;std_msgs;pcl_conversions")
+set(depends "rosconsole;opencv;image_transport;roscpp;rospy;std_msgs;pcl_conversions;find_object_2d")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls
