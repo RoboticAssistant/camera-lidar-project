@@ -40,7 +40,9 @@
 
 #include "object_depth_module/object_depth_interface.hpp"
 #include "object_depth_module/object_detection.hpp"
+
 #include "find_object_2d/ObjectsStamped.h"
+#include "darknet.hpp"
 
 
 using namespace std;
@@ -227,48 +229,53 @@ int object_depth_interface::receive_images()
     }
 }
 
-int object_depth_interface::object_detect()
+//int object_depth_interface::object_detect()
+//{
+//    cout << "object_detect(): Detecting object." << endl;
+//    int svo_position = 0;
+
+//    //some boolean variables for different functionality within this
+//    //program
+//    static bool trackObjects = true;
+//    static bool useMorphOps = true;
+
+//    //x and y values for the location of the object
+//    static int x=0, y=0;
+//    //create slider bars for HSV filtering
+
+//     if(!is_live) {
+//         svo_position = zed->getSVOPosition();
+//         svo_position += 10;
+//         zed->setSVOPosition(svo_position);
+//     }
+
+
+//    //convert frame from BGR to HSV colorspace
+//    cvtColor(left_image, HSV, COLOR_BGR2HSV);
+//    //filter HSV image between values and store filtered image to
+//    //threshold matrix
+//    inRange(HSV, Scalar(H_VAL_MIN, S_VAL_MIN, V_VAL_MIN), Scalar(H_VAL_MAX, S_VAL_MAX, V_VAL_MAX), threshold);
+//    //perform morphological operations on thresholded image to eliminate noise
+//    //and emphasize the filtered object(s)
+//    if(useMorphOps)
+//    morphOps(threshold);
+//    //pass in thresholded frame to our object tracking function
+//    //this function will return the x and y coordinates of the
+//    //filtered object
+//    if(trackObjects)
+//        trackFilteredObject(x, y, threshold, left_image);
+
+//    //show frames
+//    imshow(windowName2, threshold);
+//    imshow(windowName, left_image);
+//    imshow(windowName1, HSV);
+
+//    return 0;
+//}
+
+int object_depth_interface::object_detection(int argc, char **argv)
 {
-    cout << "object_detect(): Detecting object." << endl;
-    int svo_position = 0;
-
-    //some boolean variables for different functionality within this
-    //program
-    static bool trackObjects = true;
-    static bool useMorphOps = true;
-
-    //x and y values for the location of the object
-    static int x=0, y=0;
-    //create slider bars for HSV filtering
-
-     if(!is_live) {
-         svo_position = zed->getSVOPosition();
-         svo_position += 10;
-         zed->setSVOPosition(svo_position);
-     }
-
-
-    //convert frame from BGR to HSV colorspace
-    cvtColor(left_image, HSV, COLOR_BGR2HSV);
-    //filter HSV image between values and store filtered image to
-    //threshold matrix
-    inRange(HSV, Scalar(H_VAL_MIN, S_VAL_MIN, V_VAL_MIN), Scalar(H_VAL_MAX, S_VAL_MAX, V_VAL_MAX), threshold);
-    //perform morphological operations on thresholded image to eliminate noise
-    //and emphasize the filtered object(s)
-    if(useMorphOps)
-    morphOps(threshold);
-    //pass in thresholded frame to our object tracking function
-    //this function will return the x and y coordinates of the
-    //filtered object
-    if(trackObjects)
-        trackFilteredObject(x, y, threshold, left_image);
-
-    //show frames
-    imshow(windowName2, threshold);
-    imshow(windowName, left_image);
-    imshow(windowName1, HSV);
-
-    return 0;
+    run_darknet(argc, argv);
 }
 
 //int object_depth_interface::object_detection(int argc, char *argv[])

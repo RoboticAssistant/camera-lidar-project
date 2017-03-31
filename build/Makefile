@@ -68,17 +68,6 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -89,6 +78,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # Special rule for the target list_install_components
 list_install_components:
@@ -216,19 +216,6 @@ tests: cmake_check_build_system
 tests/fast:
 	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/build
 .PHONY : tests/fast
-
-#=============================================================================
-# Target rules for targets named clean_test_results_Project
-
-# Build rule for target.
-clean_test_results_Project: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 clean_test_results_Project
-.PHONY : clean_test_results_Project
-
-# fast build rule for target.
-clean_test_results_Project/fast:
-	$(MAKE) -f CMakeFiles/clean_test_results_Project.dir/build.make CMakeFiles/clean_test_results_Project.dir/build
-.PHONY : clean_test_results_Project/fast
 
 #=============================================================================
 # Target rules for targets named doxygen
@@ -491,17 +478,17 @@ publisher_subscriber/fast:
 .PHONY : publisher_subscriber/fast
 
 #=============================================================================
-# Target rules for targets named create_2_motion_handle_node
+# Target rules for targets named decision_module_node
 
 # Build rule for target.
-create_2_motion_handle_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 create_2_motion_handle_node
-.PHONY : create_2_motion_handle_node
+decision_module_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 decision_module_node
+.PHONY : decision_module_node
 
 # fast build rule for target.
-create_2_motion_handle_node/fast:
-	$(MAKE) -f create_2_motion_handle/CMakeFiles/create_2_motion_handle_node.dir/build.make create_2_motion_handle/CMakeFiles/create_2_motion_handle_node.dir/build
-.PHONY : create_2_motion_handle_node/fast
+decision_module_node/fast:
+	$(MAKE) -f decision_module/CMakeFiles/decision_module_node.dir/build.make decision_module/CMakeFiles/decision_module_node.dir/build
+.PHONY : decision_module_node/fast
 
 #=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_nodejs
@@ -710,6 +697,32 @@ face_detect_module_node: cmake_check_build_system
 face_detect_module_node/fast:
 	$(MAKE) -f face_detect_module/CMakeFiles/face_detect_module_node.dir/build.make face_detect_module/CMakeFiles/face_detect_module_node.dir/build
 .PHONY : face_detect_module_node/fast
+
+#=============================================================================
+# Target rules for targets named object_depth_module_node
+
+# Build rule for target.
+object_depth_module_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 object_depth_module_node
+.PHONY : object_depth_module_node
+
+# fast build rule for target.
+object_depth_module_node/fast:
+	$(MAKE) -f object_depth_module/CMakeFiles/object_depth_module_node.dir/build.make object_depth_module/CMakeFiles/object_depth_module_node.dir/build
+.PHONY : object_depth_module_node/fast
+
+#=============================================================================
+# Target rules for targets named dummy_object_depth_module
+
+# Build rule for target.
+dummy_object_depth_module: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 dummy_object_depth_module
+.PHONY : dummy_object_depth_module
+
+# fast build rule for target.
+dummy_object_depth_module/fast:
+	$(MAKE) -f object_depth_module/CMakeFiles/dummy_object_depth_module.dir/build.make object_depth_module/CMakeFiles/dummy_object_depth_module.dir/build
+.PHONY : dummy_object_depth_module/fast
 
 #=============================================================================
 # Target rules for targets named rplidarNode
@@ -1206,58 +1219,6 @@ find_object/fast:
 .PHONY : find_object/fast
 
 #=============================================================================
-# Target rules for targets named object_depth_module
-
-# Build rule for target.
-object_depth_module: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 object_depth_module
-.PHONY : object_depth_module
-
-# fast build rule for target.
-object_depth_module/fast:
-	$(MAKE) -f object_depth_module/CMakeFiles/object_depth_module.dir/build.make object_depth_module/CMakeFiles/object_depth_module.dir/build
-.PHONY : object_depth_module/fast
-
-#=============================================================================
-# Target rules for targets named dummy_object_depth_module
-
-# Build rule for target.
-dummy_object_depth_module: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 dummy_object_depth_module
-.PHONY : dummy_object_depth_module
-
-# fast build rule for target.
-dummy_object_depth_module/fast:
-	$(MAKE) -f object_depth_module/CMakeFiles/dummy_object_depth_module.dir/build.make object_depth_module/CMakeFiles/dummy_object_depth_module.dir/build
-.PHONY : dummy_object_depth_module/fast
-
-#=============================================================================
-# Target rules for targets named object_depth_module_node
-
-# Build rule for target.
-object_depth_module_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 object_depth_module_node
-.PHONY : object_depth_module_node
-
-# fast build rule for target.
-object_depth_module_node/fast:
-	$(MAKE) -f object_depth_module/CMakeFiles/object_depth_module_node.dir/build.make object_depth_module/CMakeFiles/object_depth_module_node.dir/build
-.PHONY : object_depth_module_node/fast
-
-#=============================================================================
-# Target rules for targets named _catkin_empty_exported_target
-
-# Build rule for target.
-_catkin_empty_exported_target: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _catkin_empty_exported_target
-.PHONY : _catkin_empty_exported_target
-
-# fast build rule for target.
-_catkin_empty_exported_target/fast:
-	$(MAKE) -f object_depth_module/CMakeFiles/_catkin_empty_exported_target.dir/build.make object_depth_module/CMakeFiles/_catkin_empty_exported_target.dir/build
-.PHONY : _catkin_empty_exported_target/fast
-
-#=============================================================================
 # Target rules for targets named video_analytics_node
 
 # Build rule for target.
@@ -1537,14 +1498,13 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install"
-	@echo "... rebuild_cache"
 	@echo "... clean_test_results"
 	@echo "... run_tests"
 	@echo "... download_extra_data"
 	@echo "... tests"
-	@echo "... clean_test_results_Project"
 	@echo "... edit_cache"
 	@echo "... doxygen"
+	@echo "... rebuild_cache"
 	@echo "... list_install_components"
 	@echo "... install/strip"
 	@echo "... install/local"
@@ -1568,7 +1528,7 @@ help:
 	@echo "... std_msgs_generate_messages_eus"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... publisher_subscriber"
-	@echo "... create_2_motion_handle_node"
+	@echo "... decision_module_node"
 	@echo "... geometry_msgs_generate_messages_nodejs"
 	@echo "... pcl_msgs_generate_messages_eus"
 	@echo "... geometry_msgs_generate_messages_lisp"
@@ -1585,6 +1545,8 @@ help:
 	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... pcl_msgs_generate_messages_py"
 	@echo "... face_detect_module_node"
+	@echo "... object_depth_module_node"
+	@echo "... dummy_object_depth_module"
 	@echo "... rplidarNode"
 	@echo "... rplidarNodeClient"
 	@echo "... find_object_2d_genpy"
@@ -1623,10 +1585,6 @@ help:
 	@echo "... print_objects_detected"
 	@echo "... find_object_2d"
 	@echo "... find_object"
-	@echo "... object_depth_module"
-	@echo "... dummy_object_depth_module"
-	@echo "... object_depth_module_node"
-	@echo "... _catkin_empty_exported_target"
 	@echo "... video_analytics_node"
 	@echo "... nodelet_generate_messages_lisp"
 	@echo "... dynamic_reconfigure_generate_messages_py"

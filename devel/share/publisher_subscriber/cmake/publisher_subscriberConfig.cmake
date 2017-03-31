@@ -162,12 +162,12 @@ foreach(depend ${depends})
   if(${count} EQUAL 1)
     # simple dependencies must only be find_package()-ed once
     if(NOT ${publisher_subscriber_dep}_FOUND)
-      find_package(${publisher_subscriber_dep} REQUIRED)
+      find_package(${publisher_subscriber_dep} REQUIRED NO_MODULE)
     endif()
   else()
     # dependencies with components must be find_package()-ed again
     list(REMOVE_AT depend_list 0)
-    find_package(${publisher_subscriber_dep} REQUIRED ${depend_list})
+    find_package(${publisher_subscriber_dep} REQUIRED NO_MODULE ${depend_list})
   endif()
   _list_append_unique(publisher_subscriber_INCLUDE_DIRS ${${publisher_subscriber_dep}_INCLUDE_DIRS})
 

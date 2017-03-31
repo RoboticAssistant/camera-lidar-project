@@ -4,7 +4,6 @@ project(object_depth_module)
 ## ZED package
 find_package(ZED 1.2 REQUIRED)
 
-find_package(find_object_2d REQUIRED)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -55,7 +54,6 @@ catkin_package(
 		rospy
 		std_msgs
 		pcl_conversions
-		find_object_2d
 #  DEPENDS system_lib
 )
 
@@ -168,20 +166,80 @@ add_definitions(-std=c++11)# -m64) #-Wall)
 SET(LINK_LIBRARIES
   ${catkin_LIBRARIES}
   ${ZED_LIBRARIES}
-  ${CUDA_LIBRARIES} ${CUDA_nppi_LIBRARY} ${CUDA_npps_LIBRARY}
+  ${CUDA_LIBRARIES} ${CUDA_nppi_LIBRARY} ${CUDA_npps_LIBRARY} ${CUDA_CUBLAS_LIBRARIES} ${CUDA_curand_LIBRARY}
   ${OpenCV_LIBS}
   ${PCL_LIBRARIES})
 
 ## Declare a C++ library. Note: If you have any local cpp files, you can add here. But don't forget to link them later (Follow this marker ***)
-add_library(object_depth_module src/depth_computations.cpp)
+#SET(ALL_SOURCES src/activation_layer.c src/activations.c src/art.c src/avgpool_layer.c
+#		src/batchnorm_layer.c src/blas.c  src/box.c src/captcha.c src/cifar.c src/classifier.c
+#		src/coco.c src/col2im.c  src/compare.c src/connected_layer.c  src/convolutional_layer.c
+#		src/cost_layer.c src/crnn_layer.c src/crop_layer.c  src/cuda.c src/darknet.c src/data.c
+#		src/deconvolutional_layer.c src/demo.c src/depth_computations.cpp src/detection_layer.c
+#		src/detector.c src/dice.c src/dropout_layer.c  src/gemm.c src/go.c src/gru_layer.c
+#		src/im2col.c src/image.c src/kernel_window src/layer.c src/list.c src/local_layer.c
+#		src/matrix.c src/maxpool_layer.c  src/network.c  src/nightmare.c src/normalization_layer.c
+#		src/option_list.c src/parser.c src/region_layer.c src/reorg_layer.c src/rnn.c
+#		src/rnn_layer.c src/rnn_vid.c src/route_layer.c src/shortcut_layer.c src/softmax_layer.c src/super.c
+#		src/swag.c src/tag.c src/tree.c src/utils.c src/voxel.c src/writing.c src/yolo.c src/detector.c
+#)
+
+SET(CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS} ; -gencode arch=compute_30,code=sm_30 -gencode arch=compute_35,code=sm_35 -gencode arch=compute_50,code=[sm_50,compute_50] -gencode arch=compute_52,code=[sm_52,compute_52])
+SET(CUDA_VERBOSE_BUILD ON CACHE BOOL "nvcc verbose" FORCE)
+SET(ALL_CUDA_SRC src/activation_kernels.cu src/avgpool_layer_kernels.cu src/blas_kernels.cu
+		src/col2im_kernels.cu src/convolutional_kernels.cu src/crop_layer_kernels.cu
+		src/dropout_layer_kernels.cu src/deconvolutional_kernels.cu src/network_kernels.cu
+		src/im2col_kernels.cu src/maxpool_layer_kernels.cu
+)
+
+#CUDA_COMPILE(CUDA_COMPILE_CU_O SHARED ${ALL_CUDA_SRC})
+#CUDA_COMPILE(activation_kernels_o src/activation_kernels.cu)
+#CUDA_COMPILE(avgpool_layer_kernels_o src/avgpool_layer_kernels.cu)
+#CUDA_COMPILE(blas_kernels_o src/blas_kernels.cu)
+#CUDA_COMPILE(col2im_kernels_o src/col2im_kernels.cu)
+#CUDA_COMPILE(convolutional_kernels_o src/convolutional_kernels.cu)
+#CUDA_COMPILE(crop_layer_kernels_o src/crop_layer_kernels.cu)
+#CUDA_COMPILE(deconvolutional_kernels_o src/deconvolutional_kernels.cu)
+#CUDA_COMPILE(dropout_layer_kernels_o src/dropout_layer_kernels.cu)
+#CUDA_COMPILE(im2col_kernels_o src/im2col_kernels.cu)
+#CUDA_COMPILE(maxpool_layer_kernels_o src/maxpool_layer_kernels.cu)
+#CUDA_COMPILE(network_kernels_o src/network_kernels.cu)
+
+
+#SET(LIB_TYPE MODULE)
+#CUDA_ADD_LIBRARY(OBJECT_CUDA_LIB ${activation_kernels_o} ${avgpool_layer_kernels_o}
+#		${blas_kernels_o} ${col2im_kernels_o} ${convolutional_kernels_o}
+#		${crop_layer_kernels_o} ${deconvolutional_kernels_o} ${dropout_layer_kernels_o}
+#		${im2col_kernels_o} ${maxpool_layer_kernels_o} ${network_kernels_o}
+#		${LIB_TYPE}
+#)
+#target_link_libraries(OBJECT_CUDA_LIB ${LINK_LIBRARIES})
+
+#add_library(object_depth_module )
 
 ## Declare a C++ executable
-add_executable(object_depth_module_node src/object_depth_module_node.cpp src/depth_computations.cpp
-					src/object_depth_interface.cpp src/object_detection.cpp)
+add_executable(object_depth_module_node src/object_depth_module_node.cpp
+		src/object_depth_interface.cpp src/depth_computations.cpp
+		src/object_detection.cpp src/activation_layer.cpp src/activations.cpp src/art.cpp src/avgpool_layer.cpp
+		src/batchnorm_layer.cpp src/blas.cpp  src/box.cpp src/captcha.cpp src/cifar.cpp src/classifier.cpp
+		src/coco.cpp src/col2im.cpp  src/compare.cpp src/connected_layer.cpp  src/convolutional_layer.cpp
+		src/cost_layer.cpp src/crnn_layer.cpp src/crop_layer.cpp  src/cuda.cpp src/darknet.cpp src/data.cpp
+		src/deconvolutional_layer.cpp src/demo.cpp src/detection_layer.cpp src/detector.cpp src/dice.cpp src/dropout_layer.cpp  src/gemm.cpp src/go.cpp src/gru_layer.cpp
+		src/im2col.cpp src/image.cpp src/kernel_window src/layer.cpp src/list.cpp src/local_layer.cpp
+		src/matrix.cpp src/maxpool_layer.cpp  src/network.cpp  src/nightmare.cpp src/normalization_layer.cpp
+		src/option_list.cpp src/parser.cpp src/region_layer.cpp src/reorg_layer.cpp src/rnn.cpp
+		src/rnn_layer.cpp src/rnn_vid.cpp src/route_layer.cpp src/shortcut_layer.cpp src/softmax_layer.cpp src/super.cpp
+		src/swag.cpp src/tag.cpp src/tree.cpp src/utils.cpp src/voxel.cpp src/writing.cpp src/yolo.cpp src/detector.cpp
+		src/activation_kernels.cu src/avgpool_layer_kernels.cu src/blas_kernels.cu
+		src/col2im_kernels.cu src/convolutional_kernels.cu src/crop_layer_kernels.cu
+		src/dropout_layer_kernels.cu src/deconvolutional_kernels.cu src/network_kernels.cu
+		src/im2col_kernels.cu src/maxpool_layer_kernels.cu
+)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
-# add_dependencies(opencv_project_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+#${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS}
+#add_dependencies(object_depth_module_node ${LINE_PROFILER_CU_O})
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(object_depth_module_node ${LINK_LIBRARIES})

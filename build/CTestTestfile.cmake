@@ -6,10 +6,10 @@
 # testing this directory and lists subdirectories to be tested as well.
 subdirs(gtest)
 subdirs(publisher_subscriber)
-subdirs(create_2_motion_handle)
+subdirs(decision_module)
 subdirs(face_detect_module)
+subdirs(object_depth_module)
 subdirs(rplidar_ros)
 subdirs(find-object)
-subdirs(object_depth_module)
 subdirs(video_analytics)
 subdirs(zed-ros-wrapper)

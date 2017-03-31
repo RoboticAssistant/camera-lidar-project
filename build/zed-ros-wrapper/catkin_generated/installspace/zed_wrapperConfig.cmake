@@ -162,12 +162,12 @@ foreach(depend ${depends})
   if(${count} EQUAL 1)
     # simple dependencies must only be find_package()-ed once
     if(NOT ${zed_wrapper_dep}_FOUND)
-      find_package(${zed_wrapper_dep} REQUIRED)
+      find_package(${zed_wrapper_dep} REQUIRED NO_MODULE)
     endif()
   else()
     # dependencies with components must be find_package()-ed again
     list(REMOVE_AT depend_list 0)
-    find_package(${zed_wrapper_dep} REQUIRED ${depend_list})
+    find_package(${zed_wrapper_dep} REQUIRED NO_MODULE ${depend_list})
   endif()
   _list_append_unique(zed_wrapper_INCLUDE_DIRS ${${zed_wrapper_dep}_INCLUDE_DIRS})
 

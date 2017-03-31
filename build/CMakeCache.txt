@@ -106,7 +106,7 @@ CMAKE_AR:FILEPATH=/usr/bin/ar
 
 //Choose the type of build, options are: None(CMAKE_CXX_FLAGS or
 // CMAKE_C_FLAGS used) Debug Release RelWithDebInfo MinSizeRel.
-CMAKE_BUILD_TYPE:STRING=Debug
+CMAKE_BUILD_TYPE:STRING=
 
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
@@ -371,7 +371,7 @@ CUDA_USE_STATIC_CUDA_RUNTIME:BOOL=ON
 //  With the Makefile generator this defaults to VERBOSE variable
 // specified on the command line, but can be forced on with this
 // option.
-CUDA_VERBOSE_BUILD:BOOL=OFF
+CUDA_VERBOSE_BUILD:BOOL=ON
 
 //Version of CUDA as computed from nvcc.
 CUDA_VERSION:STRING=8.0
@@ -459,6 +459,9 @@ LSB_RELEASE_EXECUTABLE:FILEPATH=/usr/bin/lsb_release
 
 //Path to a program.
 NOSETESTS:FILEPATH=/usr/bin/nosetests-2.7
+
+//Dependencies for the target
+OBJECT_CUDA_LIB_LIB_DEPENDS:STATIC=general;/usr/local/cuda-8.0/lib64/libcudart.so;
 
 //Path to a file.
 OPENNI2_INCLUDE_DIRS:PATH=OPENNI2_INCLUDE_DIRS-NOTFOUND
@@ -748,7 +751,7 @@ bond_DIR:PATH=/opt/ros/kinetic/share/bond/cmake
 bondcpp_DIR:PATH=/opt/ros/kinetic/share/bondcpp/cmake
 
 //The directory containing a CMake configuration file for catkin.
-catkin_DIR:PATH=/usr/share/catkin/cmake
+catkin_DIR:PATH=/opt/ros/kinetic/share/catkin/cmake
 
 //The directory containing a CMake configuration file for class_loader.
 class_loader_DIR:PATH=/opt/ros/kinetic/share/class_loader/cmake
@@ -765,6 +768,12 @@ create_2_motion_handle_SOURCE_DIR:STATIC=/home/ubuntu/catkin_ws/src/create_2_mot
 //The directory containing a CMake configuration file for cv_bridge.
 cv_bridge_DIR:PATH=/opt/ros/kinetic/share/cv_bridge/cmake
 
+//Value Computed by CMake
+decision_module_BINARY_DIR:STATIC=/home/ubuntu/catkin_ws/build/decision_module
+
+//Value Computed by CMake
+decision_module_SOURCE_DIR:STATIC=/home/ubuntu/catkin_ws/src/decision_module
+
 //The directory containing a CMake configuration file for dynamic_reconfigure.
 dynamic_reconfigure_DIR:PATH=/opt/ros/kinetic/share/dynamic_reconfigure/cmake
 
@@ -774,23 +783,11 @@ face_detect_module_BINARY_DIR:STATIC=/home/ubuntu/catkin_ws/build/face_detect_mo
 //Value Computed by CMake
 face_detect_module_SOURCE_DIR:STATIC=/home/ubuntu/catkin_ws/src/face_detect_module
 
-//The directory containing a CMake configuration file for find-object-2d.
-find-object-2d_DIR:PATH=find-object-2d_DIR-NOTFOUND
-
-//The directory containing a CMake configuration file for find-object.
-find-object_DIR:PATH=find-object_DIR-NOTFOUND
-
 //Value Computed by CMake
 find_object_2d_BINARY_DIR:STATIC=/home/ubuntu/catkin_ws/build/find-object
 
-//The directory containing a CMake configuration file for find_object_2d.
-find_object_2d_DIR:PATH=/home/ubuntu/catkin_ws/devel/share/find_object_2d/cmake
-
 //Value Computed by CMake
 find_object_2d_SOURCE_DIR:STATIC=/home/ubuntu/catkin_ws/src/find-object
-
-//The directory containing a CMake configuration file for find_object.
-find_object_DIR:PATH=find_object_DIR-NOTFOUND
 
 //Dependencies for the target
 find_object_LIB_DEPENDS:STATIC=general;opencv_vstab;general;opencv_tegra;general;opencv_imuvstab;general;opencv_facedetect;general;opencv_esm_panorama;general;opencv_detection_based_tracker;general;opencv_videostab;general;opencv_video;general;opencv_superres;general;opencv_stitching;general;opencv_photo;general;opencv_objdetect;general;opencv_ml;general;opencv_legacy;general;opencv_imgproc;general;opencv_highgui;general;opencv_gpu;general;opencv_flann;general;opencv_features2d;general;opencv_core;general;opencv_contrib;general;opencv_calib3d;general;/opt/ros/kinetic/lib/libcv_bridge.so;general;/opt/ros/kinetic/lib/libopencv_xphoto3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_xobjdetect3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_ximgproc3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_xfeatures2d3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_tracking3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_text3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_surface_matching3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_structured_light3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_stereo3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_saliency3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_rgbd3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_reg3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_plot3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_optflow3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_line_descriptor3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_hdf3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_fuzzy3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_face3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_dpm3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_dnn3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_datasets3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_cvv3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_ccalib3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_bioinspired3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_bgsegm3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_aruco3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_viz3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_videostab3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_videoio3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_video3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_superres3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_stitching3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_shape3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_photo3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_objdetect3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_ml3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_imgproc3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_imgcodecs3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_highgui3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_flann3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_features2d3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_core3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_calib3d3.so.3.1.0;general;/opt/ros/kinetic/lib/libimage_transport.so;general;/usr/lib/aarch64-linux-gnu/libtinyxml.so;general;/opt/ros/kinetic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/aarch64-linux-gnu/libdl.so;general;/opt/ros/kinetic/lib/libroslib.so;general;/opt/ros/kinetic/lib/libtf.so;general;/opt/ros/kinetic/lib/libtf2_ros.so;general;/opt/ros/kinetic/lib/libactionlib.so;general;/opt/ros/kinetic/lib/libmessage_filters.so;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/aarch64-linux-gnu/libboost_signals.so;general;/usr/lib/aarch64-linux-gnu/libboost_filesystem.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/libtf2.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/aarch64-linux-gnu/liblog4cxx.so;general;/usr/lib/aarch64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/aarch64-linux-gnu/libboost_system.so;general;/usr/lib/aarch64-linux-gnu/libboost_thread.so;general;/usr/lib/aarch64-linux-gnu/libboost_chrono.so;general;/usr/lib/aarch64-linux-gnu/libboost_date_time.so;general;/usr/lib/aarch64-linux-gnu/libboost_atomic.so;general;/usr/lib/aarch64-linux-gnu/libpthread.so;general;/usr/lib/aarch64-linux-gnu/libconsole_bridge.so;general;Qt5::Widgets;general;Qt5::Core;general;Qt5::Gui;general;Qt5::Network;general;Qt5::PrintSupport;
@@ -862,32 +859,8 @@ nodelet_DIR:PATH=/opt/ros/kinetic/share/nodelet/cmake
 //Value Computed by CMake
 object_depth_module_BINARY_DIR:STATIC=/home/ubuntu/catkin_ws/build/object_depth_module
 
-//Dependencies for target
-object_depth_module_LIB_DEPENDS:STATIC=
-
 //Value Computed by CMake
 object_depth_module_SOURCE_DIR:STATIC=/home/ubuntu/catkin_ws/src/object_depth_module
-
-//The directory containing a CMake configuration file for opencv2.
-opencv2_DIR:PATH=opencv2_DIR-NOTFOUND
-
-//The directory containing a CMake configuration file for opencv3.
-opencv3_DIR:PATH=opencv3_DIR-NOTFOUND
-
-//The directory containing a CMake configuration file for opencv.
-opencv_DIR:PATH=opencv_DIR-NOTFOUND
-
-//Value Computed by CMake
-opencv_project_BINARY_DIR:STATIC=/home/ubuntu/catkin_ws/build/opencv_project
-
-//Dependencies for target
-opencv_project_LIB_DEPENDS:STATIC=
-
-//Value Computed by CMake
-opencv_project_SOURCE_DIR:STATIC=/home/ubuntu/catkin_ws/src/opencv_project
-
-//Dependencies for the target
-opencv_project_library_LIB_DEPENDS:STATIC=general;/opt/ros/kinetic/lib/libcv_bridge.so;general;/opt/ros/kinetic/lib/libopencv_xphoto3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_xobjdetect3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_ximgproc3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_xfeatures2d3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_tracking3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_text3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_surface_matching3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_structured_light3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_stereo3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_saliency3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_rgbd3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_reg3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_plot3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_optflow3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_line_descriptor3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_hdf3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_fuzzy3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_face3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_dpm3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_dnn3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_datasets3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_cvv3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_ccalib3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_bioinspired3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_bgsegm3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_aruco3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_viz3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_videostab3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_videoio3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_video3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_superres3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_stitching3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_shape3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_photo3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_objdetect3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_ml3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_imgproc3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_imgcodecs3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_highgui3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_flann3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_features2d3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_core3.so.3.1.0;general;/opt/ros/kinetic/lib/libopencv_calib3d3.so.3.1.0;general;/opt/ros/kinetic/lib/libimage_transport.so;general;/opt/ros/kinetic/lib/libmessage_filters.so;general;/usr/lib/aarch64-linux-gnu/libtinyxml.so;general;/opt/ros/kinetic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/aarch64-linux-gnu/libdl.so;general;/opt/ros/kinetic/lib/libroslib.so;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/aarch64-linux-gnu/libboost_signals.so;general;/usr/lib/aarch64-linux-gnu/libboost_filesystem.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/aarch64-linux-gnu/liblog4cxx.so;general;/usr/lib/aarch64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/aarch64-linux-gnu/libboost_system.so;general;/usr/lib/aarch64-linux-gnu/libboost_thread.so;general;/usr/lib/aarch64-linux-gnu/libboost_chrono.so;general;/usr/lib/aarch64-linux-gnu/libboost_date_time.so;general;/usr/lib/aarch64-linux-gnu/libboost_atomic.so;general;/usr/lib/aarch64-linux-gnu/libpthread.so;general;/usr/lib/aarch64-linux-gnu/libconsole_bridge.so;general;opencv_xphoto;general;opencv_xobjdetect;general;opencv_ximgproc;general;opencv_xfeatures2d;general;opencv_tracking;general;opencv_text;general;opencv_surface_matching;general;opencv_structured_light;general;opencv_stereo;general;opencv_saliency;general;opencv_rgbd;general;opencv_reg;general;opencv_plot;general;opencv_optflow;general;opencv_line_descriptor;general;opencv_hdf;general;opencv_fuzzy;general;opencv_face;general;opencv_dpm;general;opencv_dnn;general;opencv_datasets;general;opencv_cvv;general;opencv_ccalib;general;opencv_bioinspired;general;opencv_bgsegm;general;opencv_aruco;general;opencv_viz;general;opencv_videostab;general;opencv_videoio;general;opencv_video;general;opencv_superres;general;opencv_stitching;general;opencv_shape;general;opencv_photo;general;opencv_objdetect;general;opencv_ml;general;opencv_imgproc;general;opencv_imgcodecs;general;opencv_highgui;general;opencv_flann;general;opencv_features2d;general;opencv_core;general;opencv_calib3d;
 
 //The directory containing a CMake configuration file for pcl_conversions.
 pcl_conversions_DIR:PATH=/opt/ros/kinetic/share/pcl_conversions/cmake
@@ -909,9 +882,6 @@ publisher_subscriber_LIB_DEPENDS:STATIC=general;/opt/ros/kinetic/lib/libroscpp.s
 
 //Value Computed by CMake
 publisher_subscriber_SOURCE_DIR:STATIC=/home/ubuntu/catkin_ws/src/publisher_subscriber
-
-//The directory containing a CMake configuration file for pyserial.
-pyserial_DIR:PATH=pyserial_DIR-NOTFOUND
 
 //The directory containing a CMake configuration file for rosconsole.
 rosconsole_DIR:PATH=/opt/ros/kinetic/share/rosconsole/cmake
@@ -1200,6 +1170,9 @@ CMAKE_UNAME:INTERNAL=/bin/uname
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CUDA_64_BIT_DEVICE_CODE
 CUDA_64_BIT_DEVICE_CODE-ADVANCED:INTERNAL=1
+//List of intermediate files that are part of the cuda dependency
+// scanning.
+CUDA_ADDITIONAL_CLEAN_FILES:INTERNAL=/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_depth_module_node_generated_activation_kernels.cu.o.depend;/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_depth_module_node_generated_avgpool_layer_kernels.cu.o.depend;/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_depth_module_node_generated_blas_kernels.cu.o.depend;/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_depth_module_node_generated_col2im_kernels.cu.o.depend;/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_depth_module_node_generated_convolutional_kernels.cu.o.depend;/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_depth_module_node_generated_crop_layer_kernels.cu.o.depend;/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_depth_module_node_generated_dropout_layer_kernels.cu.o.depend;/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_depth_module_node_generated_deconvolutional_kernels.cu.o.depend;/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_depth_module_node_generated_network_kernels.cu.o.depend;/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_depth_module_node_generated_im2col_kernels.cu.o.depend;/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_depth_module_node_generated_maxpool_layer_kernels.cu.o.depend;/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/cuda_compile.dir/src/cuda_compile_generated_activation_kernels.cu.o.depend;/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/cuda_compile.dir/src/cuda_compile_generated_avgpool_layer_kernels.cu.o.depend;/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/cuda_compile.dir/src/cuda_compile_generated_blas_kernels.cu.o.depend;/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/cuda_compile.dir/src/cuda_compile_generated_col2im_kernels.cu.o.depend;/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/cuda_compile.dir/src/cuda_compile_generated_convolutional_kernels.cu.o.depend;/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/cuda_compile.dir/src/cuda_compile_generated_crop_layer_kernels.cu.o.depend;/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/cuda_compile.dir/src/cuda_compile_generated_deconvolutional_kernels.cu.o.depend;/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/cuda_compile.dir/src/cuda_compile_generated_dropout_layer_kernels.cu.o.depend;/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/cuda_compile.dir/src/cuda_compile_generated_im2col_kernels.cu.o.depend;/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/cuda_compile.dir/src/cuda_compile_generated_maxpool_layer_kernels.cu.o.depend;/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/cuda_compile.dir/src/cuda_compile_generated_network_kernels.cu.o.depend
 //ADVANCED property for variable: CUDA_ATTACH_VS_BUILD_RULE_TO_CUDA_FILE
 CUDA_ATTACH_VS_BUILD_RULE_TO_CUDA_FILE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CUDA_BUILD_CUBIN

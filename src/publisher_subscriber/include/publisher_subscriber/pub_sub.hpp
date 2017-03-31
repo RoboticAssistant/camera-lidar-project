@@ -25,8 +25,10 @@ class Pub_Sub
 {
 
 public:
+    Pub_Sub();
+
     // utility: Selecting amongst "talker" or "listener"
-    Pub_Sub(int argc, char **argv, msg_details &message_details);
+    int init(int argc, char **argv, ros::NodeHandle &node_handle, msg_details &message_details);
 
     // For publishing data
     int publisher_data(string data);

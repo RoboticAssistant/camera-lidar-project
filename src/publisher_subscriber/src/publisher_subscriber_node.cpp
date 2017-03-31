@@ -15,6 +15,8 @@ void callback_temp(const std_msgs::String::ConstPtr &msg)
 
 int main(int argc, char *argv[])
 {
+    ros::NodeHandle node_handle;
+
     if(!strcmp(argv[1], "talker"))
     {
         string send_data(argv[2]);
@@ -26,8 +28,8 @@ int main(int argc, char *argv[])
         publish_details.pub_repeat = true;
         publish_details.frequency = 1;
         publish_details.message_topic = "test/topic";
-
-        Pub_Sub publisher(argc, argv, publish_details);
+        Pub_Sub publisher;
+        publisher.init(argc, argv, node_handle, publish_details);
 
         ros::Rate loop_rate(publish_details.frequency);
         while(ros::ok())
@@ -47,8 +49,8 @@ int main(int argc, char *argv[])
         subscribe_details.pub_repeat = false;
         subscribe_details.message_topic = "test/topic";
         subscribe_details.received_callback = callback_temp;
-
-        Pub_Sub subscriber(argc, argv, subscribe_details);
+        Pub_Sub subscriber;
+        subscriber.init(argc, argv, node_handle, subscribe_details);
     }
 
     return 0;

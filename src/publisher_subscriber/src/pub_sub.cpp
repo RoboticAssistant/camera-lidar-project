@@ -21,7 +21,17 @@ void no_callback_defined(const std_msgs::String::ConstPtr &msg)
     ROS_INFO("No Callback defined for subscriber");
 }
 
-Pub_Sub::Pub_Sub(int argc, char **argv, msg_details &message_details)
+void callback_function(const std_msgs::String::ConstPtr &msg)
+{
+    ROS_INFO("\nData Received: [%s]", msg->data.c_str());
+}
+
+Pub_Sub::Pub_Sub()
+{
+
+}
+
+int Pub_Sub::init(int argc, char **argv, ros::NodeHandle &node_handle, msg_details &message_details)
 { 
     string utility;
     if(message_details.is_talker)
@@ -33,8 +43,6 @@ Pub_Sub::Pub_Sub(int argc, char **argv, msg_details &message_details)
         utility = "listener";
     }
 
-    ros::init(argc, argv, utility);
-    ros::NodeHandle node_handle;
     topic = message_details.message_topic;
 
     cout << utility << endl;
@@ -58,9 +66,12 @@ Pub_Sub::Pub_Sub(int argc, char **argv, msg_details &message_details)
     }
     else if(message_details.is_listener)
     {
+        ROS_INFO("Subscribing to topic: [%s]", topic.c_str());
+        node_handle.subscribe(topic.c_str(), 1, message_details.received_callback);
         ROS_INFO("Subscribed to topic: [%s]", topic.c_str());
-        subscribe_chatter = node_handle.subscribe(topic.c_str(), 1, message_details.received_callback);
-        ros::spin();
+    }
+    else {
+        cout << "Neither Publisher not Subscriber selected" << endl;
     }
 }
 
@@ -74,14 +85,7 @@ int Pub_Sub::publisher_data(string data)
     // Replacement for printf
     ROS_INFO("\nPublish to topic: %s. Data: %s", topic.c_str(), message.data.c_str());
 
-    ros::spinOnce();
-
     return 0;
-}
-
-void callback_function(const std_msgs::String::ConstPtr &msg)
-{
-    ROS_INFO("\nData Received: [%s]", msg->data.c_str());
 }
 
 int Pub_Sub::subscribe_data(void(*received_callback)(const std_msgs::String::ConstPtr &))

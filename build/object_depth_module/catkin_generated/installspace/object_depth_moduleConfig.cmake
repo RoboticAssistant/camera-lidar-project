@@ -153,7 +153,7 @@ foreach(t ${object_depth_module_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "rosconsole;opencv;image_transport;roscpp;rospy;std_msgs;pcl_conversions;find_object_2d")
+set(depends "rosconsole;opencv;image_transport;roscpp;rospy;std_msgs;pcl_conversions")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls
@@ -162,12 +162,12 @@ foreach(depend ${depends})
   if(${count} EQUAL 1)
     # simple dependencies must only be find_package()-ed once
     if(NOT ${object_depth_module_dep}_FOUND)
-      find_package(${object_depth_module_dep} REQUIRED)
+      find_package(${object_depth_module_dep} REQUIRED NO_MODULE)
     endif()
   else()
     # dependencies with components must be find_package()-ed again
     list(REMOVE_AT depend_list 0)
-    find_package(${object_depth_module_dep} REQUIRED ${depend_list})
+    find_package(${object_depth_module_dep} REQUIRED NO_MODULE ${depend_list})
   endif()
   _list_append_unique(object_depth_module_INCLUDE_DIRS ${${object_depth_module_dep}_INCLUDE_DIRS})
 
