@@ -49,7 +49,7 @@ int Pub_Sub::init(int argc, char **argv, ros::NodeHandle &node_handle, msg_detai
 
     if(message_details.is_talker)
     {
-        publish_chatter = node_handle.advertise<std_msgs::String>(topic.c_str(), 1);
+        publish_chatter = node_handle.advertise<std_msgs::String>(message_details.message_topic/*topic.c_str()*/, 1);
 
         if(message_details.pub_repeat)
         {
@@ -67,7 +67,7 @@ int Pub_Sub::init(int argc, char **argv, ros::NodeHandle &node_handle, msg_detai
     else if(message_details.is_listener)
     {
         ROS_INFO("Subscribing to topic: [%s]", topic.c_str());
-        node_handle.subscribe(topic.c_str(), 1, message_details.received_callback);
+        ros::Subscriber sub = node_handle.subscribe(topic, 1000, message_details.received_callback);
         ROS_INFO("Subscribed to topic: [%s]", topic.c_str());
     }
     else {

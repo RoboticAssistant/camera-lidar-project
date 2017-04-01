@@ -117,6 +117,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/ubuntu/catkin_ws/build/gtest/cmake_install.cmake")
+  include("/home/ubuntu/catkin_ws/build/create_2_interface/cmake_install.cmake")
   include("/home/ubuntu/catkin_ws/build/publisher_subscriber/cmake_install.cmake")
   include("/home/ubuntu/catkin_ws/build/decision_module/cmake_install.cmake")
   include("/home/ubuntu/catkin_ws/build/face_detect_module/cmake_install.cmake")

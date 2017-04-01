@@ -41,7 +41,7 @@ from std_msgs.msg import String
 import time
 
 def talker():
-    pub = rospy.Publisher('motion', String, queue_size=10)
+    pub = rospy.Publisher('D_M_direction', String, queue_size=10)
     rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(100) # 10hz
     while not rospy.is_shutdown():

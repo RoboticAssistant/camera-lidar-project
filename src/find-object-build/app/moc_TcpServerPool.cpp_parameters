@@ -1,7 +1,0 @@
--DPROJECT_PREFIX="find_object"
--DPROJECT_VERSION="0.6.1"
--DPROJECT_NAME="Find-Object"
--DQT_NO_KEYWORDS
--o
-/home/ubuntu/catkin_ws/src/find-object-build/app/moc_TcpServerPool.cpp
-/home/ubuntu/catkin_ws/src/find-object/app/TcpServerPool.h

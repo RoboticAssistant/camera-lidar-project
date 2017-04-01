@@ -5177,9 +5177,6 @@
       <Unit filename="/home/ubuntu/catkin_ws/src/object_depth_module/src/yolo.cpp">
          <Option target="dummy_zed_wrapper"/>
       </Unit>
-      <Unit filename="/home/ubuntu/catkin_ws/src/object_depth_module/yolo.weights">
-         <Option target="dummy_zed_wrapper"/>
-      </Unit>
       <Unit filename="/home/ubuntu/catkin_ws/src/publisher_subscriber/CMakeLists.txt">
          <Option target="dummy_zed_wrapper"/>
       </Unit>

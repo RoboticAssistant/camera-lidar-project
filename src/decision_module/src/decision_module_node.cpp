@@ -40,6 +40,7 @@ int main(int argc, char *argv[])
 {
     ros::init(argc, argv, "decision_module");
     ros::NodeHandle node_handle;
+//    ros::NodeHandle node_handle;
 
 #ifdef TEST_CODE
     // Create a publisher object
@@ -81,24 +82,29 @@ int main(int argc, char *argv[])
 #else
     // Define subscriber from audio to decision
     // Subscriber 1: From Audio to Decision: Forward and Backward data
+    string topic;
     msg_details a_d_direction_details;
     a_d_direction_details.is_talker = false;
     a_d_direction_details.is_listener = true;
     a_d_direction_details.pub_repeat = false;
     a_d_direction_details.frequency = 1;
-    a_d_direction_details.message_topic = "D_M_direction";
+    a_d_direction_details.message_topic = "A_D_direction";
     a_d_direction_details.received_callback = a_d_direction_callback;
-    a_d_direction_subscriber.init(argc, argv, node_handle, a_d_direction_details);
+    topic = a_d_direction_details.message_topic;
+    ros::Subscriber sub_1 = node_handle.subscribe(topic, 1000, a_d_direction_callback);
+//    a_d_direction_subscriber.init(argc, argv, node_handle, a_d_direction_details);
 
-//    // Subscriber 2: From Audio to Decision: Rotation left or right
-//    msg_details a_d_rotation_details;
-//    a_d_rotation_details.is_talker = false;
-//    a_d_rotation_details.is_listener = true;
-//    a_d_rotation_details.pub_repeat = false;
-//    a_d_rotation_details.frequency = 1;
-//    a_d_rotation_details.message_topic = "A_D_rotation";
-//    a_d_rotation_details.received_callback = a_d_rotation_callback;
-//    a_d_rotation_subscriber.init(argc, argv, node_handle, a_d_rotation_details);
+    // Subscriber 2: From Audio to Decision: Rotation left or right
+    msg_details a_d_rotation_details;
+    a_d_rotation_details.is_talker = false;
+    a_d_rotation_details.is_listener = true;
+    a_d_rotation_details.pub_repeat = false;
+    a_d_rotation_details.frequency = 1;
+    a_d_rotation_details.message_topic = "A_D_rotation";
+    a_d_rotation_details.received_callback = a_d_rotation_callback;
+    topic = a_d_rotation_details.message_topic;
+    ros::Subscriber sub_2 = node_handle.subscribe(topic, 1000, a_d_rotation_callback);
+//    a_d_rotation_subscriber.init(argc, argv, node_handle_sub, a_d_rotation_details);
 
     // Publisher 1: From Decision to Motor: Forward
     msg_details d_m_direction_details;
@@ -109,14 +115,14 @@ int main(int argc, char *argv[])
     d_m_direction_details.message_topic = "D_M_direction";
     d_m_direction_publisher.init(argc, argv, node_handle, d_m_direction_details);
 
-//    // Publisher 2: From Decision to Motor: Rotation left or right
-//    msg_details d_m_rotation_details;
-//    d_m_rotation_details.is_talker = true;
-//    d_m_rotation_details.is_listener = false;
-//    d_m_rotation_details.pub_repeat = false;
-//    d_m_rotation_details.frequency = 1;
-//    d_m_rotation_details.message_topic = "D_M_rotation";
-//    d_m_rotation_publisher.init(argc, argv, node_handle, d_m_rotation_details);
+    // Publisher 2: From Decision to Motor: Rotation left or right
+    msg_details d_m_rotation_details;
+    d_m_rotation_details.is_talker = true;
+    d_m_rotation_details.is_listener = false;
+    d_m_rotation_details.pub_repeat = false;
+    d_m_rotation_details.frequency = 1;
+    d_m_rotation_details.message_topic = "D_M_rotation";
+    d_m_rotation_publisher.init(argc, argv, node_handle, d_m_rotation_details);
 #endif
 
     ros::Rate loop_rate(10);

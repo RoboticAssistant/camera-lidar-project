@@ -33,45 +33,24 @@
 #
 # Revision $Id$
 
-## Simple talker demo that listens to std_msgs/Strings published 
-## to the 'chatter' topic
+## Listener that listens to std_msgs/Strings published 
+## to the 'D_M_direction' topic
+## to the 'D_M_rotation' topic
 
 from breezycreate2 import Robot
 import time
 import rospy
 from std_msgs.msg import String
 
-def callback(data):
-
-    	#rospy.loginfo(rospy.get_caller_id() + 'I heard %s', data.data)
-
-	    bot = Robot()
-
-	    if data.data == str("left"):
-		bot.setTurnSpeed(-50)
-		#time.sleep(1)
-	    	#bot.setTurnSpeed(0)
-
-	    elif data.data == str("forward"):
-		bot.setForwardSpeed(50)
-		#time.sleep(1)
-	    	#bot.setForwardSpeed(0)
-
-	    elif data.data == str("reverse"):
-		bot.setForwardSpeed(-50)
-		#time.sleep(1)
-	    	#bot.setForwardSpeed(0)
-
-	    elif data.data == str("right"):
-		bot.setTurnSpeed(50)
-		#time.sleep(1)
-	    	#bot.setTurnSpeed(0)
+def callback_direction(data):
+	global	direction_data
+	direction_data = data.data
+	rospy.loginfo(rospy.get_caller_id() + 'Move %s', direction_data)
 	
-	    elif data.data == str("stop"):
-		bot.setTurnSpeed(50)
-		bot.setForwardSpeed(-50)
-		
-	    bot.close()
+def callback_rotation(data):
+	global rotation_data
+	rotation_data = data.data
+    	rospy.loginfo(rospy.get_caller_id() + 'Rotation %s', rotation_data)
 
 def listener():
 
@@ -82,10 +61,35 @@ def listener():
     # run simultaneously.
     rospy.init_node('listener', anonymous=True)
 
-    rospy.Subscriber('motion', String, callback)
+    rospy.Subscriber('D_M_direction', String, callback_direction)
+    rospy.Subscriber('D_M_rotation', String, callback_rotation)
 
     # spin() simply keeps python from exiting until this node is stopped
-    rospy.spin()
 
 if __name__ == '__main__':
-    listener()
+	listener()
+    
+	bot = Robot()
+	
+	while(1):
+		# Direction	    
+		if direction_data == str("forward"):				
+			bot.setForwardSpeed(50)	
+
+		elif direction_data == str("backward"):
+			bot.setForwardSpeed(-50)
+
+		elif direction_data == str("stop"):
+			bot.setForwardSpeed(0)
+
+		# Rotation
+		if rotation_data == str("left"):
+			bot.setTurnSpeed(-50)
+			    
+		elif rotation_data == str("right"):
+			bot.setTurnSpeed(50)
+	
+		elif rotation_data == str("stop"):
+			bot.setTurnSpeed(0)
+	
+	bot.close() 

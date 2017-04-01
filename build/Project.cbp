@@ -453,6 +453,7 @@
             <Add option="-DROS_BUILD_SHARED_LIBS=1" />
             <Add option="-DROS_PACKAGE_NAME=&quot;decision_module&quot;" />
             <Add option="-DROSCONSOLE_BACKEND_LOG4CXX" />
+            <Add directory="/home/ubuntu/catkin_ws/src/decision_module/include" />
             <Add directory="/home/ubuntu/catkin_ws/src/publisher_subscriber/include" />
             <Add directory="/opt/ros/kinetic/include" />
          </Compiler>
@@ -473,6 +474,7 @@
             <Add option="-DROS_BUILD_SHARED_LIBS=1" />
             <Add option="-DROS_PACKAGE_NAME=&quot;decision_module&quot;" />
             <Add option="-DROSCONSOLE_BACKEND_LOG4CXX" />
+            <Add directory="/home/ubuntu/catkin_ws/src/decision_module/include" />
             <Add directory="/home/ubuntu/catkin_ws/src/publisher_subscriber/include" />
             <Add directory="/opt/ros/kinetic/include" />
          </Compiler>
@@ -2230,6 +2232,7 @@
          <Option target="dummy_zed_wrapper"/>
       </Unit>
       <Unit filename="/home/ubuntu/catkin_ws/src/decision_module/src/decision_processing.cpp">
+         <Option target="decision_module_node"/>
          <Option target="dummy_object_depth_module"/>
          <Option target="dummy_zed_wrapper"/>
       </Unit>
@@ -8602,10 +8605,6 @@
       </Unit>
       <Unit filename="/home/ubuntu/catkin_ws/src/object_depth_module/src/yolo.cpp">
          <Option target="object_depth_module_node"/>
-         <Option target="dummy_object_depth_module"/>
-         <Option target="dummy_zed_wrapper"/>
-      </Unit>
-      <Unit filename="/home/ubuntu/catkin_ws/src/object_depth_module/yolo.weights">
          <Option target="dummy_object_depth_module"/>
          <Option target="dummy_zed_wrapper"/>
       </Unit>

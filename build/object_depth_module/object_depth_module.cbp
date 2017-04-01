@@ -4957,9 +4957,6 @@
          <Option target="object_depth_module_node"/>
          <Option target="dummy_object_depth_module"/>
       </Unit>
-      <Unit filename="/home/ubuntu/catkin_ws/src/object_depth_module/yolo.weights">
-         <Option target="dummy_object_depth_module"/>
-      </Unit>
       <Unit filename="/home/ubuntu/catkin_ws/src/publisher_subscriber/CMakeLists.txt">
          <Option target="dummy_object_depth_module"/>
       </Unit>

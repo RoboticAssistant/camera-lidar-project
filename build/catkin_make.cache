@@ -1,2 +1,2 @@
-decision_module:face_detect_module:find-object:object_depth_module:publisher_subscriber:rplidar_ros:video_analytics:zed-ros-wrapper
+create_2_interface:decision_module:face_detect_module:find-object:object_depth_module:publisher_subscriber:rplidar_ros:video_analytics:zed-ros-wrapper
 -DCATKIN_DEVEL_PREFIX=/home/ubuntu/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/ubuntu/catkin_ws/install -G Unix Makefiles

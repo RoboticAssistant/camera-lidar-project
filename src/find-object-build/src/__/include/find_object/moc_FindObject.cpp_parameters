@@ -1,7 +1,0 @@
--DPROJECT_PREFIX="find_object"
--DPROJECT_VERSION="0.6.1"
--DPROJECT_NAME="Find-Object"
--DQT_NO_KEYWORDS
--o
-/home/ubuntu/catkin_ws/src/find-object-build/src/__/include/find_object/moc_FindObject.cpp
-/home/ubuntu/catkin_ws/src/find-object/include/find_object/FindObject.h
