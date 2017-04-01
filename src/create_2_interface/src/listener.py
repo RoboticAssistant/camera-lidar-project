@@ -42,8 +42,11 @@ import time
 import rospy
 from std_msgs.msg import String
 
-def callback_direction(data):
-	global	direction_data
+direction_data = ""
+rotation_data = ""
+
+def callback_direction(data):	
+	global direction_data
 	direction_data = data.data
 	rospy.loginfo(rospy.get_caller_id() + 'Move %s', direction_data)
 	
@@ -53,43 +56,48 @@ def callback_rotation(data):
     	rospy.loginfo(rospy.get_caller_id() + 'Rotation %s', rotation_data)
 
 def listener():
+	# In ROS, nodes are uniquely named. If two nodes with the same
+	# name are launched, the previous one is kicked off. The
+	# anonymous=True flag means that rospy will choose a unique
+	# name for our 'listener' node so that multiple listeners can
+	# run simultaneously.
+	rospy.init_node('listener', anonymous=True)
 
-    # In ROS, nodes are uniquely named. If two nodes with the same
-    # name are launched, the previous one is kicked off. The
-    # anonymous=True flag means that rospy will choose a unique
-    # name for our 'listener' node so that multiple listeners can
-    # run simultaneously.
-    rospy.init_node('listener', anonymous=True)
-
-    rospy.Subscriber('D_M_direction', String, callback_direction)
-    rospy.Subscriber('D_M_rotation', String, callback_rotation)
+	rospy.Subscriber('D_M_direction', String, callback_direction)
+	rospy.Subscriber('D_M_rotation', String, callback_rotation)
 
     # spin() simply keeps python from exiting until this node is stopped
 
 if __name__ == '__main__':
 	listener()
-    
+
 	bot = Robot()
-	
+
 	while(1):
 		# Direction	    
-		if direction_data == str("forward"):				
+		if direction_data == "forward":
+			print "Moving Forward"			
 			bot.setForwardSpeed(50)	
 
-		elif direction_data == str("backward"):
+		elif direction_data == "backward":
+			print "Moving Backward"
 			bot.setForwardSpeed(-50)
 
-		elif direction_data == str("stop"):
+		elif direction_data == "stop":
+			print "Moving Stop"
 			bot.setForwardSpeed(0)
 
 		# Rotation
 		if rotation_data == str("left"):
+			print "Moving Left"
 			bot.setTurnSpeed(-50)
 			    
 		elif rotation_data == str("right"):
+			print "Moving Right"
 			bot.setTurnSpeed(50)
 	
 		elif rotation_data == str("stop"):
+			print "Moving Stop"
 			bot.setTurnSpeed(0)
 	
 	bot.close() 

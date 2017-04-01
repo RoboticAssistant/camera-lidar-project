@@ -10,6 +10,8 @@ using namespace std;
 
 string linear_displacement_data;
 string angular_displacement_data;
+bool process_direction = false;
+bool process_rotation = false;
 
 Pub_Sub a_d_direction_subscriber;
 Pub_Sub a_d_rotation_subscriber;
@@ -22,7 +24,8 @@ void a_d_direction_callback(const std_msgs::String::ConstPtr &msg)
 {
     // Activate logging
     ROS_INFO("decision_module: a_d_direction_callback(): Data Received: [%s]", msg->data.c_str());
-    linear_displacement_data = msg->data;
+    linear_displacement_data = msg->data;\
+    process_direction = true;
 }
 
 /// This function is a callback for following details
@@ -32,6 +35,7 @@ void a_d_rotation_callback(const std_msgs::String::ConstPtr &msg)
     // Activate logging
     ROS_INFO("decision_module: a_d_rotation_callback(): Data Received: [%s]", msg->data.c_str());
     angular_displacement_data = msg->data;
+    process_rotation = true;
 }
 
 
@@ -128,8 +132,11 @@ int main(int argc, char *argv[])
     ros::Rate loop_rate(10);
     // While loop for continuously assessing the system and running
     while(ros::ok()) {
-        process_data();
-
+        if(process_direction || process_rotation) {
+            process_data(process_direction, process_rotation);
+            process_direction = false;
+            process_rotation = false;
+        }
         ros::spinOnce();
         loop_rate.sleep();
     }
