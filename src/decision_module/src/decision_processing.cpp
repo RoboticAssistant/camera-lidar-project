@@ -32,9 +32,9 @@ int process_data(bool process_direction, bool process_rotation) {
         else if(!linear_displacement_data.compare("BACKWARD")){
             d_m_direction_publisher.publisher_data(backward_data);
         }
-    //    else if(!linear_displacement_data.compare("STOP")){
-    //        d_m_direction_publisher.publisher_data(stop_data);
-    //    }
+        else if(!linear_displacement_data.compare("STOP")){
+            d_m_direction_publisher.publisher_data(stop_data);
+        }
         else {
             d_m_direction_publisher.publisher_data(stop_data);
         }
@@ -45,10 +45,10 @@ int process_data(bool process_direction, bool process_rotation) {
         if(!angular_displacement_data.compare("LEFT")) {
             d_m_rotation_publisher.publisher_data(left_data);
         }
-        else if(!angular_displacement_data.compare("RIGHT")){
+        else if(!angular_displacement_data.compare("RIGHT")) {
             d_m_rotation_publisher.publisher_data(right_data);
         }
-        else {
+        else if(!angular_displacement_data.compare("STOP")) {
             d_m_rotation_publisher.publisher_data(stop_data);
         }
     }

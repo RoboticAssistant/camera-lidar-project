@@ -31,7 +31,7 @@ Pub_Sub::Pub_Sub()
 
 }
 
-int Pub_Sub::init(int argc, char **argv, ros::NodeHandle &node_handle, msg_details &message_details)
+int Pub_Sub::init(ros::NodeHandle &node_handle, msg_details &message_details, ros::Subscriber &sub)
 { 
     string utility;
     if(message_details.is_talker)
@@ -49,7 +49,7 @@ int Pub_Sub::init(int argc, char **argv, ros::NodeHandle &node_handle, msg_detai
 
     if(message_details.is_talker)
     {
-        publish_chatter = node_handle.advertise<std_msgs::String>(message_details.message_topic/*topic.c_str()*/, 1);
+        publish_chatter = node_handle.advertise<std_msgs::String>(message_details.message_topic/*topic.c_str()*/, 1000);
 
         if(message_details.pub_repeat)
         {

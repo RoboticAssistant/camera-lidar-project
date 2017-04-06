@@ -84,7 +84,7 @@ if __name__ == '__main__':
 			bot.setForwardSpeed(-50)
 
 		elif direction_data == "stop":
-			print "Moving Stop"
+			print "Moving direction STOP"
 			bot.setForwardSpeed(0)
 
 		# Rotation
@@ -97,7 +97,7 @@ if __name__ == '__main__':
 			bot.setTurnSpeed(50)
 	
 		elif rotation_data == str("stop"):
-			print "Moving Stop"
+			print "Moving Rotation Stop"
 			bot.setTurnSpeed(0)
 	
 	bot.close() 

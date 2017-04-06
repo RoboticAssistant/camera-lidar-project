@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <std_msgs/String.h>
+#include <ros/ros.h>
 
 using namespace std;
 
@@ -28,7 +29,7 @@ public:
     Pub_Sub();
 
     // utility: Selecting amongst "talker" or "listener"
-    int init(int argc, char **argv, ros::NodeHandle &node_handle, msg_details &message_details);
+    int init(ros::NodeHandle &node_handle, msg_details &message_details, ros::Subscriber &sub);
 
     // For publishing data
     int publisher_data(string data);

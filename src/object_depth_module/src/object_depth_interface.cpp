@@ -9,28 +9,6 @@
 #include <opencv2/calib3d/calib3d.hpp> // for homography
 #include <opencv2/opencv_modules.hpp>
 
-// Qt stuff
-#include <qt5/QtCore/QTime>
-#include <qt5/QtCore/QTimer>
-#include <qt5/QtWidgets/QApplication>
-#include <qt5/QtWidgets/QGraphicsRectItem>
-#include <qt5/QtGui/QPen>
-#include <qt5/QtGui/QColor>
-
-#ifdef HAVE_OPENCV_NONFREE
-  #if CV_MAJOR_VERSION == 2 && CV_MINOR_VERSION >=4
-  #include <opencv2/nonfree/gpu.hpp>
-  #include <opencv2/nonfree/features2d.hpp>
-  #endif
-#endif
-#ifdef HAVE_OPENCV_XFEATURES2D
-  #include <opencv2/xfeatures2d.hpp>
-  #include <opencv2/xfeatures2d/cuda.hpp>
-#endif
-
-#undef RENDER_MSERS
-#define RENDER_MSERS 0
-
 // ZED Libraries
 #include <zed/Camera.hpp>
 
@@ -40,15 +18,11 @@
 
 #include "object_depth_module/object_depth_interface.hpp"
 #include "object_depth_module/object_detection.hpp"
-
-#include "find_object_2d/ObjectsStamped.h"
-#include "darknet.hpp"
-
+#include <publisher_subscriber/pub_sub.hpp>
 
 using namespace std;
 using namespace sl::zed;
 using namespace cv;
-using namespace find_object_2d;
 
 extern int H_VAL_MIN;
 extern int H_VAL_MAX;
@@ -62,6 +36,8 @@ const string windowName1 = "HSV Image";
 const string windowName2 = "Thresholded Image";
 const string windowName3 = "After Morphological Operations";
 const string trackbarWindowName = "Trackbars";
+
+extern Pub_Sub face_information_publisher;
 
 int object_depth_interface::initialize_ZED_camera()
 {
@@ -275,252 +251,137 @@ int object_depth_interface::receive_images()
 
 int object_depth_interface::object_detection(int argc, char **argv)
 {
-    run_darknet(argc, argv);
+
 }
 
-//int object_depth_interface::object_detection(int argc, char *argv[])
-//{
-//    QTime time;
+// Copy this file from opencv/data/haarscascades to target folder
+cv::CascadeClassifier face_cascade;
+string face_cascade_name = "/usr/share/OpenCV/haarcascades/haarcascade_frontalface_alt.xml";
+string window_name = "Capture - Face detection";
+int filenumber; // Number of file to be saved
+string filename;
+int faces_detected = 0;
 
-//    // GUI stuff
-//    QApplication app(argc, argv);
+// Function detectAndDisplay. Returns faces detected
+int detectAndDisplay(cv::Mat frame, bool is_left)
+{
+    std::vector<Rect> faces;
+    cv::Mat frame_gray;
+    cv::Mat crop;
+    cv::Mat res;
+    cv::Mat gray;
+    string text;
+    stringstream sstm;
 
-//    //Load as grayscale
-//    cv::Mat objectImg = left_image;
-//    cv::Mat sceneImg = right_image;
+    cvtColor(frame, frame_gray, COLOR_BGR2GRAY);
+    equalizeHist(frame_gray, frame_gray);
 
-//    if(!objectImg.empty() && !sceneImg.empty())
-//    {
-//        cout << "Loading images" << endl;
-//        std::vector<cv::KeyPoint> objectKeypoints;
-//        std::vector<cv::KeyPoint> sceneKeypoints;
-//        cv::Mat objectDescriptors;
-//        cv::Mat sceneDescriptors;
+    // Detect faces
+    face_cascade.detectMultiScale(frame_gray, faces, 1.1, 2, 0 | CASCADE_SCALE_IMAGE, Size(30, 30));
 
-//        ////////////////////////////
-//        // EXTRACT KEYPOINTS
-//        ////////////////////////////
-//        cv::Ptr<cv::FeatureDetector> detector;
-//        // The detector can be any of (see OpenCV features2d.hpp):
-//        detector = cv::Ptr<cv::FeatureDetector>(new cv::StarFeatureDetector());
+    // Set Region of Interest
+    cv::Rect roi_b;
+    cv::Rect roi_c;
 
-//        detector->detect(objectImg, objectKeypoints);
-//        cout << "Object: " << (int)objectKeypoints.size() << " keypoints detected" << endl;
+    size_t ic = 0; // ic is index of current element
+    int ac = 0; // ac is area of current element
 
-//        detector->detect(sceneImg, sceneKeypoints);
-//        cout << "Scene: " << (int)sceneKeypoints.size() << " keypoints detected" << endl;
+    size_t ib = 0; // ib is index of biggest element
+    int ab = 0; // ab is area of biggest element
 
-//        ////////////////////////////
-//        // EXTRACT DESCRIPTORS
-//        ////////////////////////////
-//        cv::Ptr<cv::DescriptorExtractor> extractor;
-//        extractor = cv::Ptr<cv::DescriptorExtractor>(new cv::BriefDescriptorExtractor());
-//        // extractor = cv::Ptr(new cv::ORB());
-//        // extractor = cv::Ptr(new cv::BRISK());
-//        // extractor = cv::Ptr<cv::DescriptorExtractor>(new cv::FREAK());
-//        extractor->compute(objectImg, objectKeypoints, objectDescriptors);
-//        cout << "Object: " << objectDescriptors.rows << " descriptors extracted" << endl;
+    faces_detected = faces.size();
 
-//        extractor->compute(sceneImg, sceneKeypoints, sceneDescriptors);
-//        cout << "Scene: " << sceneDescriptors.rows << " descriptors extracted" << endl;
+    for (ic = 0; ic < faces_detected; ic++) // Iterate through all current elements (detected faces)
 
-//        ////////////////////////////
-//        // NEAREST NEIGHBOR MATCHING USING FLANN LIBRARY (included in OpenCV)
-//        ////////////////////////////
-//        cv::Mat results;
-//        cv::Mat dists;
-//        std::vector<std::vector<cv::DMatch> > matches;
-//        int k=2; // find the 2 nearest neighbors
-//        bool useBFMatcher = false; // SET TO TRUE TO USE BRUTE FORCE MATCHER
-//        if(objectDescriptors.type()==CV_8U)
-//        {
-//            // Binary descriptors detected (from ORB, Brief, BRISK, FREAK)
-//            cout << "Binary descriptors detected...\n" << endl;
-//            if(useBFMatcher)
-//            {
-//                cv::BFMatcher matcher(cv::NORM_HAMMING); // use cv::NORM_HAMMING2 for ORB descriptor with WTA_K == 3 or 4 (see ORB constructor)
-//                matcher.knnMatch(objectDescriptors, sceneDescriptors, matches, k);
-//            }
-//            else
-//            {
-//                // Create Flann LSH index
-//                cv::flann::Index flannIndex(sceneDescriptors, cv::flann::LshIndexParams(12, 20, 2), cvflann::FLANN_DIST_HAMMING);
-//                cout << "Time creating FLANN LSH index" << endl;
+    {
+        roi_c.x = faces[ic].x;
+        roi_c.y = faces[ic].y;
+        roi_c.width = (faces[ic].width);
+        roi_c.height = (faces[ic].height);
 
-//                // search (nearest neighbor)
-//                flannIndex.knnSearch(objectDescriptors, results, dists, k, cv::flann::SearchParams() );
-//            }
-//        }
-//        else
-//        {
-//            // assume it is CV_32F
-//            cout << "Float descriptors detected...\n" << endl;
-//            if(useBFMatcher)
-//            {
-//                cv::BFMatcher matcher(cv::NORM_L2);
-//                matcher.knnMatch(objectDescriptors, sceneDescriptors, matches, k);
-//            }
-//            else
-//            {
-//                // Create Flann KDTree index
-//                cv::flann::Index flannIndex(sceneDescriptors, cv::flann::KDTreeIndexParams(), cvflann::FLANN_DIST_EUCLIDEAN);
+        ac = roi_c.width * roi_c.height; // Get the area of current element (detected face)
 
-//                // search (nearest neighbor)
-//                flannIndex.knnSearch(objectDescriptors, results, dists, k, cv::flann::SearchParams() );
-//            }
-//        }
+        roi_b.x = faces[ib].x;
+        roi_b.y = faces[ib].y;
+        roi_b.width = (faces[ib].width);
+        roi_b.height = (faces[ib].height);
 
-//        // Conversion to CV_32F if needed
-//        if(dists.type() == CV_32S)
-//        {
-//            cv::Mat temp;
-//            dists.convertTo(temp, CV_32F);
-//            dists = temp;
-//        }
+        ab = roi_b.width * roi_b.height; // Get the area of biggest element, at beginning it is same as "current" element
+
+        if (ac > ab)
+        {
+            ib = ic;
+            roi_b.x = faces[ib].x;
+            roi_b.y = faces[ib].y;
+            roi_b.width = (faces[ib].width);
+            roi_b.height = (faces[ib].height);
+        }
+
+        crop = frame(roi_b);
+        resize(crop, res, Size(128, 128), 0, 0, INTER_LINEAR); // This will be needed later while saving images
+        cvtColor(crop, gray, CV_BGR2GRAY); // Convert cropped image to Grayscale
+
+        Point pt1(faces[ic].x, faces[ic].y); // Display detected faces on main window - live stream from camera
+        Point pt2((faces[ic].x + faces[ic].height), (faces[ic].y + faces[ic].width));
+        rectangle(frame, pt1, pt2, Scalar(0, 255, 0), 2, 8, 0);
+    }
+
+      text = "Face Detector";
+
+    putText(frame, text, cvPoint(30, 30), FONT_HERSHEY_COMPLEX_SMALL, 0.8, cvScalar(0, 0, 255), 1, CV_AA);
+
+    if(is_left) {
+        imshow("Left: Face Detector", frame);
+    }
+    else {
+        imshow("Right Cam: Face Detector", frame);
+    }
+
+    return faces_detected;
+}
+
+int face_detector_initializer()
+{
+    // Load the cascade
+    if (!face_cascade.load(face_cascade_name)){
+        printf("--(!)Error loading\n");
+        return (-1);
+    }
+    return 0;
+}
+
+int object_depth_interface::face_detection_engine()
+{
+    static bool face_detected = false;
+    string buffer_send;
+
+    if (!left_image.empty()){
+     left_faces_detected = detectAndDisplay(left_image, true);
+    }
+    else{
+     printf(" --(!) No captured frame -- Break!");
+    }
+
+    if (!right_image.empty()){
+     right_faces_detected = detectAndDisplay(right_image, false);
+    }
+    else{
+     printf(" --(!) No captured frame -- Break!");
+    }
+
+    if(left_faces_detected == right_faces_detected) {
+        face_detected = true;
+        faces_detected = left_faces_detected;
+    }
+    else {
+        faces_detected = 0;
+    }
 
 
-//        ////////////////////////////
-//        // PROCESS NEAREST NEIGHBOR RESULTS
-//        ////////////////////////////
-        // Set gui data
-//        ObjWidget objWidget(0, objectKeypoints, QMultiMap<int,int>(), cvtCvMat2QImage(objectImg));
-//        ObjWidget sceneWidget(0, sceneKeypoints, QMultiMap<int,int>(), cvtCvMat2QImage(sceneImg));
+    if(faces_detected > 0) {
+        buffer_send = to_string(faces_detected);
+        face_information_publisher.publisher_data(buffer_send);
+    }
 
-//        // Find correspondences by NNDR (Nearest Neighbor Distance Ratio)
-//        float nndrRatio = 0.8f;
-//        std::vector<cv::Point2f> mpts_1, mpts_2; // Used for homography
-//        std::vector<int> indexes_1, indexes_2; // Used for homography
-//        std::vector<uchar> outlier_mask;  // Used for homography
-//        // Check if this descriptor matches with those of the objects
-//        if(!useBFMatcher)
-//        {
-//            for(int i=0; i<objectDescriptors.rows; ++i)
-//            {
-//                // Apply NNDR
-//                //printf("q=%d dist1=%f dist2=%f\n", i, dists.at<float>(i,0), dists.at<float>(i,1));
-//                if(results.at<int>(i,0) >= 0 && results.at<int>(i,1) >= 0 &&
-//                   dists.at<float>(i,0) <= nndrRatio * dists.at<float>(i,1))
-//                {
-//                    mpts_1.push_back(objectKeypoints.at(i).pt);
-//                    indexes_1.push_back(i);
-
-//                    mpts_2.push_back(sceneKeypoints.at(results.at<int>(i,0)).pt);
-//                    indexes_2.push_back(results.at<int>(i,0));
-//                }
-//            }
-//        }
-//        else
-//        {
-//            for(unsigned int i=0; i<matches.size(); ++i)
-//            {
-//                // Apply NNDR
-//                //printf("q=%d dist1=%f dist2=%f\n", matches.at(i).at(0).queryIdx, matches.at(i).at(0).distance, matches.at(i).at(1).distance);
-//                if(matches.at(i).size() == 2 &&
-//                   matches.at(i).at(0).distance <= nndrRatio * matches.at(i).at(1).distance)
-//                {
-//                    mpts_1.push_back(objectKeypoints.at(matches.at(i).at(0).queryIdx).pt);
-//                    indexes_1.push_back(matches.at(i).at(0).queryIdx);
-
-//                    mpts_2.push_back(sceneKeypoints.at(matches.at(i).at(0).trainIdx).pt);
-//                    indexes_2.push_back(matches.at(i).at(0).trainIdx);
-//                }
-//            }
-//        }
-
-//        // FIND HOMOGRAPHY
-//        unsigned int minInliers = 8;
-//        if(mpts_1.size() >= minInliers)
-//        {
-//            cv::Mat H = findHomography(mpts_1,
-//                    mpts_2,
-//                    cv::RANSAC,
-//                    1.0,
-//                    outlier_mask);
-//            printf("Time finding homography\n");
-//            int inliers=0, outliers=0;
-//            for(unsigned int k=0; k<mpts_1.size();++k)
-//            {
-//                if(outlier_mask.at(k))
-//                {
-//                    ++inliers;
-//                }
-//                else
-//                {
-//                    ++outliers;
-//                }
-//            }
-//            QTransform hTransform(
-//            H.at<double>(0,0), H.at<double>(1,0), H.at<double>(2,0),
-//            H.at<double>(0,1), H.at<double>(1,1), H.at<double>(2,1),
-//            H.at<double>(0,2), H.at<double>(1,2), H.at<double>(2,2));
-
-//            // GUI : Change color and add homography rectangle
-//            QColor color(Qt::green);
-//            int alpha = 130;
-//            color.setAlpha(alpha);
-//            for(unsigned int k=0; k<mpts_1.size();++k)
-//            {
-//                if(outlier_mask.at(k))
-//                {
-//                    objWidget.setKptColor(indexes_1.at(k), color);
-//                    sceneWidget.setKptColor(indexes_2.at(k), color);
-//                }
-//                else
-//                {
-//                    objWidget.setKptColor(indexes_1.at(k), QColor(255,0,0,alpha));
-//                    sceneWidget.setKptColor(indexes_2.at(k), QColor(255,0,0,alpha));
-//                }
-//            }
-//            QPen rectPen(color);
-//            rectPen.setWidth(4);
-//            QGraphicsRectItem * rectItem = new QGraphicsRectItem(objWidget.pixmap().rect());
-//            rectItem->setPen(rectPen);
-//            rectItem->setTransform(hTransform);
-//            sceneWidget.addRect(rectItem);
-//            printf("Inliers=%d Outliers=%d\n", inliers, outliers);
-//        }
-//        else
-//        {
-//            printf("Not enough matches (%d) for homography...\n", (int)mpts_1.size());
-//        }
-
-//        // Wait for gui
-//        objWidget.setGraphicsViewMode(false);
-//        objWidget.setWindowTitle("Object");
-//        if(objWidget.pixmap().width() <= 800)
-//        {
-//            objWidget.setMinimumSize(objWidget.pixmap().width(), objWidget.pixmap().height());
-//        }
-//        else
-//        {
-//            objWidget.setMinimumSize(800, 600);
-//            objWidget.setAutoScale(false);
-//        }
-
-//        sceneWidget.setGraphicsViewMode(false);
-//        sceneWidget.setWindowTitle("Scene");
-//        if(sceneWidget.pixmap().width() <= 800)
-//        {
-//            sceneWidget.setMinimumSize(sceneWidget.pixmap().width(), sceneWidget.pixmap().height());
-//        }
-//        else
-//        {
-//            sceneWidget.setMinimumSize(800, 600);
-//            sceneWidget.setAutoScale(false);
-//        }
-
-//        sceneWidget.show();
-//        objWidget.show();
-
-//        int r = app.exec();
-//        printf("Closing...\n");
-
-//        return r;
-//    }
-//    else
-//    {
-//        printf("Images are not valid!\n");
-//    }
-
-//    return 1;
-//}
+    face_detected = false;
+}

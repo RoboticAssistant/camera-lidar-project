@@ -12,11 +12,13 @@ string linear_displacement_data;
 string angular_displacement_data;
 bool process_direction = false;
 bool process_rotation = false;
+bool system_started = false;
 
 Pub_Sub a_d_direction_subscriber;
 Pub_Sub a_d_rotation_subscriber;
 Pub_Sub d_m_direction_publisher;
 Pub_Sub d_m_rotation_publisher;
+Pub_Sub system_status;
 
 /// This function is a callback for following details
 // 1) Audio to Motor: For forward backward direction
@@ -44,7 +46,18 @@ int main(int argc, char *argv[])
 {
     ros::init(argc, argv, "decision_module");
     ros::NodeHandle node_handle;
-//    ros::NodeHandle node_handle;
+
+    static string boot("BOOT");
+
+    // Publisher: From Decision to All modules
+    msg_details system_status_details;
+    ros::Subscriber sub;
+    system_status_details.is_talker = true;
+    system_status_details.is_listener = false;
+    system_status_details.pub_repeat = false;
+    system_status_details.frequency = 1;
+    system_status_details.message_topic = "status";
+    system_status.init(node_handle, system_status_details, sub);
 
 #ifdef TEST_CODE
     // Create a publisher object
@@ -96,7 +109,7 @@ int main(int argc, char *argv[])
     a_d_direction_details.received_callback = a_d_direction_callback;
     topic = a_d_direction_details.message_topic;
     ros::Subscriber sub_1 = node_handle.subscribe(topic, 1000, a_d_direction_callback);
-//    a_d_direction_subscriber.init(argc, argv, node_handle, a_d_direction_details);
+//    a_d_direction_subscriber.init(node_handle, a_d_direction_details);
 
     // Subscriber 2: From Audio to Decision: Rotation left or right
     msg_details a_d_rotation_details;
@@ -108,7 +121,7 @@ int main(int argc, char *argv[])
     a_d_rotation_details.received_callback = a_d_rotation_callback;
     topic = a_d_rotation_details.message_topic;
     ros::Subscriber sub_2 = node_handle.subscribe(topic, 1000, a_d_rotation_callback);
-//    a_d_rotation_subscriber.init(argc, argv, node_handle_sub, a_d_rotation_details);
+//    a_d_rotation_subscriber.init(node_handle_sub, a_d_rotation_details);
 
     // Publisher 1: From Decision to Motor: Forward
     msg_details d_m_direction_details;
@@ -117,7 +130,7 @@ int main(int argc, char *argv[])
     d_m_direction_details.pub_repeat = false;
     d_m_direction_details.frequency = 1;
     d_m_direction_details.message_topic = "D_M_direction";
-    d_m_direction_publisher.init(argc, argv, node_handle, d_m_direction_details);
+    d_m_direction_publisher.init(node_handle, d_m_direction_details, sub);
 
     // Publisher 2: From Decision to Motor: Rotation left or right
     msg_details d_m_rotation_details;
@@ -126,12 +139,21 @@ int main(int argc, char *argv[])
     d_m_rotation_details.pub_repeat = false;
     d_m_rotation_details.frequency = 1;
     d_m_rotation_details.message_topic = "D_M_rotation";
-    d_m_rotation_publisher.init(argc, argv, node_handle, d_m_rotation_details);
+    d_m_rotation_publisher.init(node_handle, d_m_rotation_details, sub);
 #endif
 
     ros::Rate loop_rate(10);
     // While loop for continuously assessing the system and running
-    while(ros::ok()) {
+    while(/*system_started && */ros::ok()) {
+        static int i = 0;
+        if(i < 5) {
+            // Sending Boot message
+            system_status.publisher_data(boot);
+            system_started = true;
+            i++;
+        }
+        ros::spinOnce();
+
         if(process_direction || process_rotation) {
             process_data(process_direction, process_rotation);
             process_direction = false;
@@ -140,7 +162,6 @@ int main(int argc, char *argv[])
         ros::spinOnce();
         loop_rate.sleep();
     }
-
 
     return 0;
 }

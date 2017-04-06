@@ -26,6 +26,9 @@ public:
     //Depth related functions
     int depth_reception();
 
+    // Face detection related function
+    int face_detection_engine();
+
     //Object related functions
     int object_detection_initialize();
     int object_detect();
@@ -48,9 +51,14 @@ private:
     // Depth related data
     int depth_clamp;
 
+    // Face related data
+    int left_faces_detected;
+    int right_faces_detected;
+
     // Object detection
     cv::Mat HSV;                            //matrix storage for HSV image
     cv::Mat threshold;                      //matrix storage for binary threshold image
 };
 
+int face_detector_initializer();
 #endif // OBJECT_DEPTH_INTERFACE_HPP

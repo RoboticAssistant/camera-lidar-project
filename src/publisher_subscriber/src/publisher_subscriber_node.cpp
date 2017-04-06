@@ -8,6 +8,8 @@ using namespace ros;
 // Everywhere in the project, you have to use this publisher and subscriber thing.
 // There is no need to create any special pub sub models in your classes.
 
+ros::Subscriber sub;
+
 void callback_temp(const std_msgs::String::ConstPtr &msg)
 {
     ROS_INFO("publisher_subscriber_node: Data Received: [%s]", msg->data.c_str());
@@ -29,7 +31,7 @@ int main(int argc, char *argv[])
         publish_details.frequency = 1;
         publish_details.message_topic = "test/topic";
         Pub_Sub publisher;
-        publisher.init(argc, argv, node_handle, publish_details);
+        publisher.init(node_handle, publish_details, sub);
 
         ros::Rate loop_rate(publish_details.frequency);
         while(ros::ok())
@@ -50,7 +52,7 @@ int main(int argc, char *argv[])
         subscribe_details.message_topic = "test/topic";
         subscribe_details.received_callback = callback_temp;
         Pub_Sub subscriber;
-        subscriber.init(argc, argv, node_handle, subscribe_details);
+        subscriber.init(node_handle, subscribe_details, sub);
     }
 
     return 0;

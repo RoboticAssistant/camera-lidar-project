@@ -11,6 +11,8 @@ iostream
 -
 std_msgs/String.h
 -
+ros/ros.h
+-
 
 /home/ubuntu/catkin_ws/src/publisher_subscriber/src/pub_sub.cpp
 iostream
