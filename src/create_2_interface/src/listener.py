@@ -38,6 +38,7 @@
 ## to the 'D_M_rotation' topic
 
 from breezycreate2 import Robot
+from breezycreate2 import _Create2
 import time
 import rospy
 from std_msgs.msg import String
@@ -53,7 +54,7 @@ def callback_direction(data):
 def callback_rotation(data):
 	global rotation_data
 	rotation_data = data.data
-    	rospy.loginfo(rospy.get_caller_id() + 'Rotation %s', rotation_data)
+   	rospy.loginfo(rospy.get_caller_id() + 'Rotation %s', rotation_data)
 
 def listener():
 	# In ROS, nodes are uniquely named. If two nodes with the same
@@ -69,35 +70,55 @@ def listener():
     # spin() simply keeps python from exiting until this node is stopped
 
 if __name__ == '__main__':
+
 	listener()
 
-	bot = Robot()
-
+	bot = Robot()					#Open Serial Connection
+	robot = _Create2()
+	
 	while(1):
+	
 		# Direction	    
 		if direction_data == "forward":
 			print "Moving Forward"			
-			bot.setForwardSpeed(50)	
+#			bot.setForwardSpeed(50)
+			robot.drive(50,0)			#Move forward
 
+			if rotation_data == "right":
+				print "Moving Right"
+				robot.drive(50,-100)	#Moving forward + right
+				time.sleep(1)
+				rotation_data = ""
+
+			elif rotation_data == "left":
+				print "Moving Left"	
+				robot.drive(50,100)	#Move forward + left
+				time.sleep(1)
+				rotation_data = ""
+	 
 		elif direction_data == "backward":
 			print "Moving Backward"
-			bot.setForwardSpeed(-50)
+			robot.drive(-50,0)		#Move backward
+
+			if rotation_data == "right":
+				print "Moving Right"
+				robot.drive(-50,-100)	#Move backward + right
+				time.sleep(1)
+				rotation_data = ""
+
+			elif rotation_data == "left":
+				print "Moving Left"
+				robot.drive(-50,100)	#Move backward +left
+				time.sleep(1)
+				rotation_data = ""
 
 		elif direction_data == "stop":
-			print "Moving direction STOP"
-			bot.setForwardSpeed(0)
-
-		# Rotation
-		if rotation_data == str("left"):
-			print "Moving Left"
-			bot.setTurnSpeed(-50)
-			    
-		elif rotation_data == str("right"):
-			print "Moving Right"
-			bot.setTurnSpeed(50)
+			print "Moving Stop"
+			robot.drive(0,0)		#Stop movement
+			direction_data = ""
+			
+		time.sleep(1)
 	
-		elif rotation_data == str("stop"):
-			print "Moving Rotation Stop"
-			bot.setTurnSpeed(0)
+ 	bot.close()
+	robot.destroy()					#Close serial connection
 	
-	bot.close() 

@@ -220,7 +220,7 @@ class _Create2(object):
     
     """
     
-    def __init__(self, port, baud):
+    def __init__(self, port='/dev/ttyUSB0', baud=115200):
         
         self.SCI = _SerialCommandInterface(port, baud)
         self.config = _Config()
