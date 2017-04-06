@@ -102,14 +102,13 @@ int main(int argc, char **argv)
 
     while (keyboard != 'q')
     {
-        // Depth Calculations
         if(!camera_processing.receive_images()) {
-            camera_processing.depth_reception();
-            camera_processing.face_detection_engine();
-
+//            camera_processing.face_detection_engine();
+            camera_processing.object_detect();
+            camera_processing.depth_object_interface();
         }
         else {
-            cout << "object_depth_module_node: image reception" << endl;
+            cout << "object_depth_module_node: Problem with image reception" << endl;
         }
 
         keyboard = cv::waitKey(30);

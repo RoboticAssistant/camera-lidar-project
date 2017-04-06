@@ -32,9 +32,10 @@ public:
     //Object related functions
     int object_detection_initialize();
     int object_detect();
-//    int object_detection();
-    int object_detection(int argc, char *argv[]);
 
+    // Object and depth interface
+    // Returns the
+    int depth_object_interface();
 
 private:
     std::unique_ptr<sl::zed::Camera> zed;
@@ -50,6 +51,7 @@ private:
 
     // Depth related data
     int depth_clamp;
+    cv::Mat depth_map;
 
     // Face related data
     int left_faces_detected;
@@ -58,6 +60,9 @@ private:
     // Object detection
     cv::Mat HSV;                            //matrix storage for HSV image
     cv::Mat threshold;                      //matrix storage for binary threshold image
+
+    // Object depth interface
+    float *objects_distances;
 };
 
 int face_detector_initializer();
