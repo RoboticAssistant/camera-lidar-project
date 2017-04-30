@@ -30,8 +30,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "publisher_subscriber/catkin_generated/package.cmake"
   "rplidar_ros/catkin_generated/ordered_paths.cmake"
   "rplidar_ros/catkin_generated/package.cmake"
-  "video_analytics/catkin_generated/ordered_paths.cmake"
-  "video_analytics/catkin_generated/package.cmake"
   "zed-ros-wrapper/catkin_generated/ordered_paths.cmake"
   "zed-ros-wrapper/catkin_generated/package.cmake"
   "/home/ubuntu/catkin_ws/devel/share/find_object_2d/cmake/find_object_2d-msg-paths.cmake"
@@ -55,8 +53,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/ubuntu/catkin_ws/src/publisher_subscriber/package.xml"
   "/home/ubuntu/catkin_ws/src/rplidar_ros/CMakeLists.txt"
   "/home/ubuntu/catkin_ws/src/rplidar_ros/package.xml"
-  "/home/ubuntu/catkin_ws/src/video_analytics/CMakeLists.txt"
-  "/home/ubuntu/catkin_ws/src/video_analytics/package.xml"
   "/home/ubuntu/catkin_ws/src/zed-ros-wrapper/CMakeLists.txt"
   "/home/ubuntu/catkin_ws/src/zed-ros-wrapper/package.xml"
   "/opt/ros/kinetic/share/actionlib/cmake/actionlib-msg-extras.cmake"
@@ -494,7 +490,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "rplidar_ros/CMakeFiles/CMakeDirectoryInformation.cmake"
   "find-object/CMakeFiles/CMakeDirectoryInformation.cmake"
   "find-object/src/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "video_analytics/CMakeFiles/CMakeDirectoryInformation.cmake"
   "zed-ros-wrapper/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
@@ -581,7 +576,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "find-object/src/CMakeFiles/print_objects_detected.dir/DependInfo.cmake"
   "find-object/src/CMakeFiles/find_object_2d.dir/DependInfo.cmake"
   "find-object/src/CMakeFiles/find_object.dir/DependInfo.cmake"
-  "video_analytics/CMakeFiles/video_analytics_node.dir/DependInfo.cmake"
   "zed-ros-wrapper/CMakeFiles/nodelet_generate_messages_lisp.dir/DependInfo.cmake"
   "zed-ros-wrapper/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/DependInfo.cmake"
   "zed-ros-wrapper/CMakeFiles/bond_generate_messages_nodejs.dir/DependInfo.cmake"

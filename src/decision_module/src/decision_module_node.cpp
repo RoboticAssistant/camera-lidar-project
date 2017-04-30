@@ -20,6 +20,8 @@ Pub_Sub d_m_direction_publisher;
 Pub_Sub d_m_rotation_publisher;
 Pub_Sub system_status;
 
+string greet("GREET");
+
 /// This function is a callback for following details
 // 1) Audio to Motor: For forward backward direction
 void a_d_direction_callback(const std_msgs::String::ConstPtr &msg)
@@ -40,6 +42,10 @@ void a_d_rotation_callback(const std_msgs::String::ConstPtr &msg)
     process_rotation = true;
 }
 
+void greet_callback(const ros::TimerEvent&)
+{
+    system_status.publisher_data(greet);
+}
 
 // There is no need for any command line arguments here in this module
 int main(int argc, char *argv[])
@@ -48,6 +54,8 @@ int main(int argc, char *argv[])
     ros::NodeHandle node_handle;
 
     static string boot("BOOT");
+
+    ros::Timer timer_send_greetings = node_handle.createTimer(ros::Duration(20.0), greet_callback);
 
     // Publisher: From Decision to All modules
     msg_details system_status_details;

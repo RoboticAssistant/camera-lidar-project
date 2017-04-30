@@ -371,7 +371,7 @@ CUDA_USE_STATIC_CUDA_RUNTIME:BOOL=ON
 //  With the Makefile generator this defaults to VERBOSE variable
 // specified on the command line, but can be forced on with this
 // option.
-CUDA_VERBOSE_BUILD:BOOL=ON
+CUDA_VERBOSE_BUILD:BOOL=OFF
 
 //Version of CUDA as computed from nvcc.
 CUDA_VERSION:STRING=8.0
@@ -459,9 +459,6 @@ LSB_RELEASE_EXECUTABLE:FILEPATH=/usr/bin/lsb_release
 
 //Path to a program.
 NOSETESTS:FILEPATH=/usr/bin/nosetests-2.7
-
-//Dependencies for the target
-OBJECT_CUDA_LIB_LIB_DEPENDS:STATIC=general;/usr/local/cuda-8.0/lib64/libcudart.so;
 
 //Path to a file.
 OPENNI2_INCLUDE_DIRS:PATH=OPENNI2_INCLUDE_DIRS-NOTFOUND
@@ -764,12 +761,6 @@ create_2_interface_BINARY_DIR:STATIC=/home/ubuntu/catkin_ws/build/create_2_inter
 
 //Value Computed by CMake
 create_2_interface_SOURCE_DIR:STATIC=/home/ubuntu/catkin_ws/src/create_2_interface
-
-//Value Computed by CMake
-create_2_motion_handle_BINARY_DIR:STATIC=/home/ubuntu/catkin_ws/build/create_2_motion_handle
-
-//Value Computed by CMake
-create_2_motion_handle_SOURCE_DIR:STATIC=/home/ubuntu/catkin_ws/src/create_2_motion_handle
 
 //The directory containing a CMake configuration file for cv_bridge.
 cv_bridge_DIR:PATH=/opt/ros/kinetic/share/cv_bridge/cmake
@@ -1135,7 +1126,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=12
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=11
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -1176,9 +1167,6 @@ CMAKE_UNAME:INTERNAL=/bin/uname
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CUDA_64_BIT_DEVICE_CODE
 CUDA_64_BIT_DEVICE_CODE-ADVANCED:INTERNAL=1
-//List of intermediate files that are part of the cuda dependency
-// scanning.
-CUDA_ADDITIONAL_CLEAN_FILES:INTERNAL=/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_depth_module_node_generated_activation_kernels.cu.o.depend;/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_depth_module_node_generated_avgpool_layer_kernels.cu.o.depend;/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_depth_module_node_generated_blas_kernels.cu.o.depend;/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_depth_module_node_generated_col2im_kernels.cu.o.depend;/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_depth_module_node_generated_convolutional_kernels.cu.o.depend;/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_depth_module_node_generated_crop_layer_kernels.cu.o.depend;/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_depth_module_node_generated_dropout_layer_kernels.cu.o.depend;/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_depth_module_node_generated_deconvolutional_kernels.cu.o.depend;/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_depth_module_node_generated_network_kernels.cu.o.depend;/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_depth_module_node_generated_im2col_kernels.cu.o.depend;/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_depth_module_node_generated_maxpool_layer_kernels.cu.o.depend;/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/cuda_compile.dir/src/cuda_compile_generated_activation_kernels.cu.o.depend;/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/cuda_compile.dir/src/cuda_compile_generated_avgpool_layer_kernels.cu.o.depend;/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/cuda_compile.dir/src/cuda_compile_generated_blas_kernels.cu.o.depend;/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/cuda_compile.dir/src/cuda_compile_generated_col2im_kernels.cu.o.depend;/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/cuda_compile.dir/src/cuda_compile_generated_convolutional_kernels.cu.o.depend;/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/cuda_compile.dir/src/cuda_compile_generated_crop_layer_kernels.cu.o.depend;/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/cuda_compile.dir/src/cuda_compile_generated_deconvolutional_kernels.cu.o.depend;/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/cuda_compile.dir/src/cuda_compile_generated_dropout_layer_kernels.cu.o.depend;/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/cuda_compile.dir/src/cuda_compile_generated_im2col_kernels.cu.o.depend;/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/cuda_compile.dir/src/cuda_compile_generated_maxpool_layer_kernels.cu.o.depend;/home/ubuntu/catkin_ws/build/object_depth_module/CMakeFiles/cuda_compile.dir/src/cuda_compile_generated_network_kernels.cu.o.depend
 //ADVANCED property for variable: CUDA_ATTACH_VS_BUILD_RULE_TO_CUDA_FILE
 CUDA_ATTACH_VS_BUILD_RULE_TO_CUDA_FILE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CUDA_BUILD_CUBIN

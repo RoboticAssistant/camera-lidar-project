@@ -1219,19 +1219,6 @@ find_object/fast:
 .PHONY : find_object/fast
 
 #=============================================================================
-# Target rules for targets named video_analytics_node
-
-# Build rule for target.
-video_analytics_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 video_analytics_node
-.PHONY : video_analytics_node
-
-# fast build rule for target.
-video_analytics_node/fast:
-	$(MAKE) -f video_analytics/CMakeFiles/video_analytics_node.dir/build.make video_analytics/CMakeFiles/video_analytics_node.dir/build
-.PHONY : video_analytics_node/fast
-
-#=============================================================================
 # Target rules for targets named nodelet_generate_messages_lisp
 
 # Build rule for target.
@@ -1585,7 +1572,6 @@ help:
 	@echo "... print_objects_detected"
 	@echo "... find_object_2d"
 	@echo "... find_object"
-	@echo "... video_analytics_node"
 	@echo "... nodelet_generate_messages_lisp"
 	@echo "... dynamic_reconfigure_generate_messages_py"
 	@echo "... bond_generate_messages_nodejs"

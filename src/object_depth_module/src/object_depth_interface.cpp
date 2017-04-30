@@ -37,13 +37,17 @@ const string windowName2 = "Thresholded Image";
 const string windowName3 = "After Morphological Operations";
 const string trackbarWindowName = "Trackbars";
 
+cv::Mat contour_display_mat;
+cv::vector<Vec4i> hierarchy;
+vector<vector<Point> > contours;
+
 extern Pub_Sub face_information_publisher;
 
 int object_depth_interface::initialize_ZED_camera()
 {
     cout << "initialize_ZED_camera(): Initialized ZED Camera." << endl;
     // Initialization of the parameters
-    int quality = sl::zed::MODE::PERFORMANCE;
+    int quality = sl::zed::MODE::QUALITY;
     int gpu_id = -1;
     int zed_id = 0;
     int frame_rate = 30;
@@ -53,7 +57,7 @@ int object_depth_interface::initialize_ZED_camera()
     sl::zed::InitParams param;
 
     // Filling of camera object parameter
-    param.unit = UNIT::METER;                                   // METER looks Good
+    param.unit = UNIT::MILLIMETER;                              // METER looks Good
     param.coordinate = COORDINATE_SYSTEM::IMAGE;                // IMAGE looks Good
     param.mode = static_cast<sl::zed::MODE> (quality);          // Good
     param.verbose = true;                                       // Good
@@ -90,18 +94,20 @@ int object_depth_interface::initialize_ZED_camera()
     return 0;
 }
 
-object_depth_interface::object_depth_interface(bool live_flag, string svo_file_path, int depth_requested)
+object_depth_interface::object_depth_interface(bool live_flag, string svo_file_path, int depth_requested, int confidence_requested)
     : displaySize(720, 404)
 {
     is_live = live_flag;
     svo_path = svo_file_path;
     depth_clamp = depth_requested;
+    confidence = confidence_requested;
+    svo_position = 0;
 }
 
 int object_depth_interface::object_detection_initialize()
 {
     cout << "object_detection_initialize(): Initial object detection module setup done." << endl;
-    createTrackbars();
+//    createTrackbars();
 }
 
 int object_depth_interface::initialize_camera_reception()
@@ -116,15 +122,25 @@ int object_depth_interface::initialize_camera_reception()
     depth_map.create(image_height, image_width, CV_8UC4);
 
     // If not live and not 0, limit the max depth value
-    if(!is_live && depth_clamp != 0) {
+    if(is_live && (depth_clamp != 0 || confidence != 0)) {
         zed->setDepthClampValue(depth_clamp);
+        cout << "\ninitialize_camera_reception(): Limiting Depth to " << depth_clamp << endl;
+
+        zed->setConfidenceThreshold(confidence);
+        cout << "\ninitialize_camera_reception(): Setting confidence to " << confidence << endl;
     }
 }
 
-int object_depth_interface::receive_images()
+ERRCODE object_depth_interface::receive_images()
 {
     ERRCODE err;
     err = zed->grab(sl::zed::SENSING_MODE::FILL);
+
+    if(!is_live) {
+     svo_position = zed->getSVOPosition();
+     svo_position += 1;
+     zed->setSVOPosition(svo_position);
+    }
 
     // Grab frame and compute depth in FILL sensing mode
     if (!err) {
@@ -148,15 +164,19 @@ int object_depth_interface::receive_images()
         // Display image in OpenCV window
         cv::resize(depth_map, depth_map, displaySize);
 
-        return 0;
+        cout << "receive_images(): Receiving Disparity." << endl;
+        sl::zed::Mat disparity = zed->normalizeMeasure(sl::zed::MEASURE::DISPARITY);
+        disparity_image = slMat2cvMat(disparity);
+        // Display image in OpenCV window
+        cv::resize(disparity_image, disparity_image, displaySize);
     }
-    else {
-        return -1;
-    }
+
+    return err;
 }
 
 int object_depth_interface::object_detect()
 {
+    imshow("Depth", depth_map);
     cout << "object_detect(): Detecting object." << endl;
 
     //some boolean variables for different functionality within this
@@ -180,14 +200,31 @@ int object_depth_interface::object_detect()
     //pass in thresholded frame to our object tracking function
     //this function will return the x and y coordinates of the
     //filtered object
-    if(trackObjects)
-        trackFilteredObject(x, y, threshold, left_image);
+//    if(trackObjects)
+//        trackFilteredObject(x, y, threshold, left_image);
 
     //show frames
-    imshow(windowName2, threshold);
-    imshow(windowName1, HSV);
+//    imshow(windowName1, HSV);
 
-    // Apply the contour and edge detection on the threshold
+//    // Apply the contour and edge detection on the threshold
+//    contour_display_mat = cv::Mat::zeros(image_height, image_width, CV_8UC1);
+//    int threshold_val = 100;
+
+//    /// Detect edges using canny
+//    Canny(threshold, threshold, threshold_val, threshold_val*2, 3 );
+//    imshow(windowName2, threshold);
+
+//    findContours(threshold, contours, hierarchy,
+//                  CV_RETR_CCOMP, CV_CHAIN_APPROX_SIMPLE );
+
+//    for(int idx = 0 ; idx >= 0; idx = hierarchy[idx][0] )
+//    {
+//        Scalar color(rand()&255, rand()&255, rand()&255);
+//        drawContours(contour_display_mat, contours, idx, color, CV_FILLED, 8, hierarchy);
+//    }
+
+//    namedWindow( "Components", 1 );
+//    imshow( "Components", contour_display_mat);
 
     return 0;
 }
@@ -272,7 +309,7 @@ int detectAndDisplay(cv::Mat frame, bool is_left)
         imshow("Left: Face Detector", frame);
     }
     else {
-        imshow("Right Cam: Face Detector", frame);
+        imshow("Right: Face Detector", frame);
     }
 
     return faces_detected;
@@ -327,6 +364,34 @@ int object_depth_interface::face_detection_engine()
 // This is the approximate distance of the objects around
 int object_depth_interface::depth_object_interface() {
 
+
+    return 0;
+}
+
+/// This section plays with the disparity and finds different blobs in the image
+/// Algo:
+/// 1) Convert the disparity to binary: Think of a threshold
+/// 2) Apply erosion and dilation to get rid of noise blobs
+/// 3) Apply the simple blob detector
+/// 4) Get all the blobs. find the midpoint of these blobs
+/// 5) Find the distance using the depth map
+/// 6) Write a publisher: Sending the notification about following information
+///     a) Number of objects
+///     b) Distance of those object
+int object_depth_interface::object_detect_from_disparity() {
+//    // Showing the depth map
+//    imshow("Depth Map", depth_map);
+
+    // Showing the disparity
+    imshow("Disparity", disparity_image);
+
+    // Converting this image to a binary image
+    cv::threshold(disparity_image, disparity_image, 100, 255, CV_THRESH_BINARY);
+    // Showing the binarized image for disparity
+    imshow("Disparity Binary Image", disparity_image);
+
+    morphOps(disparity_image);
+    imshow("Processed Image", disparity_image);
 
     return 0;
 }

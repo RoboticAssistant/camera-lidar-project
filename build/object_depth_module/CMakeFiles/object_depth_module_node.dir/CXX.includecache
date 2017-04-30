@@ -11,6 +11,8 @@ iostream
 -
 zed/Camera.hpp
 -
+zed/utils/GlobalDefine.hpp
+-
 opencv2/core/core.hpp
 -
 
@@ -57,10 +59,6 @@ memory
 -
 thread
 -
-boost/asio.hpp
--
-boost/date_time/posix_time/posix_time.hpp
--
 stdio.h
 -
 opencv2/core/core.hpp
@@ -74,6 +72,8 @@ opencv2/calib3d/calib3d.hpp
 ros/ros.h
 -
 zed/Camera.hpp
+-
+zed/utils/GlobalDefine.hpp
 -
 cuda.h
 -

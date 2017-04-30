@@ -124,7 +124,6 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/ubuntu/catkin_ws/build/object_depth_module/cmake_install.cmake")
   include("/home/ubuntu/catkin_ws/build/rplidar_ros/cmake_install.cmake")
   include("/home/ubuntu/catkin_ws/build/find-object/cmake_install.cmake")
-  include("/home/ubuntu/catkin_ws/build/video_analytics/cmake_install.cmake")
   include("/home/ubuntu/catkin_ws/build/zed-ros-wrapper/cmake_install.cmake")
 
 endif()

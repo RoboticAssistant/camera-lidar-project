@@ -51,6 +51,9 @@ int main(int argc, char *argv[])
         cout << "From Live Camera Feed" << endl;
     }
 
+    cv::Mat temp(100, 100, CV_8UC4, 1);
+    cv::imshow("Left", temp);
+
     face_detection_engine(is_live, svo_file_path);
 
     return 0;

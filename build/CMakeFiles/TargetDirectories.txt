@@ -149,14 +149,6 @@
 /home/ubuntu/catkin_ws/build/find-object/src/CMakeFiles/edit_cache.dir
 /home/ubuntu/catkin_ws/build/find-object/src/CMakeFiles/rebuild_cache.dir
 /home/ubuntu/catkin_ws/build/find-object/src/CMakeFiles/install.dir
-/home/ubuntu/catkin_ws/build/video_analytics/CMakeFiles/list_install_components.dir
-/home/ubuntu/catkin_ws/build/video_analytics/CMakeFiles/install.dir
-/home/ubuntu/catkin_ws/build/video_analytics/CMakeFiles/rebuild_cache.dir
-/home/ubuntu/catkin_ws/build/video_analytics/CMakeFiles/edit_cache.dir
-/home/ubuntu/catkin_ws/build/video_analytics/CMakeFiles/video_analytics_node.dir
-/home/ubuntu/catkin_ws/build/video_analytics/CMakeFiles/install/strip.dir
-/home/ubuntu/catkin_ws/build/video_analytics/CMakeFiles/install/local.dir
-/home/ubuntu/catkin_ws/build/video_analytics/CMakeFiles/test.dir
 /home/ubuntu/catkin_ws/build/zed-ros-wrapper/CMakeFiles/rebuild_cache.dir
 /home/ubuntu/catkin_ws/build/zed-ros-wrapper/CMakeFiles/nodelet_generate_messages_lisp.dir
 /home/ubuntu/catkin_ws/build/zed-ros-wrapper/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir

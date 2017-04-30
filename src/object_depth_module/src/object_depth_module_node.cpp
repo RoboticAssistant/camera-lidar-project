@@ -1,8 +1,6 @@
 #include <iostream>
 #include <memory>
 #include <thread>
-#include <boost/asio.hpp>
-#include <boost/date_time/posix_time/posix_time.hpp>
 #include <stdio.h>
 
 // OpenCv Libraries
@@ -16,6 +14,7 @@
 
 // ZED Libraries
 #include <zed/Camera.hpp>
+#include <zed/utils/GlobalDefine.hpp>
 
 // CUDA Libraries
 #include <cuda.h>
@@ -28,6 +27,9 @@
 using namespace sl::zed;
 using namespace std;
 using namespace cv;
+
+/// If not using any of these options, just keep them either "" or 0
+// Usage: <exe> [is_live]<true/false> [svo_file_name(Can be "" if no file)] [depth_clamp] [confidence]
 
 Pub_Sub face_information_publisher;
 
@@ -51,24 +53,21 @@ int set_up_communication() {
     return 0;
 }
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
     bool is_live = false;
     string svo_file_path, svo_file_name(argv[2]), input_status(argv[1]);
     char keyboard = ' ';
 
-//    // Initializing while loop timer parameter
-//    boost::asio::io_service service_io;
-//    boost::asio::deadline_timer timer(service_io, boost::posix_time::seconds(2));
-
     ros::init(argc, argv, "camera_communication_module");
     set_up_communication();
 
-    if(argc != 4) {
-        cout << "Error in Usage:::Usage: <exe> [is_live]<true/false> <svo_file_name> <depth_clamp>" << endl;
+    if(argc != 5) {
+        cout << "Error in Usage:::Usage: <exe> [is_live]<true/false> [svo_file_name(Can be "" if no file)] [depth_clamp] [confidence]" << endl;
         return -1;
     }
     int depth_clamp = atoi(argv[3]);
+    int confidence = atoi(argv[4]);
 
     int size_of_file_name = (sizeof(svo_file_name)/sizeof(char));
     if(!strcmp(input_status.c_str(), "true")) {
@@ -87,34 +86,34 @@ int main(int argc, char **argv)
         cout << "From Live Camera Feed" << endl;
     }
 
-    // Handling initial camera object and it's initialization
-    object_depth_interface camera_processing(is_live, svo_file_path, depth_clamp);
+//     Handling initial camera object and it's initialization
+    object_depth_interface camera_processing(is_live, svo_file_path, depth_clamp, confidence);
     camera_processing.initialize_ZED_camera();
     camera_processing.initialize_camera_reception();
 
-    // Initializing data for object detection
-    camera_processing.object_detection_initialize();
-
-    // Initializing face detector Initialization
+//     Initializing face detector Initialization
     if(!face_detector_initializer()) {
         cout << "face_detection_module: Face detector Initialized Successfully" << endl;
     }
 
-    while (keyboard != 'q')
+    ros::Rate loop_rate(1);
+    ERRCODE error;
+
+    while(ros::ok())
     {
-        if(!camera_processing.receive_images()) {
-//            camera_processing.face_detection_engine();
-            camera_processing.object_detect();
+        error = camera_processing.receive_images();
+        if(!error) {
+            camera_processing.face_detection_engine();
+//            camera_processing.object_detect();
+            camera_processing.object_detect_from_disparity();
             camera_processing.depth_object_interface();
         }
         else {
-            cout << "object_depth_module_node: Problem with image reception" << endl;
+            cout << "object_depth_module_node: Error: " << error << endl;
         }
-
-        keyboard = cv::waitKey(30);
+        loop_rate.sleep();
+        cv::waitKey(10);
     }
-
-    waitKey(0);
     return 0;
 }
 

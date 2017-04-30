@@ -6,39 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/ubuntu/catkin_ws/src/video_analytics/include/video_analytics/video_processing_lib.hpp
-iostream
--
-opencv2/core/core.hpp
--
-opencv2/highgui/highgui.hpp
--
-
 /home/ubuntu/catkin_ws/src/video_analytics/src/video_analytics_node.cpp
-iostream
--
-video_analytics/video_processing_lib.hpp
--
-opencv2/core/core.hpp
--
-opencv2/highgui/highgui.hpp
--
-opencv2/imgproc/imgproc.hpp
--
-opencv2/calib3d/calib3d.hpp
--
 
 /home/ubuntu/catkin_ws/src/video_analytics/src/video_processing_lib.cpp
-iostream
--
-opencv2/core/core.hpp
--
-opencv2/highgui/highgui.hpp
--
-string
--
-stdio.h
--
-video_analytics/video_processing_lib.hpp
--
 

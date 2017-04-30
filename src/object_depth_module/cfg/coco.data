@@ -1,8 +1,0 @@
-classes= 80
-train  = /home/ubuntu/catkin_ws/src/object_depth_module/data/coco/trainvalno5k.txt
-#valid  = coco_testdev
-valid = src/object_detector_module/data/coco_val_5k.list
-names = src/object_depth_module/data/coco.names
-backup = /home/pjreddie/backup/
-eval=coco
-
