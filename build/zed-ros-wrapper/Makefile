@@ -56,27 +56,6 @@ CMAKE_BINARY_DIR = /home/ubuntu/catkin_ws/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -100,6 +79,27 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+
+.PHONY : install/local/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
@@ -111,6 +111,17 @@ install/strip/fast: install/strip
 
 .PHONY : install/strip/fast
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -121,17 +132,6 @@ test:
 test/fast: test
 
 .PHONY : test/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: install/local
-
-.PHONY : install/local/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -166,64 +166,49 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-zed-ros-wrapper/CMakeFiles/nodelet_generate_messages_lisp.dir/rule:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 zed-ros-wrapper/CMakeFiles/nodelet_generate_messages_lisp.dir/rule
-.PHONY : zed-ros-wrapper/CMakeFiles/nodelet_generate_messages_lisp.dir/rule
+zed-ros-wrapper/CMakeFiles/dummy_zed_wrapper.dir/rule:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 zed-ros-wrapper/CMakeFiles/dummy_zed_wrapper.dir/rule
+.PHONY : zed-ros-wrapper/CMakeFiles/dummy_zed_wrapper.dir/rule
 
 # Convenience name for target.
-nodelet_generate_messages_lisp: zed-ros-wrapper/CMakeFiles/nodelet_generate_messages_lisp.dir/rule
+dummy_zed_wrapper: zed-ros-wrapper/CMakeFiles/dummy_zed_wrapper.dir/rule
 
-.PHONY : nodelet_generate_messages_lisp
+.PHONY : dummy_zed_wrapper
 
 # fast build rule for target.
-nodelet_generate_messages_lisp/fast:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f zed-ros-wrapper/CMakeFiles/nodelet_generate_messages_lisp.dir/build.make zed-ros-wrapper/CMakeFiles/nodelet_generate_messages_lisp.dir/build
-.PHONY : nodelet_generate_messages_lisp/fast
+dummy_zed_wrapper/fast:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f zed-ros-wrapper/CMakeFiles/dummy_zed_wrapper.dir/build.make zed-ros-wrapper/CMakeFiles/dummy_zed_wrapper.dir/build
+.PHONY : dummy_zed_wrapper/fast
 
 # Convenience name for target.
-zed-ros-wrapper/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/rule:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 zed-ros-wrapper/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/rule
-.PHONY : zed-ros-wrapper/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/rule
+zed-ros-wrapper/CMakeFiles/zed_wrapper_node.dir/rule:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 zed-ros-wrapper/CMakeFiles/zed_wrapper_node.dir/rule
+.PHONY : zed-ros-wrapper/CMakeFiles/zed_wrapper_node.dir/rule
 
 # Convenience name for target.
-dynamic_reconfigure_generate_messages_py: zed-ros-wrapper/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/rule
+zed_wrapper_node: zed-ros-wrapper/CMakeFiles/zed_wrapper_node.dir/rule
 
-.PHONY : dynamic_reconfigure_generate_messages_py
+.PHONY : zed_wrapper_node
 
 # fast build rule for target.
-dynamic_reconfigure_generate_messages_py/fast:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f zed-ros-wrapper/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/build.make zed-ros-wrapper/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/build
-.PHONY : dynamic_reconfigure_generate_messages_py/fast
+zed_wrapper_node/fast:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f zed-ros-wrapper/CMakeFiles/zed_wrapper_node.dir/build.make zed-ros-wrapper/CMakeFiles/zed_wrapper_node.dir/build
+.PHONY : zed_wrapper_node/fast
 
 # Convenience name for target.
-zed-ros-wrapper/CMakeFiles/bond_generate_messages_nodejs.dir/rule:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 zed-ros-wrapper/CMakeFiles/bond_generate_messages_nodejs.dir/rule
-.PHONY : zed-ros-wrapper/CMakeFiles/bond_generate_messages_nodejs.dir/rule
+zed-ros-wrapper/CMakeFiles/ZEDWrapper.dir/rule:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 zed-ros-wrapper/CMakeFiles/ZEDWrapper.dir/rule
+.PHONY : zed-ros-wrapper/CMakeFiles/ZEDWrapper.dir/rule
 
 # Convenience name for target.
-bond_generate_messages_nodejs: zed-ros-wrapper/CMakeFiles/bond_generate_messages_nodejs.dir/rule
+ZEDWrapper: zed-ros-wrapper/CMakeFiles/ZEDWrapper.dir/rule
 
-.PHONY : bond_generate_messages_nodejs
+.PHONY : ZEDWrapper
 
 # fast build rule for target.
-bond_generate_messages_nodejs/fast:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f zed-ros-wrapper/CMakeFiles/bond_generate_messages_nodejs.dir/build.make zed-ros-wrapper/CMakeFiles/bond_generate_messages_nodejs.dir/build
-.PHONY : bond_generate_messages_nodejs/fast
-
-# Convenience name for target.
-zed-ros-wrapper/CMakeFiles/zed_wrapper_gencfg.dir/rule:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 zed-ros-wrapper/CMakeFiles/zed_wrapper_gencfg.dir/rule
-.PHONY : zed-ros-wrapper/CMakeFiles/zed_wrapper_gencfg.dir/rule
-
-# Convenience name for target.
-zed_wrapper_gencfg: zed-ros-wrapper/CMakeFiles/zed_wrapper_gencfg.dir/rule
-
-.PHONY : zed_wrapper_gencfg
-
-# fast build rule for target.
-zed_wrapper_gencfg/fast:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f zed-ros-wrapper/CMakeFiles/zed_wrapper_gencfg.dir/build.make zed-ros-wrapper/CMakeFiles/zed_wrapper_gencfg.dir/build
-.PHONY : zed_wrapper_gencfg/fast
+ZEDWrapper/fast:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f zed-ros-wrapper/CMakeFiles/ZEDWrapper.dir/build.make zed-ros-wrapper/CMakeFiles/ZEDWrapper.dir/build
+.PHONY : ZEDWrapper/fast
 
 # Convenience name for target.
 zed-ros-wrapper/CMakeFiles/nodelet_generate_messages_nodejs.dir/rule:
@@ -241,34 +226,19 @@ nodelet_generate_messages_nodejs/fast:
 .PHONY : nodelet_generate_messages_nodejs/fast
 
 # Convenience name for target.
-zed-ros-wrapper/CMakeFiles/dynamic_reconfigure_gencfg.dir/rule:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 zed-ros-wrapper/CMakeFiles/dynamic_reconfigure_gencfg.dir/rule
-.PHONY : zed-ros-wrapper/CMakeFiles/dynamic_reconfigure_gencfg.dir/rule
+zed-ros-wrapper/CMakeFiles/bond_generate_messages_py.dir/rule:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 zed-ros-wrapper/CMakeFiles/bond_generate_messages_py.dir/rule
+.PHONY : zed-ros-wrapper/CMakeFiles/bond_generate_messages_py.dir/rule
 
 # Convenience name for target.
-dynamic_reconfigure_gencfg: zed-ros-wrapper/CMakeFiles/dynamic_reconfigure_gencfg.dir/rule
+bond_generate_messages_py: zed-ros-wrapper/CMakeFiles/bond_generate_messages_py.dir/rule
 
-.PHONY : dynamic_reconfigure_gencfg
+.PHONY : bond_generate_messages_py
 
 # fast build rule for target.
-dynamic_reconfigure_gencfg/fast:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f zed-ros-wrapper/CMakeFiles/dynamic_reconfigure_gencfg.dir/build.make zed-ros-wrapper/CMakeFiles/dynamic_reconfigure_gencfg.dir/build
-.PHONY : dynamic_reconfigure_gencfg/fast
-
-# Convenience name for target.
-zed-ros-wrapper/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/rule:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 zed-ros-wrapper/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/rule
-.PHONY : zed-ros-wrapper/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-dynamic_reconfigure_generate_messages_eus: zed-ros-wrapper/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/rule
-
-.PHONY : dynamic_reconfigure_generate_messages_eus
-
-# fast build rule for target.
-dynamic_reconfigure_generate_messages_eus/fast:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f zed-ros-wrapper/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/build.make zed-ros-wrapper/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/build
-.PHONY : dynamic_reconfigure_generate_messages_eus/fast
+bond_generate_messages_py/fast:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f zed-ros-wrapper/CMakeFiles/bond_generate_messages_py.dir/build.make zed-ros-wrapper/CMakeFiles/bond_generate_messages_py.dir/build
+.PHONY : bond_generate_messages_py/fast
 
 # Convenience name for target.
 zed-ros-wrapper/CMakeFiles/nodelet_generate_messages_eus.dir/rule:
@@ -301,51 +271,6 @@ nodelet_generate_messages_cpp/fast:
 .PHONY : nodelet_generate_messages_cpp/fast
 
 # Convenience name for target.
-zed-ros-wrapper/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/rule:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 zed-ros-wrapper/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/rule
-.PHONY : zed-ros-wrapper/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-dynamic_reconfigure_generate_messages_nodejs: zed-ros-wrapper/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/rule
-
-.PHONY : dynamic_reconfigure_generate_messages_nodejs
-
-# fast build rule for target.
-dynamic_reconfigure_generate_messages_nodejs/fast:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f zed-ros-wrapper/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/build.make zed-ros-wrapper/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/build
-.PHONY : dynamic_reconfigure_generate_messages_nodejs/fast
-
-# Convenience name for target.
-zed-ros-wrapper/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 zed-ros-wrapper/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule
-.PHONY : zed-ros-wrapper/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-dynamic_reconfigure_generate_messages_lisp: zed-ros-wrapper/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule
-
-.PHONY : dynamic_reconfigure_generate_messages_lisp
-
-# fast build rule for target.
-dynamic_reconfigure_generate_messages_lisp/fast:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f zed-ros-wrapper/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/build.make zed-ros-wrapper/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/build
-.PHONY : dynamic_reconfigure_generate_messages_lisp/fast
-
-# Convenience name for target.
-zed-ros-wrapper/CMakeFiles/zed_wrapper_node.dir/rule:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 zed-ros-wrapper/CMakeFiles/zed_wrapper_node.dir/rule
-.PHONY : zed-ros-wrapper/CMakeFiles/zed_wrapper_node.dir/rule
-
-# Convenience name for target.
-zed_wrapper_node: zed-ros-wrapper/CMakeFiles/zed_wrapper_node.dir/rule
-
-.PHONY : zed_wrapper_node
-
-# fast build rule for target.
-zed_wrapper_node/fast:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f zed-ros-wrapper/CMakeFiles/zed_wrapper_node.dir/build.make zed-ros-wrapper/CMakeFiles/zed_wrapper_node.dir/build
-.PHONY : zed_wrapper_node/fast
-
-# Convenience name for target.
 zed-ros-wrapper/CMakeFiles/nodelet_generate_messages_py.dir/rule:
 	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 zed-ros-wrapper/CMakeFiles/nodelet_generate_messages_py.dir/rule
 .PHONY : zed-ros-wrapper/CMakeFiles/nodelet_generate_messages_py.dir/rule
@@ -376,6 +301,51 @@ bond_generate_messages_cpp/fast:
 .PHONY : bond_generate_messages_cpp/fast
 
 # Convenience name for target.
+zed-ros-wrapper/CMakeFiles/zed_wrapper_gencfg.dir/rule:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 zed-ros-wrapper/CMakeFiles/zed_wrapper_gencfg.dir/rule
+.PHONY : zed-ros-wrapper/CMakeFiles/zed_wrapper_gencfg.dir/rule
+
+# Convenience name for target.
+zed_wrapper_gencfg: zed-ros-wrapper/CMakeFiles/zed_wrapper_gencfg.dir/rule
+
+.PHONY : zed_wrapper_gencfg
+
+# fast build rule for target.
+zed_wrapper_gencfg/fast:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f zed-ros-wrapper/CMakeFiles/zed_wrapper_gencfg.dir/build.make zed-ros-wrapper/CMakeFiles/zed_wrapper_gencfg.dir/build
+.PHONY : zed_wrapper_gencfg/fast
+
+# Convenience name for target.
+zed-ros-wrapper/CMakeFiles/nodelet_generate_messages_lisp.dir/rule:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 zed-ros-wrapper/CMakeFiles/nodelet_generate_messages_lisp.dir/rule
+.PHONY : zed-ros-wrapper/CMakeFiles/nodelet_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+nodelet_generate_messages_lisp: zed-ros-wrapper/CMakeFiles/nodelet_generate_messages_lisp.dir/rule
+
+.PHONY : nodelet_generate_messages_lisp
+
+# fast build rule for target.
+nodelet_generate_messages_lisp/fast:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f zed-ros-wrapper/CMakeFiles/nodelet_generate_messages_lisp.dir/build.make zed-ros-wrapper/CMakeFiles/nodelet_generate_messages_lisp.dir/build
+.PHONY : nodelet_generate_messages_lisp/fast
+
+# Convenience name for target.
+zed-ros-wrapper/CMakeFiles/bond_generate_messages_nodejs.dir/rule:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 zed-ros-wrapper/CMakeFiles/bond_generate_messages_nodejs.dir/rule
+.PHONY : zed-ros-wrapper/CMakeFiles/bond_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+bond_generate_messages_nodejs: zed-ros-wrapper/CMakeFiles/bond_generate_messages_nodejs.dir/rule
+
+.PHONY : bond_generate_messages_nodejs
+
+# fast build rule for target.
+bond_generate_messages_nodejs/fast:
+	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f zed-ros-wrapper/CMakeFiles/bond_generate_messages_nodejs.dir/build.make zed-ros-wrapper/CMakeFiles/bond_generate_messages_nodejs.dir/build
+.PHONY : bond_generate_messages_nodejs/fast
+
+# Convenience name for target.
 zed-ros-wrapper/CMakeFiles/bond_generate_messages_eus.dir/rule:
 	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 zed-ros-wrapper/CMakeFiles/bond_generate_messages_eus.dir/rule
 .PHONY : zed-ros-wrapper/CMakeFiles/bond_generate_messages_eus.dir/rule
@@ -404,66 +374,6 @@ bond_generate_messages_lisp: zed-ros-wrapper/CMakeFiles/bond_generate_messages_l
 bond_generate_messages_lisp/fast:
 	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f zed-ros-wrapper/CMakeFiles/bond_generate_messages_lisp.dir/build.make zed-ros-wrapper/CMakeFiles/bond_generate_messages_lisp.dir/build
 .PHONY : bond_generate_messages_lisp/fast
-
-# Convenience name for target.
-zed-ros-wrapper/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 zed-ros-wrapper/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule
-.PHONY : zed-ros-wrapper/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-dynamic_reconfigure_generate_messages_cpp: zed-ros-wrapper/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule
-
-.PHONY : dynamic_reconfigure_generate_messages_cpp
-
-# fast build rule for target.
-dynamic_reconfigure_generate_messages_cpp/fast:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f zed-ros-wrapper/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build.make zed-ros-wrapper/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build
-.PHONY : dynamic_reconfigure_generate_messages_cpp/fast
-
-# Convenience name for target.
-zed-ros-wrapper/CMakeFiles/bond_generate_messages_py.dir/rule:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 zed-ros-wrapper/CMakeFiles/bond_generate_messages_py.dir/rule
-.PHONY : zed-ros-wrapper/CMakeFiles/bond_generate_messages_py.dir/rule
-
-# Convenience name for target.
-bond_generate_messages_py: zed-ros-wrapper/CMakeFiles/bond_generate_messages_py.dir/rule
-
-.PHONY : bond_generate_messages_py
-
-# fast build rule for target.
-bond_generate_messages_py/fast:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f zed-ros-wrapper/CMakeFiles/bond_generate_messages_py.dir/build.make zed-ros-wrapper/CMakeFiles/bond_generate_messages_py.dir/build
-.PHONY : bond_generate_messages_py/fast
-
-# Convenience name for target.
-zed-ros-wrapper/CMakeFiles/ZEDWrapper.dir/rule:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 zed-ros-wrapper/CMakeFiles/ZEDWrapper.dir/rule
-.PHONY : zed-ros-wrapper/CMakeFiles/ZEDWrapper.dir/rule
-
-# Convenience name for target.
-ZEDWrapper: zed-ros-wrapper/CMakeFiles/ZEDWrapper.dir/rule
-
-.PHONY : ZEDWrapper
-
-# fast build rule for target.
-ZEDWrapper/fast:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f zed-ros-wrapper/CMakeFiles/ZEDWrapper.dir/build.make zed-ros-wrapper/CMakeFiles/ZEDWrapper.dir/build
-.PHONY : ZEDWrapper/fast
-
-# Convenience name for target.
-zed-ros-wrapper/CMakeFiles/dummy_zed_wrapper.dir/rule:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 zed-ros-wrapper/CMakeFiles/dummy_zed_wrapper.dir/rule
-.PHONY : zed-ros-wrapper/CMakeFiles/dummy_zed_wrapper.dir/rule
-
-# Convenience name for target.
-dummy_zed_wrapper: zed-ros-wrapper/CMakeFiles/dummy_zed_wrapper.dir/rule
-
-.PHONY : dummy_zed_wrapper
-
-# fast build rule for target.
-dummy_zed_wrapper/fast:
-	cd /home/ubuntu/catkin_ws/build && $(MAKE) -f zed-ros-wrapper/CMakeFiles/dummy_zed_wrapper.dir/build.make zed-ros-wrapper/CMakeFiles/dummy_zed_wrapper.dir/build
-.PHONY : dummy_zed_wrapper/fast
 
 src/zed_wrapper_node.o: src/zed_wrapper_node.cpp.o
 
@@ -525,33 +435,27 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
-	@echo "... nodelet_generate_messages_lisp"
-	@echo "... dynamic_reconfigure_generate_messages_py"
-	@echo "... bond_generate_messages_nodejs"
-	@echo "... list_install_components"
-	@echo "... zed_wrapper_gencfg"
 	@echo "... install"
-	@echo "... nodelet_generate_messages_nodejs"
 	@echo "... edit_cache"
-	@echo "... dynamic_reconfigure_gencfg"
-	@echo "... dynamic_reconfigure_generate_messages_eus"
+	@echo "... install/local"
+	@echo "... list_install_components"
 	@echo "... install/strip"
+	@echo "... dummy_zed_wrapper"
+	@echo "... zed_wrapper_node"
+	@echo "... rebuild_cache"
+	@echo "... ZEDWrapper"
+	@echo "... nodelet_generate_messages_nodejs"
+	@echo "... bond_generate_messages_py"
 	@echo "... nodelet_generate_messages_eus"
 	@echo "... nodelet_generate_messages_cpp"
-	@echo "... dynamic_reconfigure_generate_messages_nodejs"
-	@echo "... dynamic_reconfigure_generate_messages_lisp"
-	@echo "... zed_wrapper_node"
 	@echo "... nodelet_generate_messages_py"
 	@echo "... bond_generate_messages_cpp"
+	@echo "... zed_wrapper_gencfg"
+	@echo "... nodelet_generate_messages_lisp"
+	@echo "... bond_generate_messages_nodejs"
+	@echo "... test"
 	@echo "... bond_generate_messages_eus"
 	@echo "... bond_generate_messages_lisp"
-	@echo "... dynamic_reconfigure_generate_messages_cpp"
-	@echo "... bond_generate_messages_py"
-	@echo "... test"
-	@echo "... ZEDWrapper"
-	@echo "... dummy_zed_wrapper"
-	@echo "... install/local"
 	@echo "... src/zed_wrapper_node.o"
 	@echo "... src/zed_wrapper_node.i"
 	@echo "... src/zed_wrapper_node.s"

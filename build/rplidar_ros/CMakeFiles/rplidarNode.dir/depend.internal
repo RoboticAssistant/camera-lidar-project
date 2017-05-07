@@ -59,8 +59,6 @@ rplidar_ros/CMakeFiles/rplidarNode.dir/src/node.cpp.o
  /home/ubuntu/catkin_ws/src/rplidar_ros/./sdk/include/rplidar_protocol.h
  /home/ubuntu/catkin_ws/src/rplidar_ros/./sdk/include/rptypes.h
  /home/ubuntu/catkin_ws/src/rplidar_ros/src/node.cpp
- /opt/ros/kinetic/include/XmlRpcDecl.h
- /opt/ros/kinetic/include/XmlRpcValue.h
  /opt/ros/kinetic/include/ros/advertise_options.h
  /opt/ros/kinetic/include/ros/advertise_service_options.h
  /opt/ros/kinetic/include/ros/assert.h
@@ -120,3 +118,5 @@ rplidar_ros/CMakeFiles/rplidarNode.dir/src/node.cpp.o
  /opt/ros/kinetic/include/std_srvs/Empty.h
  /opt/ros/kinetic/include/std_srvs/EmptyRequest.h
  /opt/ros/kinetic/include/std_srvs/EmptyResponse.h
+ /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
+ /opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp/XmlRpcValue.h

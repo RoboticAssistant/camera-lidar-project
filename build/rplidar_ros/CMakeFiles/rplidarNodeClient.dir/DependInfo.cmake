@@ -20,6 +20,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/ubuntu/catkin_ws/src/rplidar_ros/./sdk/include"
   "/home/ubuntu/catkin_ws/src/rplidar_ros/./sdk/src"
   "/opt/ros/kinetic/include"
+  "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   )
 
 # Targets to which this target links.

@@ -12,22 +12,6 @@ ros/ros.h
 nodelet/loader.h
 -
 
-/opt/ros/kinetic/include/XmlRpcDecl.h
-ros/macros.h
--
-
-/opt/ros/kinetic/include/XmlRpcValue.h
-XmlRpcDecl.h
-/opt/ros/kinetic/include/XmlRpcDecl.h
-map
--
-string
--
-vector
--
-time.h
--
-
 /opt/ros/kinetic/include/nodelet/loader.h
 map
 -
@@ -667,6 +651,22 @@ ros/forwards.h
 /opt/ros/kinetic/include/ros/ros/forwards.h
 
 /opt/ros/kinetic/include/rosconsole/macros_generated.h
+
+/opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
+ros/macros.h
+-
+
+/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp/XmlRpcValue.h
+xmlrpcpp/XmlRpcDecl.h
+/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp/xmlrpcpp/XmlRpcDecl.h
+map
+-
+string
+-
+vector
+-
+time.h
+-
 
 /usr/include/aarch64-linux-gnu/bits/select.h
 

@@ -99,11 +99,14 @@ ZEDWrapper_EXTERNAL_OBJECTS =
 /home/ubuntu/catkin_ws/devel/lib/libZEDWrapper.so: /opt/ros/kinetic/lib/libnodeletlib.so
 /home/ubuntu/catkin_ws/devel/lib/libZEDWrapper.so: /opt/ros/kinetic/lib/libbondcpp.so
 /home/ubuntu/catkin_ws/devel/lib/libZEDWrapper.so: /usr/lib/aarch64-linux-gnu/libuuid.so
-/home/ubuntu/catkin_ws/devel/lib/libZEDWrapper.so: /usr/lib/aarch64-linux-gnu/libtinyxml.so
 /home/ubuntu/catkin_ws/devel/lib/libZEDWrapper.so: /opt/ros/kinetic/lib/libclass_loader.so
 /home/ubuntu/catkin_ws/devel/lib/libZEDWrapper.so: /usr/lib/libPocoFoundation.so
 /home/ubuntu/catkin_ws/devel/lib/libZEDWrapper.so: /usr/lib/aarch64-linux-gnu/libdl.so
 /home/ubuntu/catkin_ws/devel/lib/libZEDWrapper.so: /opt/ros/kinetic/lib/libroslib.so
+/home/ubuntu/catkin_ws/devel/lib/libZEDWrapper.so: /opt/ros/kinetic/lib/librospack.so
+/home/ubuntu/catkin_ws/devel/lib/libZEDWrapper.so: /usr/lib/aarch64-linux-gnu/libpython2.7.so
+/home/ubuntu/catkin_ws/devel/lib/libZEDWrapper.so: /usr/lib/aarch64-linux-gnu/libboost_program_options.so
+/home/ubuntu/catkin_ws/devel/lib/libZEDWrapper.so: /usr/lib/aarch64-linux-gnu/libtinyxml.so
 /home/ubuntu/catkin_ws/devel/lib/libZEDWrapper.so: /opt/ros/kinetic/lib/libroscpp.so
 /home/ubuntu/catkin_ws/devel/lib/libZEDWrapper.so: /usr/lib/aarch64-linux-gnu/libboost_signals.so
 /home/ubuntu/catkin_ws/devel/lib/libZEDWrapper.so: /usr/lib/aarch64-linux-gnu/libboost_filesystem.so
@@ -155,6 +158,7 @@ ZEDWrapper_EXTERNAL_OBJECTS =
 /home/ubuntu/catkin_ws/devel/lib/libZEDWrapper.so: /usr/lib/aarch64-linux-gnu/libpcl_surface.so
 /home/ubuntu/catkin_ws/devel/lib/libZEDWrapper.so: /usr/lib/aarch64-linux-gnu/libpcl_sample_consensus.so
 /home/ubuntu/catkin_ws/devel/lib/libZEDWrapper.so: /usr/lib/libOpenNI.so
+/home/ubuntu/catkin_ws/devel/lib/libZEDWrapper.so: /usr/lib/libOpenNI2.so
 /home/ubuntu/catkin_ws/devel/lib/libZEDWrapper.so: /usr/lib/aarch64-linux-gnu/libfreetype.so
 /home/ubuntu/catkin_ws/devel/lib/libZEDWrapper.so: /usr/lib/aarch64-linux-gnu/libz.so
 /home/ubuntu/catkin_ws/devel/lib/libZEDWrapper.so: /usr/lib/aarch64-linux-gnu/libjpeg.so
@@ -199,6 +203,7 @@ ZEDWrapper_EXTERNAL_OBJECTS =
 /home/ubuntu/catkin_ws/devel/lib/libZEDWrapper.so: /usr/lib/aarch64-linux-gnu/libpthread.so
 /home/ubuntu/catkin_ws/devel/lib/libZEDWrapper.so: /usr/lib/aarch64-linux-gnu/libqhull.so
 /home/ubuntu/catkin_ws/devel/lib/libZEDWrapper.so: /usr/lib/libOpenNI.so
+/home/ubuntu/catkin_ws/devel/lib/libZEDWrapper.so: /usr/lib/libOpenNI2.so
 /home/ubuntu/catkin_ws/devel/lib/libZEDWrapper.so: /usr/lib/aarch64-linux-gnu/libflann_cpp_s.a
 /home/ubuntu/catkin_ws/devel/lib/libZEDWrapper.so: /usr/lib/aarch64-linux-gnu/libfreetype.so
 /home/ubuntu/catkin_ws/devel/lib/libZEDWrapper.so: /usr/lib/aarch64-linux-gnu/libz.so

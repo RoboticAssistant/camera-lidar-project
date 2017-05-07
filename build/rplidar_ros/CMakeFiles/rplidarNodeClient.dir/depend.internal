@@ -3,8 +3,6 @@
 
 rplidar_ros/CMakeFiles/rplidarNodeClient.dir/src/client.cpp.o
  /home/ubuntu/catkin_ws/src/rplidar_ros/src/client.cpp
- /opt/ros/kinetic/include/XmlRpcDecl.h
- /opt/ros/kinetic/include/XmlRpcValue.h
  /opt/ros/kinetic/include/ros/advertise_options.h
  /opt/ros/kinetic/include/ros/advertise_service_options.h
  /opt/ros/kinetic/include/ros/assert.h
@@ -61,3 +59,5 @@ rplidar_ros/CMakeFiles/rplidarNodeClient.dir/src/client.cpp.o
  /opt/ros/kinetic/include/rosconsole/macros_generated.h
  /opt/ros/kinetic/include/sensor_msgs/LaserScan.h
  /opt/ros/kinetic/include/std_msgs/Header.h
+ /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
+ /opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp/XmlRpcValue.h

@@ -32,23 +32,31 @@ using namespace cv;
 // Usage: <exe> [is_live]<true/false> [svo_file_name(Can be "" if no file)] [depth_clamp] [confidence]
 
 Pub_Sub face_information_publisher;
+Pub_Sub object_depth_publisher;
 
 int set_up_communication() {
 
     ros::NodeHandle node_handle;
 
-    // Publisher 1: From Decision to Motor: Forward
+    // Publisher 1: From Face to Audio
     msg_details face_information_details;
-    ros::Subscriber sub;
+    ros::Subscriber sub_f;
     face_information_details.is_talker = true;
     face_information_details.is_listener = false;
     face_information_details.pub_repeat = false;
     face_information_details.frequency = 1;
-    face_information_details.message_topic = "face_information";
-    face_information_publisher.init(node_handle, face_information_details, sub);
+    face_information_details.message_topic = "F_A_face_information";
+    face_information_publisher.init(node_handle, face_information_details, sub_f);
 
-    // To write publishers for other important data here
-
+    // Publisher 2: From Object to Audio
+    msg_details object_depth_details;
+    ros::Subscriber sub_o;
+    object_depth_details.is_talker = true;
+    object_depth_details.is_listener = false;
+    object_depth_details.pub_repeat = false;
+    object_depth_details.frequency = 1;
+    object_depth_details.message_topic = "O_A_object_depth_information";
+    object_depth_publisher.init(node_handle, object_depth_details, sub_o);
 
     return 0;
 }

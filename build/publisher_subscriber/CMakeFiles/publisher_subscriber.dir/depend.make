@@ -3,8 +3,6 @@
 
 publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/pub_sub.cpp.o: /home/ubuntu/catkin_ws/src/publisher_subscriber/include/publisher_subscriber/pub_sub.hpp
 publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/pub_sub.cpp.o: /home/ubuntu/catkin_ws/src/publisher_subscriber/src/pub_sub.cpp
-publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/pub_sub.cpp.o: /opt/ros/kinetic/include/XmlRpcDecl.h
-publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/pub_sub.cpp.o: /opt/ros/kinetic/include/XmlRpcValue.h
 publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/pub_sub.cpp.o: /opt/ros/kinetic/include/ros/advertise_options.h
 publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/pub_sub.cpp.o: /opt/ros/kinetic/include/ros/advertise_service_options.h
 publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/pub_sub.cpp.o: /opt/ros/kinetic/include/ros/assert.h
@@ -60,11 +58,11 @@ publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/pub_sub.cpp.o: /opt
 publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/pub_sub.cpp.o: /opt/ros/kinetic/include/ros/wall_timer_options.h
 publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/pub_sub.cpp.o: /opt/ros/kinetic/include/rosconsole/macros_generated.h
 publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/pub_sub.cpp.o: /opt/ros/kinetic/include/std_msgs/String.h
+publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/pub_sub.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
+publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/pub_sub.cpp.o: /opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp/XmlRpcValue.h
 
 publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/publisher_subscriber_node.cpp.o: /home/ubuntu/catkin_ws/src/publisher_subscriber/include/publisher_subscriber/pub_sub.hpp
 publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/publisher_subscriber_node.cpp.o: /home/ubuntu/catkin_ws/src/publisher_subscriber/src/publisher_subscriber_node.cpp
-publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/publisher_subscriber_node.cpp.o: /opt/ros/kinetic/include/XmlRpcDecl.h
-publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/publisher_subscriber_node.cpp.o: /opt/ros/kinetic/include/XmlRpcValue.h
 publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/publisher_subscriber_node.cpp.o: /opt/ros/kinetic/include/ros/advertise_options.h
 publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/publisher_subscriber_node.cpp.o: /opt/ros/kinetic/include/ros/advertise_service_options.h
 publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/publisher_subscriber_node.cpp.o: /opt/ros/kinetic/include/ros/assert.h
@@ -120,4 +118,6 @@ publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/publisher_subscribe
 publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/publisher_subscriber_node.cpp.o: /opt/ros/kinetic/include/ros/wall_timer_options.h
 publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/publisher_subscriber_node.cpp.o: /opt/ros/kinetic/include/rosconsole/macros_generated.h
 publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/publisher_subscriber_node.cpp.o: /opt/ros/kinetic/include/std_msgs/String.h
+publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/publisher_subscriber_node.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
+publisher_subscriber/CMakeFiles/publisher_subscriber.dir/src/publisher_subscriber_node.cpp.o: /opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp/XmlRpcValue.h
 

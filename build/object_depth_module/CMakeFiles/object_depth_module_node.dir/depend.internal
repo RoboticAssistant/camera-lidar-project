@@ -6,8 +6,6 @@ object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_depth_int
  /home/ubuntu/catkin_ws/src/object_depth_module/include/object_depth_module/object_detection.hpp
  /home/ubuntu/catkin_ws/src/object_depth_module/src/object_depth_interface.cpp
  /home/ubuntu/catkin_ws/src/publisher_subscriber/include/publisher_subscriber/pub_sub.hpp
- /opt/ros/kinetic/include/XmlRpcDecl.h
- /opt/ros/kinetic/include/XmlRpcValue.h
  /opt/ros/kinetic/include/ros/advertise_options.h
  /opt/ros/kinetic/include/ros/advertise_service_options.h
  /opt/ros/kinetic/include/ros/assert.h
@@ -63,6 +61,8 @@ object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_depth_int
  /opt/ros/kinetic/include/ros/wall_timer_options.h
  /opt/ros/kinetic/include/rosconsole/macros_generated.h
  /opt/ros/kinetic/include/std_msgs/String.h
+ /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
+ /opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp/XmlRpcValue.h
  /usr/include/aarch64-linux-gnu/bits/select.h
  /usr/include/aarch64-linux-gnu/bits/select2.h
  /usr/include/aarch64-linux-gnu/bits/sigset.h
@@ -356,8 +356,6 @@ object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_depth_mod
  /home/ubuntu/catkin_ws/src/object_depth_module/include/object_depth_module/object_depth_interface.hpp
  /home/ubuntu/catkin_ws/src/object_depth_module/src/object_depth_module_node.cpp
  /home/ubuntu/catkin_ws/src/publisher_subscriber/include/publisher_subscriber/pub_sub.hpp
- /opt/ros/kinetic/include/XmlRpcDecl.h
- /opt/ros/kinetic/include/XmlRpcValue.h
  /opt/ros/kinetic/include/ros/advertise_options.h
  /opt/ros/kinetic/include/ros/advertise_service_options.h
  /opt/ros/kinetic/include/ros/assert.h
@@ -413,6 +411,8 @@ object_depth_module/CMakeFiles/object_depth_module_node.dir/src/object_depth_mod
  /opt/ros/kinetic/include/ros/wall_timer_options.h
  /opt/ros/kinetic/include/rosconsole/macros_generated.h
  /opt/ros/kinetic/include/std_msgs/String.h
+ /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
+ /opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp/XmlRpcValue.h
  /usr/include/aarch64-linux-gnu/bits/select.h
  /usr/include/aarch64-linux-gnu/bits/select2.h
  /usr/include/aarch64-linux-gnu/bits/sigset.h

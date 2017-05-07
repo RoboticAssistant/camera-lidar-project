@@ -114,6 +114,7 @@ void morphOps(Mat &thresh){
     dilate(thresh,thresh,dilateElement);
 }
 
+/*
 void trackFilteredObject(int &x, int &y, Mat threshold, Mat &cameraFeed) {
     Mat temp;
     threshold.copyTo(temp);
@@ -154,4 +155,4 @@ void trackFilteredObject(int &x, int &y, Mat threshold, Mat &cameraFeed) {
         }
         else putText(cameraFeed,"TOO MUCH NOISE! ADJUST FILTER",Point(0,50),1,2,Scalar(0,0,255),2);
     }
-}
+} */

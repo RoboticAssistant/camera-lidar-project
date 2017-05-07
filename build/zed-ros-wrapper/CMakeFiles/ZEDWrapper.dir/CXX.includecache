@@ -94,22 +94,6 @@ cuda_runtime_api.h
 pluginlib/class_list_macros.h
 -
 
-/opt/ros/kinetic/include/XmlRpcDecl.h
-ros/macros.h
--
-
-/opt/ros/kinetic/include/XmlRpcValue.h
-XmlRpcDecl.h
-/opt/ros/kinetic/include/XmlRpcDecl.h
-map
--
-string
--
-vector
--
-time.h
--
-
 /opt/ros/kinetic/include/class_loader/class_loader.h
 boost/shared_ptr.hpp
 -
@@ -1597,6 +1581,22 @@ ros/ros.h
 /opt/ros/kinetic/include/tf2_ros/ros/ros.h
 geometry_msgs/TransformStamped.h
 /opt/ros/kinetic/include/tf2_ros/geometry_msgs/TransformStamped.h
+
+/opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
+ros/macros.h
+-
+
+/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp/XmlRpcValue.h
+xmlrpcpp/XmlRpcDecl.h
+/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp/xmlrpcpp/XmlRpcDecl.h
+map
+-
+string
+-
+vector
+-
+time.h
+-
 
 /usr/include/aarch64-linux-gnu/bits/mman-linux.h
 

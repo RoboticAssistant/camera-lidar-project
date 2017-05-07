@@ -42,6 +42,7 @@ cv::vector<Vec4i> hierarchy;
 vector<vector<Point> > contours;
 
 extern Pub_Sub face_information_publisher;
+extern Pub_Sub object_depth_publisher;
 
 int object_depth_interface::initialize_ZED_camera()
 {
@@ -378,20 +379,58 @@ int object_depth_interface::depth_object_interface() {
 /// 6) Write a publisher: Sending the notification about following information
 ///     a) Number of objects
 ///     b) Distance of those object
+RNG rng(12345);
 int object_depth_interface::object_detect_from_disparity() {
 //    // Showing the depth map
-//    imshow("Depth Map", depth_map);
+    cvtColor(disparity_image, disparity_image, CV_BGR2GRAY);
+    imshow("Depth Map", depth_map);
 
     // Showing the disparity
     imshow("Disparity", disparity_image);
 
-    // Converting this image to a binary image
+//    // Converting this image to a binary image
     cv::threshold(disparity_image, disparity_image, 100, 255, CV_THRESH_BINARY);
-    // Showing the binarized image for disparity
+//    // Showing the binarized image for disparity
+    namedWindow("Disparity Binary Image", CV_WINDOW_AUTOSIZE);
     imshow("Disparity Binary Image", disparity_image);
 
     morphOps(disparity_image);
-    imshow("Processed Image", disparity_image);
+//    imshow("Processed Image", disparity_image);
+
+//    // Now using the blob detector to get the different blobs
+//    cv::SimpleBlobDetector::Params params;
+////    params.minThreshold = 0;
+////    params.maxThreshold = 255;
+
+//    cv::SimpleBlobDetector detector(params);
+//    std::vector<KeyPoint> keypoints;
+
+//    //cv::Mat im = imread("/home/ubuntu/catkin_ws/src/object_depth_module/src/object_image.jpg", IMREAD_GRAYSCALE);
+//    detector.detect(disparity_image, keypoints);
+
+//    cv::Mat im_with_keypoints;
+//    cv::drawKeypoints(disparity_image, keypoints, im_with_keypoints, Scalar(0, 0, 255), DrawMatchesFlags::DRAW_RICH_KEYPOINTS);
+
+//    // Show Blobs
+//    imshow("keypoints", im_with_keypoints);
+
+    // Using contours
+    std::vector<std::vector<cv::Point> > contours;
+
+    cv::findContours(disparity_image, contours, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE);
+    std::vector<std::vector<cv::Point> > contours_poly(contours.size());
+    std::vector<cv::Rect> boundRect(contours.size());
+
+    cv::Mat drawing = cv::Mat::zeros(disparity_image.size(), CV_8UC3);
+    static int counter = 0;
+    for(counter = 0; counter < contours.size(); counter++) {
+        cv::approxPolyDP(cv::Mat(contours[counter]), contours_poly[counter], 3, true);
+        boundRect[counter] = cv::boundingRect(cv::Mat(contours_poly[counter]));
+
+        Scalar color = Scalar(rng.uniform(0,255), rng.uniform(0,255), rng.uniform(0,255));
+        rectangle(drawing, boundRect[counter].tl(), boundRect[counter].br(), color, 2, 8, 0);
+    }
+    imshow("Disparity Binary Image", drawing);
 
     return 0;
 }

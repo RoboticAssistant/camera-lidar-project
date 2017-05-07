@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"publisher_subscriber\"
 
-CXX_INCLUDES = -I/opt/ros/kinetic/include/opencv -I/opt/ros/kinetic/include -I/home/ubuntu/catkin_ws/src/publisher_subscriber/include 
+CXX_INCLUDES = -I/opt/ros/kinetic/include/opencv -I/opt/ros/kinetic/include -I/home/ubuntu/catkin_ws/src/publisher_subscriber/include -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
 

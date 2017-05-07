@@ -3,8 +3,6 @@
 
 zed-ros-wrapper/CMakeFiles/ZEDWrapper.dir/src/zed_wrapper_nodelet.cpp.o: /home/ubuntu/catkin_ws/devel/include/zed_wrapper/ZedConfig.h
 zed-ros-wrapper/CMakeFiles/ZEDWrapper.dir/src/zed_wrapper_nodelet.cpp.o: /home/ubuntu/catkin_ws/src/zed-ros-wrapper/src/zed_wrapper_nodelet.cpp
-zed-ros-wrapper/CMakeFiles/ZEDWrapper.dir/src/zed_wrapper_nodelet.cpp.o: /opt/ros/kinetic/include/XmlRpcDecl.h
-zed-ros-wrapper/CMakeFiles/ZEDWrapper.dir/src/zed_wrapper_nodelet.cpp.o: /opt/ros/kinetic/include/XmlRpcValue.h
 zed-ros-wrapper/CMakeFiles/ZEDWrapper.dir/src/zed_wrapper_nodelet.cpp.o: /opt/ros/kinetic/include/class_loader/class_loader.h
 zed-ros-wrapper/CMakeFiles/ZEDWrapper.dir/src/zed_wrapper_nodelet.cpp.o: /opt/ros/kinetic/include/class_loader/class_loader_core.h
 zed-ros-wrapper/CMakeFiles/ZEDWrapper.dir/src/zed_wrapper_nodelet.cpp.o: /opt/ros/kinetic/include/class_loader/class_loader_exceptions.h
@@ -120,6 +118,8 @@ zed-ros-wrapper/CMakeFiles/ZEDWrapper.dir/src/zed_wrapper_nodelet.cpp.o: /opt/ro
 zed-ros-wrapper/CMakeFiles/ZEDWrapper.dir/src/zed_wrapper_nodelet.cpp.o: /opt/ros/kinetic/include/tf2/LinearMath/Scalar.h
 zed-ros-wrapper/CMakeFiles/ZEDWrapper.dir/src/zed_wrapper_nodelet.cpp.o: /opt/ros/kinetic/include/tf2/LinearMath/Vector3.h
 zed-ros-wrapper/CMakeFiles/ZEDWrapper.dir/src/zed_wrapper_nodelet.cpp.o: /opt/ros/kinetic/include/tf2_ros/transform_broadcaster.h
+zed-ros-wrapper/CMakeFiles/ZEDWrapper.dir/src/zed_wrapper_nodelet.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
+zed-ros-wrapper/CMakeFiles/ZEDWrapper.dir/src/zed_wrapper_nodelet.cpp.o: /opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp/XmlRpcValue.h
 zed-ros-wrapper/CMakeFiles/ZEDWrapper.dir/src/zed_wrapper_nodelet.cpp.o: /usr/include/aarch64-linux-gnu/bits/mman-linux.h
 zed-ros-wrapper/CMakeFiles/ZEDWrapper.dir/src/zed_wrapper_nodelet.cpp.o: /usr/include/aarch64-linux-gnu/bits/mman.h
 zed-ros-wrapper/CMakeFiles/ZEDWrapper.dir/src/zed_wrapper_nodelet.cpp.o: /usr/include/aarch64-linux-gnu/bits/select.h
